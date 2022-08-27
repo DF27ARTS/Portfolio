@@ -1,0 +1,31 @@
+.NightButton {
+  position: fixed;
+  top: 1.9vw;
+  right: 7vw;
+  height: 1.5vw;
+  width: 1.5vw;
+  color: rgb(255 255 255);
+  transition: cubic-bezier(0.215, 0.610, 0.355, 1) 1s;
+  cursor: pointer;
+}
+
+.Night_Active {
+  color: rgb( 0 0 0 );
+  transition: cubic-bezier(0.215, 0.610, 0.355, 1) 1s;
+}
+
+.DayNight {
+  position: fixed;
+  top: 1.7vw;
+  right: 4vw;
+  height: 1.8vw;
+  width: 1.8vw;
+  color: rgb(255 255 255);
+  transition: cubic-bezier(0.215, 0.610, 0.355, 1) 1s;
+  cursor: pointer;
+}
+
+.Day_Active {
+  color: rgba(223, 247, 10, 0.884);
+  transition: cubic-bezier(0.215, 0.610, 0.355, 1) 1s;
+}

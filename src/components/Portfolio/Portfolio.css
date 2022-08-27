@@ -1,12 +1,17 @@
+.title {
+  font-size: 1.8vw;
+}
+
+/* ///////// */
+
 .container_portfolio {
   position: absolute;
-  top: 0;
+  top: 10vh;
   min-height: 100vh;
   display: grid;
-  width: 100vw;
-  padding: 10vh 0 0 0;
+  width: 98vw;
   color: rgb(0 0 0 );
-  /* background-image: linear-gradient(to top , #83a4d4, #b6fbff); */
+  /* background-imDayNightage: linear-gradient(to top , #83a4d4, #b6fbff); */
   background-image: transparent;
   justify-content: center;
 }
@@ -15,21 +20,151 @@
   color: rgb(255 255 255 / 80%);
 }
 
-.cont_information {
-  min-height: 100vh;
-  width: 50vh;
-  padding: 0 0 0 20vw;
+.About {
+  height: 42vw;
+  width: 100vw;
+  display: flex;
+  background-color: transparent;
 }
 
-.title {
-  font-size: 2.5vw;
+.cont_image {
+  padding: 5vw 0 0 13vw;
+  height: 30vw;
+  width: 35vw;
+  background-color: transparent;
 }
 
 .My_Image {
-  position: absolute;
-  top: 10vw;
-  left: 15vw;
   height: 25vw;
   width: 25vw;
   border-radius: 12.5vw;
+}
+
+.cont_information {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  height: 40vw;
+  width: 50vw;
+}
+
+.About_title {
+  font-size: 2.5vw;
+}
+
+.Infomation {
+  font-size: 1.7vw;
+}
+
+.Projects {
+  display: inline;
+  justify-content: center;
+  min-height: 100vh;
+  width: 60vw;
+  padding: 0 20vw;
+  background-color: transparent;
+}
+
+.Projects_title {
+  display: flex;
+  height: 5vw;
+  font-size: 5vw;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width: 60vw;
+  justify-content: center;
+  align-items: center;
+  background-color:transparent;
+}
+
+.cont_Apps {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25vw;
+  width: 50vw;
+  border-radius: 1vw;
+  background-color: transparent;
+  box-shadow: 5px 10px 15px 5px rgb(0 0 0 / 30%);
+}
+
+.cont_Apps_night {
+  box-shadow: 5px 10px 15px 5px rgb(255 255 255 / 30%);
+}
+
+.apps_image {
+  position: absolute;
+  top: 2.5vw;
+  left: 2.5vw;
+  height: 20vw;
+  width: 45vw;
+  cursor: pointer;
+}
+
+.Apps_images_buttons {
+  position: absolute;
+  color: rgb(0 0 0 / 80%);
+  top: 10.5vw;
+  height: 3vw;
+  width: 3vw;
+  transition: cubic-bezier(0.215, 0.610, 0.355, 1) 2s;
+}
+
+.right {
+  right: 2vw;
+}
+
+.left {
+  left: 2vw;
+}
+
+.next_page {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 3vw;
+  left: 15vw;
+  height: 12vw;
+  width: 20vw;
+  border-radius: 1vw;
+  background-color: rgb(255 255 255 / 70%);
+  backdrop-filter: blur(5px);
+  visibility: visible;
+  opacity: 1;
+  transition: cubic-bezier(0.215, 0.610, 0.355, 1) 1s;
+}
+
+.next_page_block {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 3vw;
+  left: 15vw;
+  height: 12vw;
+  width: 20vw;
+  border-radius: 1vw;
+  background-color: rgb(255 255 255 / 70%);
+  backdrop-filter: blur(5px);
+  visibility: hidden;
+  opacity: 0;
+  transition: cubic-bezier(0.215, 0.610, 0.355, 1) 1s;
+}
+
+.page {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 9vw;
+  width: 7vw;
+  margin: 1vw;
+  cursor: pointer;
+}
+
+.next_page_img {
+  height: 4vw;
+  width: 6vw;
+  border-radius: 0.5vw;
 }

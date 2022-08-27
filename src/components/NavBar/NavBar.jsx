@@ -1,16 +1,36 @@
 import './NavBar.css';
 
-const NavBar = ({state}) => {
+const NavBar = ({state, idiom}) => {
   return (
     <div className='container_navbar' >
-      <a href='#2' >
-      <h2 className='nav_titles' >About me</h2>
-      </a>
-      <a href='#1' >
-      <h2 className='nav_titles' >projects</h2>
-      </a>
-      <h2 className='nav_titles' >Tecnologies</h2>
-      <h2 className='nav_titles' >Contact</h2>
+      {
+        idiom ?
+        (
+          <>
+            <a href='#2' >
+              <button className='nav_titles' >Sobre mí</button>
+            </a>
+            <a href='#1' >
+              <button className='nav_titles' >Proyectos</button>
+            </a>
+            <h2 className='nav_titles' >Tecnologías</h2>
+            <h2 className='nav_titles' >Contacto</h2> 
+          </>
+        )
+          :
+        (
+          <>
+            <a href='#2' >
+              <button className='nav_titles' >About</button>
+            </a>
+            <a href='#1' >
+              <button className='nav_titles' >Projects</button>
+            </a>
+            <button className='nav_titles' >Tecnologies</button>
+            <button className='nav_titles' >Contact</button> 
+          </>
+        )
+      }
     </div>
   )
 }

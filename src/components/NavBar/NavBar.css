@@ -8,10 +8,25 @@
   left: 0;
   height: 5vw;
   width: 80vw;
+  box-shadow: 3px 7px 15px 0 rgb(0 0 0 / 30%);
   color: rgb(0 0 0 / 80%);
-  background-image: linear-gradient(to right, #2193b0, #6dd5ed )
+  background-color: rgb(251, 249, 242);
 }
 
 .nav_titles {
   font-size: 1.8vw;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.nav_titles:hover {
+  transform: translateY(-3px);
+  transition:cubic-bezier(0.215, 0.610, 0.355, 1) .5s;
+}
+
+.nav_titles:active {
+  transform: translateY(3px);
+  transition:cubic-bezier(0.215, 0.610, 0.355, 1) .5s;
 }

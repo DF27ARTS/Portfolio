@@ -1,5 +1,4 @@
-
-
+import './EnglishSpanish.css';
 
 const EnglishSpanish = ({setIdiom, idiom}) => {
   return (

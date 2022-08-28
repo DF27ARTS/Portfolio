@@ -12,3 +12,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#about {
+  transition: cubic-bezier(0.215, 0.610, 0.355, 1) 1s;
+}

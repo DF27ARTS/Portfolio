@@ -2,6 +2,10 @@
   font-size: 1.8vw;
 }
 
+.apps_infomation {
+  font-size: 1.3vw;
+}
+
 /* ///////// */
 
 .container_portfolio {
@@ -21,10 +25,11 @@
 }
 
 .About {
-  height: 42vw;
+  min-height: 42vw;
   width: 100vw;
   display: flex;
   background-color: transparent;
+  margin-bottom: 5vw;
 }
 
 .cont_image {
@@ -45,25 +50,17 @@
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  height: 40vw;
+  min-height: 40vw;
   width: 50vw;
 }
 
 .About_title {
   font-size: 2.5vw;
+  color: rgb(5, 1, 36);
 }
 
 .Infomation {
   font-size: 1.7vw;
-}
-
-.Projects {
-  display: inline;
-  justify-content: center;
-  min-height: 100vh;
-  width: 60vw;
-  padding: 0 20vw;
-  background-color: transparent;
 }
 
 .Projects_title {
@@ -71,43 +68,65 @@
   height: 5vw;
   font-size: 5vw;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  width: 60vw;
+  width: 100vw;
+  margin-bottom: 5vw;
+  color: rgb(5, 1, 36);
   justify-content: center;
   align-items: center;
   background-color:transparent;
 }
 
-.cont_Apps {
+.Projects {
+  display: grid;
+  grid-template-columns: repeat(2, 50vw);
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background-color: transparent;
+}
+
+
+.single_project {
   position: relative;
+  height: 45vw;
+  width: 40vw;
+  padding: 5vw;
+}
+
+.cont_Apps {
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 25vw;
-  width: 50vw;
+  align-self: flex-end;
+  bottom: 3vw;
+  height: 20vw;
+  width: 40vw;
   border-radius: 1vw;
   background-color: transparent;
-  box-shadow: 5px 10px 15px 5px rgb(0 0 0 / 30%);
 }
 
-.cont_Apps_night {
+/* .cont_Apps_night {
   box-shadow: 5px 10px 15px 5px rgb(255 255 255 / 30%);
-}
+} */
 
 .apps_image {
   position: absolute;
-  top: 2.5vw;
-  left: 2.5vw;
-  height: 20vw;
-  width: 45vw;
+  top: 1.5vw;
+  left: 1.5vw;
+  height: 17vw;
+  width: 37vw;
+  border-radius: 1vw;
   cursor: pointer;
 }
 
 .Apps_images_buttons {
   position: absolute;
-  color: rgb(0 0 0 / 80%);
-  top: 10.5vw;
-  height: 3vw;
-  width: 3vw;
+  color: rgb(0 100 255 / 70%);
+  top: 9vw;
+  height: 2vw;
+  width: 2vw;
   transition: cubic-bezier(0.215, 0.610, 0.355, 1) 2s;
 }
 
@@ -115,8 +134,18 @@
   right: 2vw;
 }
 
+.right:active {
+  transform: translateX(2px);
+  transition: cubic-bezier(0.215, 0.610, 0.355, 1) .5s;
+}
+
 .left {
   left: 2vw;
+}
+
+.left:active {
+  transform: translateX(-2px);
+  transition: cubic-bezier(0.215, 0.610, 0.355, 1) .5s;
 }
 
 .next_page {
@@ -124,8 +153,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 3vw;
-  left: 15vw;
+  top: 2vw;
+  left: 10vw;
   height: 12vw;
   width: 20vw;
   border-radius: 1vw;
@@ -141,8 +170,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 3vw;
-  left: 15vw;
+  top: -5vw;
+  left: 10vw;
   height: 12vw;
   width: 20vw;
   border-radius: 1vw;
@@ -160,11 +189,172 @@
   height: 9vw;
   width: 7vw;
   margin: 1vw;
-  cursor: pointer;
+}
+
+.git_and_deploy_link {
+  height: 1.8vw;
+  width: 6vw;
+  font-size: 1vw;
+  font-weight: bold;
+  border: none;
+  text-decoration: none;
+  background-color: rgb(255 255 255 / 90%);
+  border-radius: 0.7vw;
 }
 
 .next_page_img {
   height: 4vw;
   width: 6vw;
   border-radius: 0.5vw;
+}
+
+.Tecnologies {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5vw;
+  height: 40vw;
+  width: 100vw;
+}
+
+.tecnologies_title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  height: 3vw;
+  width: 90vw;
+  font-size: 4vw;
+  color: rgb(5, 1, 36);
+}
+
+.container_logos_tecnologies {
+  display: flex;
+  min-height: 20vw;
+  width: 85vw;
+  padding: 2.5vw;
+  border-radius: 2vw;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container_single_icon {
+  display: grid;
+  justify-content: center;
+  height: 7vw;
+  width: 10vw;
+  padding: 1px;
+  margin: 1vw;
+}
+
+.title_icon {
+  font-size: 1.7vw;
+  color: rgb(5, 1, 36);
+  padding: 0;
+  margin: 0;
+}
+
+.javascript_icon {
+  height: 4vw;
+  width: 4vw;
+  color: rgb(181, 184, 9);
+  margin: 0 auto;
+}
+
+.node_icon {
+  height: 4.5vw;
+  width: 4.5vw;
+  margin: 0 auto;
+  color: rgb(6, 160, 13);
+}
+
+.react_icon {
+  height: 4.2vw;
+  width: 4.2vw;
+  margin: 0 auto;
+  color: rgb(6, 94, 177);
+}
+
+.redux_icon {
+  height: 3.8vw;
+  width: 3.8vw;
+  margin: 0 auto;
+  color: rgb(116, 7, 143);
+}
+
+.html_icon {
+  height: 3.8vw;
+  width: 3.8vw;
+  margin: 0 auto;
+  color: rgb(168, 20, 9);
+}
+
+.css_icon {
+  height: 3.8vw;
+  width: 3.8vw;
+  margin: 0 auto;
+  color: rgb(8, 43, 197);
+}
+
+.express_icon {
+  height: 3.8vw;
+  width: 3.8vw;
+  margin: 0 auto;
+  color: rgb(2, 5, 17);
+}
+
+.sequelize_icon {
+  height: 3.8vw;
+  width: 3.8vw;
+  margin: 0 auto;
+  color: rgb(8, 43, 197);
+}
+
+.postgres_icon {
+  height: 3.8vw;
+  width: 3.8vw;
+  margin: 0 auto;
+  color: rgb(7, 94, 165);
+}
+
+.scrum_icon {
+  height: 5vw;
+  width: 5vw;
+  margin: 0 auto;
+  color: rgb(19, 15, 211);
+}
+/* ///////// */
+.contact {
+  display: inline;
+  justify-content: center;
+  min-height: 20vw;
+  width: 100vw;
+  margin-bottom: 2vw;
+}
+
+.contact_title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  height: 5vw;
+  width: 100vw;
+  font-size: 4vw;
+  color: rgb(5, 1, 36);
+}
+
+.container_logos {
+  height: 8vw;
+  width: 80vw;
+  padding: 2vw 10vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact_logos {
+  height: 7vw;
+  width: 7vw;
+  margin: 0 3vw;
+  color: rgb(5, 1, 36)
 }

@@ -17,8 +17,8 @@ const DayAndNightButton = ({setState, state }) => {
         onClick={()=>setState(true)} 
         className={
           !state ?
-          'DayNight' :
-          'DayNight Day_Active '
+          'DayButton' :
+          'DayButton Day_Active '
         } 
       />
     </>

@@ -3,11 +3,6 @@
   padding: 5vw 0 0 0;
 }
 
-.Idiom_Button {
-  position: fixed;
-  top: 5vw;
-  right: 1vw;
-}
 
 .block {
   visibility: hidden;

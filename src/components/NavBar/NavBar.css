@@ -30,3 +30,19 @@
   transform: translateY(3px);
   transition:cubic-bezier(0.215, 0.610, 0.355, 1) .5s;
 }
+
+@media screen and (max-width: 500px) {
+  .container_navbar {
+    height: 5vh;
+  }
+
+  .nav_titles {
+    font-size: 1.5vh;
+  }
+
+  .nav_titles:hover {
+    transform: none;
+    transition: none;
+  }
+
+}

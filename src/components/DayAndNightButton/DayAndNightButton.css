@@ -29,3 +29,30 @@
   color: rgba(223, 247, 10, 0.884);
   transition: cubic-bezier(0.215, 0.610, 0.355, 1) 1s;
 }
+@media screen and (max-width: 500px) {
+  .NightButton {
+    top: 15vw;
+    right: 3vw;
+    height: 8vw;
+    width: 8vw;
+    color: rgb(255 255 255);
+  }
+
+  .Night_Active {
+    color: rgb( 0 0 0 );
+    transition: cubic-bezier(0.215, 0.610, 0.355, 1) 1s;
+  }
+
+  .DayButton {
+    top: 25vw;
+    right: 3vw;
+    height: 8vw;
+    width: 8vw;
+    color: rgb(255 255 255);
+  }
+
+  .Day_Active {
+    color: rgba(223, 247, 10, 0.884);
+    transition: cubic-bezier(0.215, 0.610, 0.355, 1) 1s;
+  }
+}

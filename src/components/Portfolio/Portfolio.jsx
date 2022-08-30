@@ -1,5 +1,6 @@
 import my_image from '../Portfolio_Images/my_image.jpg';
 import GitHub from '../Portfolio_Images/GitHub.png';
+import My_CV from '../Portfolio_Images/My_CV.pdf'
 import app_dogs_1 from '../App_dogs_images/app_dogs1.png';
 import app_dogs_2 from '../App_dogs_images/app_dogs2.png';
 import app_dogs_3 from '../App_dogs_images/app_dogs3.png';
@@ -114,6 +115,7 @@ const Portfolio = ({state, idiom}) => {
               <div className="cont_image">
                 <img className='My_Image' src={my_image} alt='my_image' />
                 <h1 className='My_Profile_title' >Diego Fernando Rojas Carrillo</h1>
+                <a className='cv_link' href={My_CV} download >Download CV</a>
               </div>
               <div className="cont_information">
                 <h1 className='About_title' >{idiom ? 'Sobre mí' : 'About' }</h1>

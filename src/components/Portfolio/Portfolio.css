@@ -38,16 +38,31 @@
 }
 
 .cont_image {
-  padding: 5vw 0 0 13vw;
-  height: 30vw;
-  width: 35vw;
-  background-color: transparent;
+  position: relative;
+  height: 40vw;
+  width: 50vw;
 }
 
 .My_Image {
+  position: absolute;
+  top: Svw;
+  left: 13vw;
   height: 25vw;
   width: 25vw;
   border-radius: 12.5vw;
+}
+
+.My_Profile_title {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 5vw;
+  left: 1vw;
+  height: 5vw;
+  width: 49vw;
+  font-size: 3vw;
+  color: rgb(5, 1, 36);
 }
 
 .cont_information {
@@ -369,18 +384,25 @@
   }
   
   .cont_image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
     padding: 0;
-    height: 40vw;
+    height: 60vw;
     width: 100vw;
   }
   
   .My_Image {
+    position: absolute;
+    top: 0;
+    left: 30vw;
     height: 40vw;
     width: 40vw;
     border-radius: 20vw;
+  }
+
+  .My_Profile_title {
+    height: 10vw;
+    width: 100vw;
+    font-size: 5vw;
   }
   
   .cont_information {

@@ -113,6 +113,7 @@ const Portfolio = ({state, idiom}) => {
             <div className='About' >
               <div className="cont_image">
                 <img className='My_Image' src={my_image} alt='my_image' />
+                <h1 className='My_Profile_title' >Diego Fernando Rojas Carrillo</h1>
               </div>
               <div className="cont_information">
                 <h1 className='About_title' >{idiom ? 'Sobre mí' : 'About' }</h1>

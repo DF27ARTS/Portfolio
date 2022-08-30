@@ -1,8 +1,5 @@
 import my_image from '../Portfolio_Images/my_image.jpg';
 import GitHub from '../Portfolio_Images/GitHub.png';
-// import LinkedIn from '../Portfolio_Images/LinkedIn.png';
-// import Mail from '../Portfolio_Images/Mail.png';
-// import JavaScript from '../Portfolio_Images/JavaScript.jpg'
 import app_dogs_1 from '../App_dogs_images/app_dogs1.png';
 import app_dogs_2 from '../App_dogs_images/app_dogs2.png';
 import app_dogs_3 from '../App_dogs_images/app_dogs3.png';
@@ -221,9 +218,9 @@ const Portfolio = ({state, idiom}) => {
                 <div className={ OpenGitAndDeployDogs ? "next_page" : "next_page_block"}>
                     <div className="page">
                       <button className='git_and_deploy_link' >GitHub</button>
-                    <a href={HitHub} >
-                      <img className='next_page_img' src={GitHub} alt='GitHub' />
-                    </a>
+                      <a href={HitHub} >
+                        <img className='next_page_img' src={GitHub} alt='GitHub' />
+                      </a>
                     </div>
                     <div className="page">
                       <button className='git_and_deploy_link' >Deploy</button>
@@ -311,16 +308,16 @@ const Portfolio = ({state, idiom}) => {
               <div id='tecnologies' className="Tecnologies">
                 <h1 className="tecnologies_title">{ idiom ? 'Tecnologías' : 'Tecnologies' }</h1>
                 <div className="container_logos_tecnologies">
-                 <div className="container_single_icon"> <p className='title_icon' >JavaScript</p> <SiJavascript className='javascript_icon' /> </div>
-                 <div className="container_single_icon"> <p className='title_icon' >Node</p> <IoLogoNodejs className='node_icon' /> </div>
-                 <div className="container_single_icon"> <p className='title_icon' >React</p> <GrReactjs className='react_icon' /> </div>
-                 <div className="container_single_icon"> <p className='title_icon' >Redux</p> <SiRedux className='redux_icon' /> </div>
-                 <div className="container_single_icon"> <p className='title_icon' >HTML</p> <ImHtmlFive className='html_icon' /> </div>
-                 <div className="container_single_icon"> <p className='title_icon' >CSS</p> <IoLogoCss3 className='css_icon' /> </div>
-                 <div className="container_single_icon"> <p className='title_icon' >Expres</p> <SiExpress className='express_icon' /> </div>
-                 <div className="container_single_icon"> <p className='title_icon' >Sequelize</p> <SiSequelize className='sequelize_icon' /> </div>
-                 <div className="container_single_icon"> <p className='title_icon' >PostgreSQL</p> <SiPostgresql className='postgres_icon' /> </div>
-                 <div className="container_single_icon"> <p className='title_icon' >Scrum</p> <DiScrum className='scrum_icon' /> </div>
+                 <div className="container_single_icon"> <p className='title_icon' >JavaScript</p> <SiJavascript className=' icon_mobile javascript_icon' /> </div>
+                 <div className="container_single_icon"> <p className='title_icon' >Node</p> <IoLogoNodejs className=' icon_mobile node_icon' /> </div>
+                 <div className="container_single_icon"> <p className='title_icon' >React</p> <GrReactjs className=' icon_mobile react_icon' /> </div>
+                 <div className="container_single_icon"> <p className='title_icon' >Redux</p> <SiRedux className=' icon_mobile redux_icon' /> </div>
+                 <div className="container_single_icon"> <p className='title_icon' >HTML</p> <ImHtmlFive className=' icon_mobile html_icon' /> </div>
+                 <div className="container_single_icon"> <p className='title_icon' >CSS</p> <IoLogoCss3 className=' icon_mobile css_icon' /> </div>
+                 <div className="container_single_icon"> <p className='title_icon' >Expres</p> <SiExpress className=' icon_mobile express_icon' /> </div>
+                 <div className="container_single_icon"> <p className='title_icon' >Sequelize</p> <SiSequelize className=' icon_mobile sequelize_icon' /> </div>
+                 <div className="container_single_icon"> <p className='title_icon' >PostgreSQL</p> <SiPostgresql className=' icon_mobile postgres_icon' /> </div>
+                 <div className="container_single_icon"> <p className='title_icon' >Scrum</p> <DiScrum className=' icon_mobile scrum_icon' /> </div>
                 </div>
               </div>
 
@@ -334,7 +331,7 @@ const Portfolio = ({state, idiom}) => {
                   <a href='https://www.linkedin.com/in/diego-fernando-rojas-carrillo-full-stack-developer/' >
                     <BsLinkedin className='contact_logos' />
                   </a>
-                  <a href='www.drawingsdf@gmail.com' >
+                  <a href='mailto:diego27Fernando72@gmail.com' >
                     <ImMail className='contact_logos' />
                   </a>
                 </div>

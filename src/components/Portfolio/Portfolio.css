@@ -6,6 +6,11 @@
   font-size: 1.3vw;
 }
 
+.icon_mobile {
+  height: 0;
+  width: 0;
+}
+
 /* ///////// */
 
 .container_portfolio {
@@ -406,10 +411,9 @@
     display: inline;
     justify-content: center;
     position: relative;
-    min-height: 100vw;
+    min-height: 125vw;
     width: 90vw;
     padding: 5vw;
-    border: 5px solid rgb(0 0 0 / 80%);
   } 
   
   .title {
@@ -421,15 +425,122 @@
   }
   
   .cont_Apps {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-self: flex-end;
     bottom: 3vw;
     height: 50vw;
-    background-color: rgb(0 0 0 / 40%);
     width: 90vw;
     border-radius: 1vw;
+  }
+
+  .apps_image {
+    top: 4vw;
+    left: 4vw;
+    height: 42vw;
+    width: 82vw;
+    border-radius: 2vw;
+  }
+
+  .Apps_images_buttons {
+    top: 21.5vw;
+    height: 7vw;
+    width: 7vw;
+  }
+
+  .right {
+    right: 3vw;
+  }
+
+  .right:active {
+    transform: translateX(2vw);
+    transition: cubic-bezier(0.215, 0.610, 0.355, 1) .5s;
+  }
+  
+  .left {
+    left: 3vw;
+  }
+
+  .left:active {
+    transform: translateX(-2vw);
+    transition: cubic-bezier(0.215, 0.610, 0.355, 1) .5s;
+  }
+
+  .next_page {
+    top: 7vw;
+    left: 25vw;
+    height: 25vw;
+    width: 40vw;
+    border-radius: 2vw;
+  }
+
+  .next_page_block {
+    top: -7vw;
+    left: 25vw;
+    height: 25vw;
+    width: 40vw;
+    border-radius: 2vw;
+  }
+
+  .page {
+    background-color: rgb(0 0 0 / 40%);
+    height: 17vw;
+    width: 15vw;
+  }
+
+  .git_and_deploy_link {
+    height:3vw;
+    width: 13vw;
+    font-size: 2vw;
+  }
+
+  .next_page_img {
+    height: 8vw;
+    width: 13vw;
+    border-radius: 0.5vw;
+  }
+
+  .Tecnologies {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5vw;
+    min-height: 90vw;
+    width: 100vw;
+  }
+  
+  .tecnologies_title {
+    height: 7vw;
+    width: 90vw;
+    font-size: 6vw;
+  }
+  
+  .container_single_icon {
+    display: grid;
+    justify-content: center;
+    height: 15vw;
+    width: 20vw;
+  }
+
+  .title_icon {
+    font-size: 2.7vw;
+  }
+
+  .icon_mobile {
+    height: 8vw;
+    width: 8vw;
+  }
+
+  .contact {
+    min-height: 30vw;
+  }
+
+  .contact_title {
+    font-size: 7vw;
+    padding-bottom: 3vw;
+  }
+
+  .contact_logos {
+    height: 15vw;
+    width: 15vw;
+    margin: 0 3vw;
+    color: rgb(5, 1, 36)
   }
 }

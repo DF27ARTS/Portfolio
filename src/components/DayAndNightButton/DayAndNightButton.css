@@ -31,10 +31,10 @@
 }
 @media screen and (max-width: 500px) {
   .NightButton {
-    top: 15vw;
-    right: 3vw;
-    height: 8vw;
-    width: 8vw;
+    top: 2vw;
+    left: 3vw;
+    height: 6vw;
+    width: 6vw;
     color: rgb(255 255 255);
   }
 
@@ -44,10 +44,10 @@
   }
 
   .DayButton {
-    top: 25vw;
+    top: 2vw;
     right: 3vw;
-    height: 8vw;
-    width: 8vw;
+    height: 6vw;
+    width: 6vw;
     color: rgb(255 255 255);
   }
 

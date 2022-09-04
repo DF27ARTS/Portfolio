@@ -14,7 +14,7 @@ import { SiSequelize } from 'react-icons/si';
 import { SiExpress } from 'react-icons/si';
 import { SiPostgresql } from 'react-icons/si';
 import { DiScrum } from 'react-icons/di';
-import Module_Projects from '../Mudule_Projects/Module_Projects';
+import ModuleProjects from '../ModuleProjects/ModuleProjects';
 import { 
   Array_App_dogs, 
   Array_App_Synnet, 
@@ -27,7 +27,6 @@ import {
 
 
 import './Portfolio.css'
-import { useEffect } from 'react';
 
 const Portfolio = ({state, idiom}) => {
 
@@ -47,11 +46,11 @@ const Portfolio = ({state, idiom}) => {
             <div className='About' >
               <div className="cont_image">
                 <img className='My_Image' src={my_image} alt='my_image' />
-                <h1 className='My_Profile_title' >Diego Fernando Rojas Carrillo</h1>
-                <a className='cv_link' href={My_CV} download >Download CV</a>
+                <h1 className={ state ? 'My_Profile_title' : "My_Profile_title t_t_n" } >Diego Fernando Rojas Carrillo</h1>
+                <a className={ state ? 'cv_link' : 'cv_link t_t_n' } href={My_CV} download >Download CV</a>
               </div>
               <div className="cont_information">
-                <h1 className='About_title' >{idiom ? 'Sobre mí' : 'About' }</h1>
+                <h1 className={ state ? 'About_title' : 'About_title t_t_n' }>{idiom ? 'Sobre mí' : 'About' }</h1>
                 <span className='Infomation' >
                   {
                     idiom ?
@@ -77,10 +76,10 @@ const Portfolio = ({state, idiom}) => {
               </div>
             </div>
 
-            <div id='projects' className='Projects_title' >{ idiom ? 'Proyectos' : 'Projects'}</div>
+            <div id='projects' className={ state ? 'Projects_title' : 'Projects_title t_t_n' } >{ idiom ? 'Proyectos' : 'Projects'}</div>
             <div className="Projects" >
               <div className="single_project">
-                <Module_Projects
+                <ModuleProjects
                   state={state}
                   Array={Array_App_dogs}
                   GitHub={"https://github.com/DF27ARTS/Henry-PI-Dogs"}
@@ -92,7 +91,7 @@ const Portfolio = ({state, idiom}) => {
               </div>
 
               <div className="single_project">
-                <Module_Projects
+                <ModuleProjects
                   state={state}
                   Array={Array_App_Synnet}
                   GitHub={"https://github.com/Nicrosi/Proyecto-Final"}
@@ -104,11 +103,11 @@ const Portfolio = ({state, idiom}) => {
               </div>
 
               <div className="single_project">
-                <Module_Projects
+                <ModuleProjects
                   state={state}
                   Array={Array_Weather_App}
                   GitHub={"https://github.com/DF27ARTS/Weather_App"}
-                  Deploy={"https://weather-dg4hdgpg6-df27arts.vercel.app/"}
+                  Deploy={"https://weather-app-dusky-phi.vercel.app/"}
                   GitHubIcon={GitHub}
                   idiom={idiom}
                   Descriptions={Weather_App_Descriptions}
@@ -117,7 +116,7 @@ const Portfolio = ({state, idiom}) => {
 
             </div>
               <div id='tecnologies' className="Tecnologies">
-                <h1 className="tecnologies_title">{ idiom ? 'Tecnologías' : 'Tecnologies' }</h1>
+                <h1 className={ state ? "tecnologies_title" : 'tecnologies_title t_t_n' }>{ idiom ? 'Tecnologías' : 'Tecnologies' }</h1>
                 <div className="container_logos_tecnologies">
                  <div className="container_single_icon"> <p className='title_icon' >JavaScript</p> <SiJavascript className=' icon_mobile javascript_icon' /> </div>
                  <div className="container_single_icon"> <p className='title_icon' >Node</p> <IoLogoNodejs className=' icon_mobile node_icon' /> </div>
@@ -134,7 +133,7 @@ const Portfolio = ({state, idiom}) => {
 
 
               <div id='contact' className="contact">
-                <div className="contact_title">{ idiom ? 'Contacto' : 'Contact' }</div>
+                <div className={ state? "contact_title" : "contact_title t_t_n" }>{ idiom ? 'Contacto' : 'Contact' }</div>
                 <div className="container_logos">
                   <a href='https://github.com/DF27ARTS' >
                     <GoMarkGithub className='contact_logos' />

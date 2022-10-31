@@ -1,0 +1,57 @@
+$background: transparent;
+
+.projects_container {
+  --perspective-up: -2%;
+  position: relative;
+  height: 100%; 
+  width: 100%;
+  background: $background;
+
+  display: flex;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 5%;
+  flex-wrap: wrap;
+  gap: 5%;
+  justify-content: center;
+  perspective: 950px;
+  transition: perspective-origin ease 700ms;
+  perspective-origin: 50% var(--perspective-up);
+}
+
+.projects_container::-webkit-scrollbar {
+  width: 0px;
+}
+
+.main_img {
+  height: 175px;
+  width: 350px;
+  transition: scale 300ms ease;
+  border-radius: 20px;
+}
+
+.main_img:hover {
+  scale: 1.1;
+}
+
+// @import url("./ProjectsMobile.scss");
+
+@media screen and (max-width: 400px) {
+
+  .main_img {
+    height: 120px;
+    width: 240px;
+    border-radius: 15px;
+  }
+
+  .main_img:hover,
+  .main_img:focus {
+    scale: 1;
+  }
+
+  .projects_container {
+    perspective-origin: 50% 50%;
+    height: 80%;
+    gap: 0;
+  }
+}

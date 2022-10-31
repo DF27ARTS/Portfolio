@@ -1,39 +1,26 @@
-import './App.css';
-import NavBar from './components/NavBar/NavBar';
-import Portfolio from './components/Portfolio/Portfolio';
-import Image from './components/Image/Image';
-import { useState } from 'react';
-import DayAndNightButton from './components/DayAndNightButton/DayAndNaightButton';
-import EnglishSpanish from './components/EnglishSpanish/EnglishSpanish';
+import "./App.css";
+import { useState } from "react";
+import MainPage from "./components/MainPage/MainPage";
+import EnglishSpanish from "./components/English_Spanish_Button/EnglishSpanish";
+import DayAndNightButton from "./components/DayAndNightButton/DayAndNaightButton";
 
 function App() {
-
-  const [ state, setState ] = useState(true);
-  const [ idiom, setIdiom ] = useState(false);
+  const [dayOrNight, setDayOrNight] = useState(true);
+  const [language, setLanguage] = useState(false);
 
   return (
-    <div className='App' >
-      <Image
-        state={state}
-      />
-      <Portfolio
-        state={state}
-        idiom={idiom}
-      />
-      <NavBar
-        state={state}
-        idiom={idiom}
+    <>
+      <MainPage dayOrNight={dayOrNight} language={language} />
+      <EnglishSpanish
+        dayOrNight={dayOrNight}
+        language={language}
+        setLanguage={setLanguage}
       />
       <DayAndNightButton
-        setState={setState}
-        state={state}
+        setDayOrNight={setDayOrNight}
+        dayOrNight={dayOrNight}
       />
-      <EnglishSpanish
-        setIdiom={setIdiom}
-        idiom={idiom}
-      />
-      
-    </div>
+    </>
   );
 }
 

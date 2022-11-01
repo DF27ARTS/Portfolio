@@ -24,8 +24,8 @@ $background: transparent;
 }
 
 .main_img {
-  height: 175px;
-  width: 350px;
+  height: 13vw;
+  width: 26vw;
   transition: scale 300ms ease;
   border-radius: 20px;
 }
@@ -34,7 +34,8 @@ $background: transparent;
   scale: 1.1;
 }
 
-// @import url("./ProjectsMobile.scss");
+
+
 
 @media screen and (max-width: 500px) {
 

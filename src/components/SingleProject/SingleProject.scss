@@ -38,6 +38,7 @@
   transform: translateZ(10vw);
   height: 3vw;
   min-width: 10vw;
+  font-size: 2.5vw;
   color: rgb(219, 216, 216);
   text-shadow: 3px 3px 5px #000;
 }
@@ -420,6 +421,7 @@ $amount: 6;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: none;
+    font-size: 4vh;
   }
 
   .links {

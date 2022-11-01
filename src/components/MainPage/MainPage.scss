@@ -161,8 +161,9 @@
       }
 
       .web_icons {
-        height: 2.5vw;
-        width: 2.5vw;
+        height: 2vw;
+        width: 2vw;
+        transform: translateX(-.4vh);
       }
 
       .icons_name {
@@ -201,7 +202,16 @@ a {
   padding: 0;
 }
 
-// @import url("./MainPageMobile.scss");
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 500px) {
 
@@ -213,7 +223,7 @@ a {
       "right-panel"
      ;
      grid-template-columns: 100%;
-     grid-template-rows: 45% 110%;
+     grid-template-rows: 45% 100%;
   }
 
   .left_panel {
@@ -275,7 +285,8 @@ a {
       }
 
       .information_rows {
-
+        transform: translate(-3vh);
+        
         .personal_icons {
           height: 5vw;
           width: 5vw;

@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+*:target {
+  background: transparent;
+}
+
 body {
   --main-background: #000;
   --body-background: #fff;

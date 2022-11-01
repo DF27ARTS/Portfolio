@@ -58,10 +58,10 @@ export default function MainPage({ dayOrNight, language }) {
                 <span className="icons_name">Colombia / Cundinamarca</span>
               </div>
             </a>
-            <a href="https://api.whatsapp.com/send?phone=3202074828">
+            <a href="https://wa.me/573202074828">
               <div className="information_rows">
                 <img src={About.Phone} alt="" className="personal_icons" />
-                <span className="icons_name">3202074828</span>
+                <span className="icons_name">+57 3202074828</span>
               </div>
             </a>
             <a href="https://github.com/DF27ARTS">

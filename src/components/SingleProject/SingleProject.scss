@@ -5,8 +5,8 @@
   top: 0;
   left: 0;
   right: 0;
+  height: 100%;
   margin: auto;
-  min-height: 100%;
   width: 100%;
   background-color: rgb(240 237 237 / 70%);
   display: flex;
@@ -17,11 +17,6 @@
   transform: translateX(var(--translate-container));
 }
 
-.project_information::-webkit-scrollbar {
-  width: 10px;
-  background: red;
-}
-
 .project_information_night {
   background-color: rgba(32, 32, 32, 0.7);
 }
@@ -29,7 +24,6 @@
 .project_activated {
   visibility: visible; 
   opacity: 1;
-  translate: 0 0;
 }
 
 .project_name {
@@ -50,7 +44,7 @@
 
 .links {
   position: absolute;
-  bottom: 15vh;
+  bottom: 10vh;
   right: 0;
   left: 0;
   margin: auto;
@@ -97,18 +91,15 @@
   margin: auto;
   height: 2.5vw;
   width: 10vw;
-  background: #fff5;
-  color: #000;
   align-items: center;
   justify-content: center;
   font-size: 1.3vw;
-  font-weight: 700;
   border-radius: 5px;
   backdrop-filter: blur(9px);
 }
 
 .link_deploy_cont::before { content: "link Deploy"}
-.links_github_cont::before { content: "link GitHub"}
+.links_github_cont::before { content: "link GitHub"; transform: translateY(-1vh)}
 
 .links_github_cont:hover::before {
   display: flex;
@@ -148,7 +139,6 @@
   top: var(--top);
   left: 0;
   right: 0;
-  // background: red;
   margin: auto;
   transform-style: preserve-3d;
   height: 8vw;
@@ -206,7 +196,7 @@
   height: 9vw;
   object-fit: cover;
   transition: transform 300ms ease;
-  translate: -50%;
+  transform: translateX(-50%);
   min-width: 9vw;
   background: #0005;
   padding: 0;
@@ -223,7 +213,7 @@
 
 .activated {
   .single_image {
-    animation: image 500ms linear forwards calc(var(--delay) + 700ms);
+    animation: image 500ms ease-in-out forwards calc(var(--delay) + 700ms);
   }
 
   .arrows {
@@ -235,13 +225,15 @@
 @keyframes image {
   0% {
     transform: 
-    rotateY(0deg) 
-    translateZ(0px)
+      translateX(-50%)
+      rotateY(0deg) 
+      translateZ(0px)
   }
   100% {
     transform: 
-    rotateY(var(--angle)) 
-    translateZ(var(--translate))
+      translateX(-50%)
+      rotateY(var(--angle)) 
+      translateZ(var(--translate))
   }
 }
 
@@ -350,8 +342,7 @@ $amount: 6;
   top: 1vw;
   right: -1.2vw;
   background: red;
-  rotate: 90deg;
-  transform: rotateY(var(--rotate-close-icon)) ;
+  transform: rotate(90deg) rotateY(var(--rotate-close-icon)) ;
   transition: 
     transform ease 200ms;
   color: #333;
@@ -447,7 +438,7 @@ $amount: 6;
     }
   
     .links_github {
-      translate: 0 -.2vh;
+      transform: translateY(-.2vh);
       height: 6vh;
       width: fit-content;
     }
@@ -461,13 +452,12 @@ $amount: 6;
     left: -2vh;
     height: 2vh;
     width: 9vh;
-    background: #fff7;
     font-size: 1.2vh;
     backdrop-filter: blur(15px);
   }
 
   .link_deploy_cont::before { content: "link Deploy" }
-  .links_github_cont::before { content: "link GitHub"; translate: 0 -.3vh;}
+  .links_github_cont::before { content: "link GitHub"; transform: translateY(-.5vh);}
 
 
   .container_slider {
@@ -532,7 +522,6 @@ $amount: 6;
     min-width: 75vw;
     transition: transform 300ms ease;
     transform: translateX(var(--translate));
-    translate: 0;
     background: #ccc;
   
     .image {

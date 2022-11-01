@@ -15,12 +15,12 @@ import synnet_image5 from "../Image/Synnet_app_images/synnet_image5.png";
 import synnet_image6 from "../Image/Synnet_app_images/synnet_image6.png";
 
 // App Weather Images
-import weather_app_img1 from "../Image/Weather_app_images/weather_app_img1.jpg";
-import weather_app_img2 from "../Image/Weather_app_images/weather_app_img2.jpg";
-import weather_app_img3 from "../Image/Weather_app_images/weather_app_img3.jpg";
-import weather_app_img4 from "../Image/Weather_app_images/weather_app_img4.jpg";
-import weather_app_img5 from "../Image/Weather_app_images/weather_app_img5.jpg";
-import weather_app_img6 from "../Image/Weather_app_images/weather_app_img6.jpg";
+import weather_app_img1 from "../Image/Weather_app_images/weather_app_img1.webp";
+import weather_app_img2 from "../Image/Weather_app_images/weather_app_img2.webp";
+import weather_app_img3 from "../Image/Weather_app_images/weather_app_img3.webp";
+import weather_app_img4 from "../Image/Weather_app_images/weather_app_img4.webp";
+import weather_app_img5 from "../Image/Weather_app_images/weather_app_img5.webp";
+import weather_app_img6 from "../Image/Weather_app_images/weather_app_img6.webp";
 
 // Technology icons
 import ExpressJS from "../Image/Icons/ExpressJS.svg";
@@ -174,17 +174,17 @@ const Weather_App_Descriptions = {
 // Object With English and Spanish Information
 const About_Me = {
   description_spanish: [
-    "Hola!",
-    "Soy un desarrollador Full stack, cuando decidí hacer el bootcamp de henery y termine la cursada me enamore de la programación. Me gustan los retos y aprender cosas nuevas por eso aver cursar henry fue una gran y maravillosa experiencia donde aprendí varias de las tecnologías mas usadas en el mundo tech",
+    "Hola! 👋",
+    "💻 Soy un desarrollador web Full stack, cuando decidí hacer el bootcamp de henery y termine la cursada me enamore de la programación. Me gustan los retos y aprender cosas nuevas por eso aver cursar henry fue una gran y maravillosa experiencia donde aprendí varias de las tecnologías mas usadas en el mundo tech",
     "Me gustaría tener la oportunidad de seguir aprendiendo nuevas tecnologías y seguir mejorando los conocimientos aprendidos en el Bootcamp.",
-    "Soy una persona curiosa con ganas de aprende y seguir mejorando,me gusta el trabajo en equipo y espero encontrar un lugar donde pueda seguir desarrollando mis habilidades y donde pueda contribuir con mis conocimientos además de seguir creciendo como programador y también como persona",
+    "Soy una persona curiosa con ganas de aprende y seguir mejorando, me gustaría encontrar un lugar donde pueda seguir desarrollando mis habilidades y donde pueda contribuir con mis conocimientos además de seguir creciendo como programador y también como persona",
   ],
 
   description_english: [
-    "Hi!",
-    "I am a full stack developer, when I decided to do henery's bootcamp and I finished the course I fell in love with programming. I like challenges and learn new things, that's why studying in Henry was a great and wonderful experience where I learned several of the most used technologies in the tech world.",
+    "Hi! 👋",
+    "💻 I am a full stack web developer, when I decided to do henery's bootcamp and I finished the course I fell in love with programming. I like challenges and learn new things, that's why studying in Henry was a great and wonderful experience where I learned several of the most used technologies in the tech world.",
     "I would like to have the opportunity to continue learning new technologies and continue improving the knowledge learned in the Bootcamp.",
-    "I am a curious person who wants to learn and keep improving.I like teamwork and I hope to find a place where I can continue developing my skills and where I can contribute with my knowledge as well as continue to grow as a programmer and also as a person.",
+    "I am a curious person who wants to learn and keep improving. I'm looking forward to finding a place where I can continue developing my skills and where I can contribute with my knowledge as well as continue to grow as a programmer and also as a person.",
   ],
 };
 

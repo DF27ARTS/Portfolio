@@ -89,23 +89,6 @@ export const MoveBackwards = () => {
   }
 };
 
-// Takes the circle carucel up to show the technologies and decription
-export const TechnologyBoxFunction = (value, techFunction) => {
-  const center_panel = document.querySelector(".center_panel");
-  const projects_container = document.querySelector(".projects_container");
-  const project_description = document.querySelector(".project_description");
-  if (value !== true) {
-    center_panel.style.setProperty("--top", "-25%");
-    projects_container.style.setProperty("--perspective-up", "20%");
-    project_description.style.setProperty("--overflow", "auto");
-  } else {
-    center_panel.style.setProperty("--top", "4%");
-    projects_container.style.setProperty("--perspective-up", "-5%");
-    project_description.style.setProperty("--overflow", "hidden");
-  }
-  techFunction(!value);
-};
-
 // Move forwards in the liner carucel
 export const SliderRight = () => {
   removeSliderClass();

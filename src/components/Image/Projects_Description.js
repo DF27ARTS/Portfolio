@@ -5,6 +5,7 @@ import app_dogs_3 from "../Image/App_dogs_images/app_dogs3.webp";
 import app_dogs_4 from "../Image/App_dogs_images/app_dogs4.webp";
 import app_dogs_5 from "../Image/App_dogs_images/app_dogs5.webp";
 import app_dogs_6 from "../Image/App_dogs_images/app_dogs6.webp";
+import app_dogs_video from "../Image/App_dogs_images/app_dogs_video.mp4";
 
 // App Synnet  Images
 import synnet_image1 from "../Image/Synnet_app_images/synnet_image1.png";
@@ -37,6 +38,8 @@ import CSS from "../Image/Icons/CSS.svg";
 import HTML from "../Image/Icons/HTML.svg";
 import Sequelize from "../Image/Icons/Sequelize.svg";
 import Arrow_icon from "../Image/Icons/Arrow_icon.svg";
+import Play_btn from "../Image/Icons/play-btn.svg";
+import Paused_btn from "../Image/Icons/paused-btn.svg";
 
 // Personal Information
 import My_Picture from "../Image/Personal_Information/my_image.jpg";
@@ -190,6 +193,7 @@ const About_Me = {
 
 export const App_dogs = {
   Images: App_dogs_Images,
+  Video: app_dogs_video,
   Description: App_Dogs_Descriptions,
   GitHub: "https://github.com/DF27ARTS/Henry-PI-Dogs",
   Deploy: "https://henry-pi-dogs-d26rn64ql-df27arts.vercel.app/",
@@ -223,6 +227,8 @@ export const About = {
   CV_image_English,
   CV_image_Spanish,
   Arrow_icon,
+  Play_btn,
+  Paused_btn,
 };
 
 export const Icons = [

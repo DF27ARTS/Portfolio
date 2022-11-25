@@ -1,22 +1,38 @@
 $background: transparent;
 
 .projects_container {
-  --perspective-up: -4%;
   position: relative;
   height: 100%; 
   width: 100%;
   background: $background;
-
   display: flex;
   overflow-y: auto;
   overflow-x: hidden;
+  overscroll-behavior-block: contain;
   padding: 5%;
   flex-wrap: wrap;
   gap: 5%;
   justify-content: center;
-  perspective: 950px;
-  transition: perspective-origin ease 700ms;
-  perspective-origin: 50% var(--perspective-up);
+}
+
+.projects_container::before,
+.projects_container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  border-radius: 2px;
+}
+
+.projects_container::before {
+  left: 0;
+  background: linear-gradient(var(--first-gradient-color), 20%, var(--second-gradient-color), 40%, transparent);
+}
+
+.projects_container::after {
+  right: 0;
+  background: linear-gradient( transparent, 60%,var(--second-gradient-color), 80%, var(--first-gradient-color));
 }
 
 .projects_container::-webkit-scrollbar {
@@ -33,8 +49,6 @@ $background: transparent;
 .main_img:hover {
   scale: 1.1;
 }
-
-
 
 
 @media screen and (max-width: 500px) {
@@ -56,3 +70,5 @@ $background: transparent;
     gap: 0;
   }
 }
+
+

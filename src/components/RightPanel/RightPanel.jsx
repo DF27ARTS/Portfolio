@@ -5,7 +5,7 @@ import Projects from "../Projects/Projects.jsx";
 // Styles
 import "./RightPanel.scss";
 
-export default function RightPanel({ dayOrNight, language }) {
+export default function RightPanel({ setCurrentProjectObject, language }) {
   const [aboutExtended, setAboutExtended] = useState(false);
   const [NavbarButtons, setNavbarButtons] = useState(false);
 
@@ -13,27 +13,24 @@ export default function RightPanel({ dayOrNight, language }) {
     ? About.About_Me.description_spanish
     : About.About_Me.description_english;
 
-  // Handler to move from the projects page to the about page and
+  // Handler translate of the projects page and the about, page and
   // adding the active class to start the nimation on the technologies slider
-  const translateAbout = () => {
+  const ToggleTranslateContainer = (translate) => {
     const container = document.querySelector(".container_information");
-    container.classList.add("active");
-    container.style.setProperty("--translate", "0%");
-    setNavbarButtons(!NavbarButtons);
-  };
-
-  // Handler to move from the about page to the projects page and
-  // removin the avtive class of the technologies slider so it can be activated after
-  const translateProjects = () => {
-    const container = document.querySelector(".container_information");
-    container.classList.remove("active");
-    container.style.setProperty("--translate", "-105%");
-    setNavbarButtons(!NavbarButtons);
+    if (translate === "0%") {
+      container.classList.add("active");
+      container.style.setProperty("--translate", translate);
+      setNavbarButtons(false);
+    } else if (translate === "-105%") {
+      setNavbarButtons(true);
+      container.classList.remove("active");
+      container.style.setProperty("--translate", translate);
+    }
   };
 
   // Handler for the axpantion of the about section
   const HandleAboutExtended = (value) => {
-    const go_down = document.querySelector(".go_down");
+    const go_down = document.querySelector(".go_down_btn");
     if (value === true) {
       go_down.style.setProperty("--rotate-arrow", "180deg");
     } else {
@@ -48,7 +45,7 @@ export default function RightPanel({ dayOrNight, language }) {
         <h2 className="full_name">{About.Full_Name}</h2>
         <div className="navbar_titles">
           <div
-            onClick={() => translateAbout()}
+            onClick={() => ToggleTranslateContainer("0%")}
             className={!NavbarButtons ? "titles background_color" : "titles "}
           >
             {!language ? "Sobre mí" : "About"}
@@ -56,7 +53,7 @@ export default function RightPanel({ dayOrNight, language }) {
         </div>
         <div className="navbar_titles">
           <div
-            onClick={() => translateProjects()}
+            onClick={() => ToggleTranslateContainer("-105%")}
             className={NavbarButtons ? "titles background_color" : "titles "}
           >
             {!language ? "Proyectos" : "Projects"}
@@ -64,7 +61,7 @@ export default function RightPanel({ dayOrNight, language }) {
         </div>
       </nav>
 
-      <main className="container_information active">
+      <main className="container_information active snaps_inline">
         <div className="information">
           <div
             onClick={() => HandleAboutExtended(!aboutExtended)}
@@ -78,7 +75,7 @@ export default function RightPanel({ dayOrNight, language }) {
           </div>
           <div
             onClick={() => HandleAboutExtended(!aboutExtended)}
-            className="go_down"
+            className="go_down_btn"
           >
             &#8249;
           </div>
@@ -99,7 +96,10 @@ export default function RightPanel({ dayOrNight, language }) {
           </div>
         </div>
         <div className="container_projects">
-          <Projects dayOrNight={dayOrNight} language={language} />
+          <Projects
+            setCurrentProjectObject={setCurrentProjectObject}
+            language={language}
+          />
         </div>
       </main>
     </>

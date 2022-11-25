@@ -1,3 +1,4 @@
+
 .main_container {
   height: 100vh;
   width: 100vw;
@@ -16,18 +17,26 @@
 .left_panel {
   position: relative;
   display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
   height: 100%;
   width: 100%;
   border-radius: 1vw;
-  background-image: linear-gradient( 70deg , #00d2ff, 40%, #928DAB );
+  background-image: linear-gradient( 70deg , var(--first-gradient-color), 40%, var(--second-gradient-color) );
+  transition: background-image var(--timing) ease-in-out ;
   grid-area: left-panel;
+
+  .cont_img_CV {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 20px;
+  }
 
   
   .picture {
-    position: absolute;
-    top: 2vw;
-    left: 0;
-    right: 0;
     margin: auto;
     height: 15vw;
     width: 15vw;
@@ -36,147 +45,201 @@
 
   .personal_information {
     display: flex;
-    justify-content: flex-end;
+    flex-grow: 1;
     gap: 15px;
-    height: 60%;
     padding: 20px;
-    width: 100%;
-    align-self: flex-end;
+    width: 95%;
+    margin: auto;
     flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .personal_information::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  .personal_information::-webkit-scrollbar-thumb {
+    width: 3px;
+    background: #ccc;
+    border-radius: 5px;
+  }
 
     .resume {
-      position: absolute;
       display: flex;
       gap: 5%;
       padding: 2.5%;
-      top: 20vw;
-      left: 0;
       width: 100%;
       height: 4vw;
-       
-      
-          .cv_button {
-            height: 100%;
-            width: 50%;
-            border: none;
-            background: #ccc;
-            border-radius: 10px;
-            font-weight: 700;
-            font-size: 1vw;
-            cursor: pointer;
-          }
-      
-          .cv_button:hover,
-          .cv_button:focus {
-            box-shadow: 3px 3px 10px 0 #000;
-          }
-      
-          .cv_button_options {
-            position: absolute;
-            
-            gap: 20%;
-            padding: 5%;
-            height: 10vw;
-            width: 18vw;
-            background: #fff3;
-            backdrop-filter: blur(5px);
-            top: -400%;
-            left: 0;
-            right: 0;
-            margin: auto;
-            border-radius: 10px;
-            transition: ease 300ms;
-            visibility: hidden;
-            opacity: 0;
-
-            a {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            }
-
-            .download_CV {
-              height: 50px;
-              width: 50px;
-            }
-    
-            .CV_image {
-              display: flex;
-              height: 100%;
-              width: 35%;
-              transition: transform ease 700ms;
-              z-index: 1000;
-              transform-style: preserve-3d;
-            }
-
-            .cv_button_options:focus {
-              background: red;
-            }
-          }
-
-          .b_sp:focus + .sp {
-            top: -250%;
-            visibility: visible;
-            opacity: 1;
-          }
-      
-          .b_en:focus + .en {
-            top: -250%;
-            visibility: visible;
-            opacity: 1;
-          }
-
-          .sp:hover .CV_image,
-          .sp:focus .CV_image {
-            transform: 
-              translateZ(10px) 
-              scale(5) 
-              translateX(-5%) 
-              translateY(20%)
-              ;
-          }
-
-          .en:hover .CV_image,
-          .en:focus .CV_image{
-            transform: 
-              translateZ(10px) 
-              scale(5) 
-              translateX(-5%) 
-              translateY(20%)
-              ;
-          }
     }
 
-    .information_rows {
+    .cv_button {
+      height: 100%;
+      width: 50%;
+      border: none;
+      background: #ccc;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1vw;
+      cursor: pointer;
+    }
+          
+    .cv_button {
+      height: 100%;
+      width: 50%;
+      border: none;
+      background: #ccc;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1vw;
+      cursor: pointer;
+    }
+
+    .cv_button {
+      height: 100%;
+      width: 50%;
+      border: none;
+      background: #ccc;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1vw;
+      cursor: pointer;
+    }
+
+    .cv_button:hover,
+    .cv_button:focus {
+      box-shadow: 3px 3px 10px 0 #000;
+    }
+      
+    .cv_button_options {
+      position: absolute;
+      
+      gap: 20%;
+      padding: 5%;
+      height: 10vw;
+      width: 18vw;
+      background: #fff3;
+      backdrop-filter: blur(5px);
+      top: -400%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      border-radius: 10px;
+      transition: ease 300ms;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    a {
       display: flex;
       align-items: center;
-      width: 100%;
-      gap: 10px;
-      cursor: pointer;
-
-      .personal_icons {
-        height: 1.7vw;
-        width: 1.7vw;
-        color: #fff;
-      }
-
-      .web_icons {
-        height: 2vw;
-        width: 2vw;
-        transform: translateX(-.4vh);
-      }
-
-      .icons_name {
-        color: white;
-        font-weight: 500;
-        font-size: 1.3vw;
-      }
-
-      .torre {
-        clip-path: polygon(50% 0, 93% 24%, 93% 77%, 50% 100%, 6% 77%, 6% 24%);
-      }
+      justify-content: center;
     }
+
+    .download_CV {
+      height: 50px;
+      width: 50px;
+    }
+    
+    .CV_image {
+      display: flex;
+      height: 100%;
+      width: 35%;
+      transition: transform ease 700ms;
+      z-index: 1000;
+      transform-style: preserve-3d;
+    }
+
+    .cv_button_options:focus {
+      background: red;
+    }
+}
+
+  .b_sp:focus + .sp {
+    top: -250%;
+    visibility: visible;
+    opacity: 1;
   }
+      
+  .b_en:focus + .en {
+    top: -250%;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .sp:hover .CV_image,
+  .sp:focus .CV_image {
+    transform: 
+      translateZ(10px) 
+      scale(5) 
+      translateX(-5%) 
+      translateY(20%)
+      ;
+  }
+
+  .en:hover .CV_image,
+  .en:focus .CV_image{
+    transform: 
+      translateZ(10px) 
+      scale(5) 
+      translateX(-5%) 
+      translateY(20%)
+      ;
+  }
+    
+
+.information_rows {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  cursor: pointer;
+
+  .icons {
+    height: 2vw;
+    width: 2vw;
+    color: #ccc;
+  }
+
+  .icons_name {
+    color: white;
+    font-weight: 500;
+    font-size: 1.3vw;
+  }
+
+  .mail { position: relative;}
+
+  .mail::before {
+    content: "drawingsdf@gmail.com";
+    position: absolute;
+    padding: 5px;
+    top: 0;
+    left: 0;
+    background: #ccc4;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 1.5vw;
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-20%) translateY(50%);
+    transition: 
+      opacity 300ms ease-in-out,
+      visibility 300ms ease-in-out,
+      width 300ms ease-in-out;
+  }
+
+  .mail:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transition: 
+      opacity 300ms ease-in-out,
+      visibility 300ms ease-in-out,
+  }
+
+  .torre {
+    clip-path: polygon(50% 0, 93% 24%, 93% 77%, 50% 100%, 6% 77%, 6% 24%);
+  }
+  
 }
 
 .right_panel {
@@ -188,12 +251,8 @@
   scroll-behavior: smooth;
   transform-style: preserve-3d;
   border-radius: 1vw;
-  background: rgba(204, 204, 204, 0.33);
+  background: var(--right-panel);
   grid-area: right-panel;
-}
-
-.right_panel_black {
-  background: rgb(32, 32, 32);
 }
 
 a {
@@ -203,109 +262,4 @@ a {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-@media screen and (max-width: 500px) {
-
-  .main_container {
-    padding-top: 4%;
-    padding-bottom: 14%;
-    grid-template-areas:
-      "left-panel"
-      "right-panel"
-     ;
-     grid-template-columns: 100%;
-     grid-template-rows: 45% 102%;
-  }
-
-  .left_panel {
-    gap: 5%; 
-    padding: 0 5%;
-
-    .picture {
-      position: relative;
-      height: 55%;
-      width: 55%;
-      margin: 17% auto;
-    }
-
-    .personal_information {
-
-      height: 100%;
-
-      .resume {
-        top: 80%;
-        width: 55%;
-        height: 15%;
-        transform-style: preserve-3d;
-
-        .cv_button {
-          font-size: 2vw;
-        }
-
-        .cv_button_options {
-          height: 25vw;
-          width: 45vw;
-          top: -40vw;
-          justify-content: center; 
-          padding: 5% 10%;
-          gap: 10%;
-
-          .download_CV {
-            height: 10vw;
-            width: 10vw;
-          }
-        }
-
-          .sp:hover .CV_image,
-          .sp:focus .CV_image {
-            transform: 
-              scale(4) 
-              translateX(25%) 
-              translateY(-1.5vw)
-              ;
-          }
-
-          .en:hover .CV_image,
-          .en:focus .CV_image{
-            transform: 
-              scale(4) 
-              translateX(25%) 
-              translateY(-1.5vw)
-              ;
-          }
-      }
-
-      .information_rows {
-        transform: translate(-3vh);
-        
-        .personal_icons {
-          height: 5vw;
-          width: 5vw;
-        }
-
-        .web_icons {
-          height: 6vw;
-          width: 6vw;
-        }
-
-        .icons_name {
-          font-size: 2.3vw;
-        }
-      }
-    }
-  }
-
-  a {
-    margin: 0;
-    padding: 0;
-  }
-}
+@import "PhoneStyle.scss";

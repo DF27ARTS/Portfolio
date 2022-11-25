@@ -1,0 +1,75 @@
+.detail_descriptions {
+  position: relative;
+
+  min-height: 30%;
+  width: 100%;
+  padding: calc(var(--unit) * 7) calc(var(--unit) * 14);
+
+  display: flex;
+  flex: none;
+  justify-content: center;
+  flex-direction: column;
+  gap: calc(var(--unit) * 3);
+  margin-top: calc(var(--unit) * 7);
+}
+
+.corners {
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  background: yellow;
+}
+
+.top_left {
+  top: 0;
+  left: calc(var(--unit) * 7);
+}
+
+.bottom_right {
+  bottom: 0;
+  right: calc(var(--unit) * 7);
+  transform: rotate(180deg);
+}
+
+.corners::before,
+.corners::after { 
+  --width: 10vw;
+
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+}
+
+.corners::before {
+  
+  height: 100%;
+  width: var(--width);
+  background: linear-gradient(90deg, var(--first-gradient-color), var(--second-gradient-color), transparent);
+  border-radius: 4px 0;
+}
+
+.corners::after {
+  
+  height: var(--width);
+  width: 100%;
+  background: linear-gradient(0deg, transparent, var(--second-gradient-color), var(--first-gradient-color))
+}
+
+
+
+
+.description_title {
+  color: var(--titles);
+}
+
+.description_project {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--unit) * 2);
+  list-style-image: var(--titles);
+}
+
+.description_project li {
+  color: var(--titles);
+}

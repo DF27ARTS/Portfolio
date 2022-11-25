@@ -1,0 +1,92 @@
+
+@media screen and (max-width: 500px) {
+
+  .main_container {
+    padding-top: 4%;
+    padding-bottom: 14%;
+    grid-template-areas:
+      "left-panel"
+      "right-panel"
+     ;
+     grid-template-columns: 100%;
+     grid-template-rows: 45% 102%;
+  }
+
+  .left_panel {
+    gap: 5%; 
+    padding: 0 5%;
+
+    .picture {
+      position: relative;
+      height: 55%;
+      width: 55%;
+      margin: 17% auto;
+    }
+
+    .personal_information {
+
+      height: 100%;
+
+      .resume {
+        top: 80%;
+        width: 55%;
+        height: 15%;
+        transform-style: preserve-3d;
+
+        .cv_button {
+          font-size: 2vw;
+        }
+
+        .cv_button_options {
+          height: 25vw;
+          width: 45vw;
+          top: -40vw;
+          justify-content: center; 
+          padding: 5% 10%;
+          gap: 10%;
+
+          .download_CV {
+            height: 10vw;
+            width: 10vw;
+          }
+        }
+
+        .sp:hover .CV_image,
+        .sp:focus .CV_image {
+          transform: 
+            scale(4) 
+            translateX(25%) 
+            translateY(-1.5vw)
+            ;
+        }
+        
+        .en:hover .CV_image,
+        .en:focus .CV_image{
+          transform: 
+            scale(4) 
+            translateX(25%) 
+            translateY(-1.5vw)
+            ;
+        }
+      }
+
+      .information_rows {
+        transform: translate(-3vh);
+        
+        .icons {
+          height: 2vw;
+          width: 2vw;
+        }
+
+        .icons_name {
+          font-size: 2.3vw;
+        }
+      }
+    }
+  }
+
+  a {
+    margin: 0;
+    padding: 0;
+  }
+}

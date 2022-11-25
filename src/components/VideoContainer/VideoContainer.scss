@@ -1,0 +1,206 @@
+
+
+.video-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 90%;
+  max-width: 1000px;
+  margin-inline: auto;
+  background: black;
+  overflow: hidden;
+  color: white;
+}
+
+.video-container.full-screen {
+  max-width: initial;
+  width: 100%;
+}
+
+.video-container .video {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container-video-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: ease-in-out 300ms;
+  /* transition: opacity 500ms ease-in-out, transform 300ms ease-in-out; */
+}
+
+.container-video-controls::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, .75), transparent);
+  width: 100%;
+  aspect-ratio: 5 / 1;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* .container-video-controls {
+  display: none;
+} */
+
+.activated:hover .container-video-controls,
+.activated:focus-within .container-video-controls,
+.activated.paused .container-video-controls {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.activated:hover .volume-container,
+.activated:focus-within .volume-container,
+.activated.paused .volume-container {
+  transform: translateX(0);
+}
+
+.activated:hover .center-player-btn,
+.activated:focus-within .center-player-btn,
+.activated.paused .center-player-btn {
+  --translate-btn: -50%;
+  opacity: 1;
+  visibility: visible;
+}
+
+.volume-container {
+  position: absolute;
+  right: 30px;
+  top: -400%;
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+  align-items: center;
+  transform: translateX(50px);
+  transition: transform 300ms ease-in-out;
+}
+
+.slider-volume-container {
+  position: relative;
+  height: 100px;
+  width: 4px;
+  background: #ccc;
+  border-radius: 2px;
+  overflow: hidden;
+  margin: auto;
+  transition: border-radius 100ms ease-in-out, width 100ms ease-in-out;
+}
+
+.volume-container:hover .slider-volume-container,
+.slider-volume-container:focus-within {
+  border-radius: 30px;
+  width: 15px;
+}
+
+.slider-volume-container .slider-volume {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: calc( 100% - var(--slider-volume, 0%));
+  background: red;
+  opacity: 0.8;
+}
+
+.volume-icon {
+  margin: auto;
+}
+
+.timeline-container {
+  height: 7px;
+  display: flex;
+  align-items: center;
+  margin-inline: .7rem;
+  cursor: pointer;
+}
+
+
+.timeline {
+  background: #ccc8;
+  height: 3px;
+  width: 100%;
+  position: relative;
+  border-radius: 3.5px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: calc(100% - var(--progress-position,) * 100%);
+  background: linear-gradient(90deg, green, blue);
+  border-radius: 3.5px;
+}
+
+.thumb-indicator {
+  --scale: 0;
+  position: absolute;
+  transform: translateX(-50%) scale(var(--scale));
+  height: 200%;
+  top: -50%;
+  left: calc(var(--progress-position ) * 100%);
+  background: red;
+  transition: transform 100ms ease-in-out;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+}
+
+.video-container.scrubbing .thumb-indicator,
+.timeline-container:hover .thumb-indicator {
+  --scale: 1;
+}
+
+.video-container.scrubbing .timeline,
+.timeline-container:hover .timeline {
+  height: 100%;
+}
+
+.container-video-controls .controls-container {
+  display: flex;
+  height: 20%;
+  gap: .5rem;
+  padding: .25rem .7rem;
+  align-items: center;
+}
+
+.duration-container {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+  flex-grow: 1;
+}
+
+
+.center-player-btn {
+  --translate-btn: -30vh;
+  display: block;
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(var(--translate-btn)) translateX(-50%);
+  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out, visibility 300ms ease-in-out;
+}

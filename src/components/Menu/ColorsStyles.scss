@@ -1,0 +1,105 @@
+
+
+.container_colors {
+  position: absolute;
+  top: 10%;
+  left: -105%;
+  padding: 1vw;
+  background: #ccc2;
+  border-radius: 5px 0 0 5px;
+  backdrop-filter: blur(7px);
+  overflow: hidden;
+
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(120%);
+
+  display: grid;
+  grid-template-columns: repeat(3, 2vw);
+  grid-template-rows: repeat(3, 2vw);
+  grid-column-gap: 1.2vw;
+  grid-row-gap: 1.7vw;
+
+ 
+  transition: 
+    transform 500ms ease-in-out, 
+    opacity 200ms ease-in-out, 
+    visibility 200ms ease-in-out;
+}
+
+.container_colors::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: -1;
+
+  height: 10vw;
+  width: 10vw;
+  background: var(--first-gradient-color);
+  opacity: 0.3;
+  filter: blur(40px);
+}
+
+
+.menu_container:has(.icon_colos):focus + .container_colors,
+.container_colors:hover,
+.container_colors:focus {
+  transform: translateX(0%);
+  visibility: visible;
+  opacity: 1;
+}
+
+.single_color {
+  height: 100%; 
+  width: 100%;
+  border-radius: 50%;
+  background: blue;
+}
+
+
+.single_color:nth-child(1) {
+  background: linear-gradient(90deg, hsl(191, 100%, 50%),hsl(250, 15%, 61%));
+}
+
+.single_color:nth-child(2) {
+  background: linear-gradient(90deg, hsl(120, 58%, 31%), hsl(86, 81%, 35%))
+}
+
+.single_color:nth-child(3) {
+  background: linear-gradient(90deg, hsl(327, 100%, 41%), rgb(109, 44, 106))
+}
+
+.single_color:nth-child(4) {
+  background: linear-gradient(90deg, hsl(267, 100%, 70%), hsl(210, 89%, 71%))
+}
+
+.single_color:nth-child(5) {
+  background: linear-gradient(90deg, hsl(301, 100%, 34%), hsl(212, 72%, 21%))
+}
+
+.single_color:nth-child(6) {
+  background: linear-gradient(90deg, hsl(33, 100%, 50%), hsl(13, 100%, 49%))
+}
+
+.single_color:nth-child(7) {
+  background: linear-gradient(90deg, hsl(262, 97%, 54%), hsl(282, 68%, 38%))
+}
+
+.single_color:nth-child(8) {
+  background: linear-gradient(90deg, hsl(321, 73%, 26%), hsl(0, 0%, 11%))
+}
+
+.single_color:nth-child(9) {
+  background: linear-gradient(90deg, hsl(201, 9%, 31%), hsl(0, 0%, 73%))
+}
+
+
+.container_colors .color_active {
+  box-shadow:
+    0 0 0 2px var(--right-panel),
+    0 0 0 4px var(--first-gradient-color);
+}

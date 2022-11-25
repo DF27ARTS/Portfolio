@@ -2,15 +2,31 @@
 
 *, *::before, *::after {
   box-sizing: border-box;
+  user-select: none;
 }
 
-*:target {
-  background: transparent;
+:root {
+  /* Colors */
+  --body-background: #fff;
+  --right-panel: rgb(240, 239, 239);
+  --main-background: #000;
+  --titles: #333;
+  --right-panel-translate: cubic-bezier(0.34, 0.67, 0.86, 1.42);
+
+  --unit: 8px;
+  --translate-gallery: 0%;
+
+  /* Gradient color */
+  --first-gradient-color: #00d2ff;
+  --second-gradient-color: #928DAB;
+  /* --first-gradient-color: #24C6DC; */
+  /* --second-gradient-color: #514A9D; */
+
+  /* Transition */
+  --timing: 1500ms;
 }
 
 body {
-  --main-background: #000;
-  --body-background: #fff;
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
@@ -24,7 +40,6 @@ body {
   }
   
   body {
-    --main-background: #000;
     margin: 0;
     padding: 0;
     overflow-y: auto;

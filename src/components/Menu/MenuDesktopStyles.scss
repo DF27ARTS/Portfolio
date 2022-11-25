@@ -1,0 +1,89 @@
+@import "3D-menu-animation.scss";
+
+.container_right_menu {
+  --translate-right-menu: 120%;
+
+  height: 30vw;
+  width: 10vw;
+  backdrop-filter: blur(20px);
+  padding: 10% 20%;
+  background: #ccc1;
+
+  position: fixed;
+  display: flex;
+  gap: calc(var(--unit) * 3);
+  border: 1px solid transparent;
+  border-top-color: var(--first-gradient-color);
+  border-left-color: var(--first-gradient-color);
+  border-bottom-color: var(--first-gradient-color);
+
+  flex-direction: column;
+  align-items: flex-end;
+  top: 200%;
+  right: 2%;
+  border-radius: 7px 0 0 7px;
+
+  transform: translateX(var(--translate-right-menu));
+  transition: transform 300ms var(--right-panel-translate);
+}
+
+.container_aquare:focus-within .container_right_menu,
+.container_right_menu:hover,
+.container_right_menu:focus-within {
+  --translate-right-menu: 10%;
+}
+
+.container_right_menu::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  opacity: 0.2;
+
+  width: 100%;
+  height: 100%;
+  background: var(--first-gradient-color);
+  border-radius: 2px;
+  filter: blur(40px);
+}
+
+.menu_container {
+  position: relative;
+  height: 10%;
+  width: 100%;
+  padding: 0 5%;
+
+  display: flex;
+  gap: var(--unit);
+  align-items: center;
+}
+
+.menu_container::before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, var(--second-gradient-color), var(--first-gradient-color))
+}
+
+.menu_container p {
+  flex-grow: 1;
+  color: var(--titles);
+  font-size: 1.2vw;
+}
+
+.icon_colos {
+  height: 2.2vw;
+  width: 2.2vw;
+  border-radius: 50%;
+  background: linear-gradient(var(--first-gradient-color), var(--second-gradient-color));
+}
+
+
+@import "ColorsStyles.scss"

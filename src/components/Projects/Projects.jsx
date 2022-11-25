@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import SingleProject from "../SingleProject/SingleProject.jsx";
+import React from "react";
 import {
   App_dogs,
   App_Synnet,
@@ -9,15 +8,20 @@ import {
 // styles
 import "./Projects.scss";
 
-export default function Projects({ dayOrNight, language }) {
-  const [currentProjectObject, setCurrentProjectObject] = useState({});
-
+export default function Projects({ setCurrentProjectObject }) {
   // Open the project detail and send the object
   const HandleClick = (object) => {
     setCurrentProjectObject(object);
-    const center_panel = document.querySelector(".center_panel");
-    if (center_panel !== null) center_panel.classList.add("activated");
+
+    const mainDetailContainer = document.querySelector(
+      ".main_container_project_detail"
+    );
+    mainDetailContainer.style.setProperty("--opacity", "1");
+    mainDetailContainer.style.setProperty("--visibility", "visible");
+
+    mainDetailContainer.classList.add("show");
   };
+
   return (
     <>
       <div className="projects_container">
@@ -39,12 +43,12 @@ export default function Projects({ dayOrNight, language }) {
           alt="App_images"
           className="main_img"
         />
-        <SingleProject
+        {/* <SingleProject
           App_Object={currentProjectObject}
           setCurrentProjectObject={setCurrentProjectObject}
           language={language}
           dayOrNight={dayOrNight}
-        />
+        /> */}
       </div>
     </>
   );

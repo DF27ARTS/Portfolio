@@ -1,0 +1,185 @@
+
+
+
+  
+
+.information::-webkit-scrollbar {
+  width: 7px;
+}
+
+.about {
+  grid-area: about;
+
+  position: relative;
+  padding: 0 2.5%;
+  height: 18vh;
+  width: 100%;
+  overflow: hidden;
+  padding-right: 15px;
+  cursor: pointer;
+  border-inline-start: 3px solid;
+  border-inline-end: 3px solid;
+  // border-block-end: 1px solid;
+  border-image-source: 
+    linear-gradient( var(--first-gradient-color), 50%, var(--second-gradient-color) );
+  border-image-slice: 1;
+  transition: 
+    height ease 500ms,
+    border-image-source var(--timing) ease-in-out;
+}
+  
+.go_down_btn {
+  --rotate-arrow: 0deg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(var(--first-gradient-color), 50%, var(--second-gradient-color) );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: 5vh;
+  margin:  0 auto;
+  border: none;
+  font-size: 70px;
+  transition: transform ease 500ms, background-image var(--timing) ease-in-out;
+  transform: translateX(-1vw) rotate(270deg) rotateY(var(--rotate-arrow)) ;
+  cursor: pointer;
+}
+
+.about_extended {
+  height: 50vh;
+  padding-right: 0;
+  overflow-y: scroll;
+}
+
+.about_extended::-webkit-scrollbar {
+  width: 7px;
+}
+
+.about_extended::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(var(--first-gradient-color), 50%, var(--second-gradient-color) );
+  border-right: 5px solid var(--right-panel);
+  transition: background-image var(--timing) ease-in-out;
+}
+
+.about_extended::-webkit-scrollbar-thumb::after {
+  content: "";
+  height: 20px;
+  width: 20px;
+  background: red;
+}
+
+.about_description {
+  font-size: 1.1em;
+}
+
+.technologies {
+  grid-area: technologies;
+
+  position: relative;
+  margin-top: 30px;
+  display: grid;
+  height: 95vh;
+  grid-template-areas: 
+    "Title      Title"
+    "frontEnd   backEnd"
+    "JavaScript ExpressJS"
+    "TypeScript Git"
+    "ReactJS    GitHub"
+    "ReduxJS    NodeJS"
+    "CSS        PostgreSQL"
+    "HTML       Scrum"
+    "......     Sequelize";
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  grid-gap: 3.3%;
+
+  .technology_title {
+    grid-area: Title;
+    margin: 0;
+    height: 100%; 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    font-size: 250%;
+  }
+
+  .frontend_titles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    font-size: 2vw;
+    grid-area: frontEnd;
+  }
+
+  .backend_titles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    font-size: 2vw;
+    grid-area: backEnd;
+  }
+
+  .tech_rows {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    width: 100%;
+
+    .img_icons {
+      height: 40px;
+      width: 40px;
+    }
+      
+  }
+}
+
+
+@import "SingleIconClassAsignment.scss";
+
+.tech_panel {
+  position: relative;
+  height: 22%;
+  width: 80%;
+  background: #ccc;
+  border-radius: 15px;
+}
+
+.active {
+
+  .persantage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 10px;
+    border-radius: 20px;
+    background: rgb(49, 173, 214);
+    transform-origin: 0% 50%;
+    animation: scaleX 700ms var(--timing) forwards 300ms;
+  }
+  
+  .tech_panel:hover .persantage,
+  .tech_panel:focus .persantage {
+    animation: scale-width 700ms var(--timing) forwards ;
+    background: rgb(235, 232, 57);
+  }
+
+  @keyframes scaleX {
+    from {width: 0}
+    to {width: var(--width) }
+  }
+
+  @keyframes scale-width {
+    from {width: 0}
+    to {width: var(--width) }
+  }
+}
+
+@import "PhoneStyle.scss"
+

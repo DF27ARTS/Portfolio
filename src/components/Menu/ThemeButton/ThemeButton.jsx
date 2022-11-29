@@ -1,6 +1,6 @@
-import "./DayAndNightButton.scss";
+import "./ThemeButton.scss";
 
-const DayAndNightButton = ({ setDayOrNight, dayOrNight }) => {
+const ThemeButton = ({ setDayOrNight, dayOrNight }) => {
   const HandleClick = (value) => {
     const first_circle = document.querySelector(".first_circle");
     // const body = document.querySelector("body");
@@ -44,28 +44,6 @@ const DayAndNightButton = ({ setDayOrNight, dayOrNight }) => {
     setDayOrNight(value);
   };
 
-  // function handlerColorChage(value) {
-  //   if (value === "value1") {
-  //     document.documentElement.style.setProperty(
-  //       "--first-gradient-color",
-  //       "#00d2ff"
-  //     );
-  //     document.documentElement.style.setProperty(
-  //       "--second-gradient-color",
-  //       "#928DAB"
-  //     );
-  //   } else if (value === "value2") {
-  //     document.documentElement.style.setProperty(
-  //       "--first-gradient-color",
-  //       "#fe8c00"
-  //     );
-  //     document.documentElement.style.setProperty(
-  //       "--second-gradient-color",
-  //       "#f83600"
-  //     );
-  //   }
-  // }
-
   return (
     <>
       <div onClick={() => HandleClick(!dayOrNight)} className="first_circle">
@@ -81,4 +59,4 @@ const DayAndNightButton = ({ setDayOrNight, dayOrNight }) => {
   );
 };
 
-export default DayAndNightButton;
+export default ThemeButton;

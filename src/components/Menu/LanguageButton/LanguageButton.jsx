@@ -1,7 +1,7 @@
-import "./EnglishSpanish.scss";
+import "./LanguageButton.scss";
 import { useState } from "react";
 
-const EnglishSpanish = ({ setLanguage }) => {
+const LanguageButton = ({ setLanguage }) => {
   const [LanguageSelected, setLanguageSelected] = useState(false);
 
   const SelectLanguage = () => {
@@ -33,4 +33,4 @@ const EnglishSpanish = ({ setLanguage }) => {
   );
 };
 
-export default EnglishSpanish;
+export default LanguageButton;

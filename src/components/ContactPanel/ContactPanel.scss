@@ -1,0 +1,231 @@
+
+.contact_container {
+  --font-size: 3vw;
+
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overscroll-behavior: contain;
+  
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--unit) * 5);
+  padding-left: calc(var(--unit) * 10);
+  padding-right: calc(var(--unit) * 10);
+  padding-top: calc(var(--unit) * 4);
+  padding-bottom: calc(var(--unit) * 2);
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+}
+
+.contact_container::-webkit-scrollbar {
+  width: 13px;
+  margin-block: calc(var(--unit) * 2.5);
+}
+
+.contact_container::-webkit-scrollbar-track {
+  margin-block: 20px;
+}
+
+.contact_container::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--first-gradient-color), var(--second-gradient-color));
+  border-right: 10px solid var(--right-panel);
+}
+
+.contact_title {
+  color: var(--titles);
+  margin-bottom: calc(var(--unit) * 5);
+  font-size: var(--font-size);
+}
+
+.container_contacts {
+  display: flex;
+  flex-direction: column;
+  gap: calc( var(--unit) * 4);
+
+  padding: calc(var(--unit) * 2);
+}
+
+.container_single_contact {
+  display: flex;
+  gap: calc(var(--unit) * 7);
+
+  color: var(--titles);
+  font-size: 1.3vw;
+}
+
+.container_single_contact :first-child {
+  font-weight: bold;
+}
+
+// Form styles
+
+.contact_form {
+  width: 100%;
+  position: relative;
+
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: calc(var(--unit) * 1.5);
+  padding: calc(var(--unit) * 4);
+  padding-bottom: calc(var(--unit) * 7);
+  padding-top: calc(var(--unit) * 10);
+  border-radius: 2vw;
+
+  box-shadow: 5px 5px 20px 5px #0005;
+}
+
+.contact_message {
+  font-size: calc(var(--font-size) / 1.7) ;
+  color: var(--titles);
+}
+
+.contact_form ~ label {
+  display: none;
+}
+
+.contact_input {
+  height: 3vw;
+  width: 100%;
+
+  border-radius: 10vw;
+  border: none; 
+  outline: none;
+  padding-left: calc(var(--unit) * 3);
+  font-family: 'Inter', sans-serif;
+}
+
+.contact_textarea {
+  height: 20vw;
+  width: 100%;
+  border-radius: 1vw;
+  background: white;
+  resize: none;
+  font-family: inherit;
+
+  border: none;
+  outline: none;
+  padding: 20px;
+}
+
+.contact_textarea::-webkit-scrollbar {
+  width: 10px;
+}
+
+.contact_textarea::-webkit-scrollbar-track {
+  background: white;
+  margin-block: 1.5vw;
+}
+
+.contact_textarea::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--first-gradient-color), var(--second-gradient-color));
+  border-right: 8px solid white;
+}
+
+.contact_textarea textarea {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.contact_textarea::-webkit-scrollbar {
+  width: 0px;
+}
+
+.container_button {
+  height: 11%;
+  width: 100%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--unit) / 3);
+  background: linear-gradient(45deg, var(--first-gradient-color), var(--second-gradient-color));
+  border-radius: 1vw;
+  margin: auto;
+}
+
+.contact_button {
+  height: 100%;
+  width: 100%;
+  border-radius: 0.9vw;
+  background: var(--right-panel);
+  font-size: 1.2vw;
+  color: var(--titles);
+
+  border: none;
+  outline: none;
+}
+
+.contact_button:hover {
+  opacity: 0.7;
+}
+
+
+
+
+// Footer styles
+
+.contact_footer {
+  display: flex;
+  width: 100%;
+  gap: calc(var(--unit) * 2);
+  align-items: flex-end;
+  justify-content: center;
+  padding: calc(var(--unit) * 2);
+  padding-top: calc(var(--unit) * 7);
+  padding-bottom: var(--unit);
+
+}
+
+.single_contact_icon {
+  height: 9vw;
+  aspect-ratio: 1 / 1;
+  background: transparent;
+  border-radius: 1vw;
+
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--unit);
+  justify-content: center;
+  align-items: center;
+}
+
+.contact_icons {
+  height: 4vw;
+}
+
+.contact_icons_torre {
+  height: 4vw;
+  aspect-ratio: 1 / 1;
+
+  padding: calc(var(--unit) / 3);
+  overflow: hidden;
+  background: var(--titles);
+
+  clip-path: polygon(50% 0, 94% 25%, 94% 75%, 50% 100%, 6% 75%, 6% 25%);
+}
+
+.contact_icons_torre img {
+  height: 100%;
+  width: 100%;
+  
+  clip-path: polygon(50% 0, 94% 25%, 94% 75%, 50% 100%, 6% 75%, 6% 25%);
+}
+
+.icon_contact_title {
+  font-size: 1.3vw;
+  font-weight: bold;
+  color: var(--titles);
+}
+
+a {
+  margin: 0;
+  padding: 0;
+}

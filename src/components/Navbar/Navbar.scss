@@ -1,0 +1,67 @@
+.navbar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+
+  align-items: flex-start;
+  height: 15%;
+  min-width: 100%;
+  margin: 0;
+
+}
+
+
+.full_name {
+  font-size: 4vw;
+  left: 0;
+  margin: 0;
+  font-family: 'Tangerine', cursive;
+  font-weight: bolder;
+  background-image: linear-gradient( 70deg ,  var(--first-gradient-color), 40%, var(--second-gradient-color) );
+  transition: background-image var(--timing) ease-in-out ;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar_buttons {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  gap: 4%;
+}
+
+.navbar_titles {
+  display: flex;
+  place-items: center;
+  height: 2vw;
+  margin: 0;
+  width: 6.5vw;
+  padding: 2px;
+  border-radius: .3vw;
+  background-image: linear-gradient( 70deg , var(--first-gradient-color), 40%, var(--second-gradient-color) );
+  transition: background-image var(--timing) ease-in-out ;
+  --button-color: rgb(238, 233, 233);
+}  
+
+.titles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  font-size: 1.1vw;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  border-radius: .3vw;
+  font-weight: 500;
+  background: var(--right-panel);
+  transition: background-image 300ms ease-in-out ;
+}
+
+.background_color {
+  background-image: linear-gradient( 70deg , var(--first-gradient-color), 40%, var(--second-gradient-color) );
+  color: #ccc;
+}
+  

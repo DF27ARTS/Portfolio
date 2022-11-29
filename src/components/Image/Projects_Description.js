@@ -40,6 +40,7 @@ import Sequelize from "../Image/Icons/Sequelize.svg";
 import Arrow_icon from "../Image/Icons/Arrow_icon.svg";
 import Play_btn from "../Image/Icons/play-btn.svg";
 import Paused_btn from "../Image/Icons/paused-btn.svg";
+import Whatsapp from "../Image/Icons/whatsapp.png";
 
 // Personal Information
 import My_Picture from "../Image/Personal_Information/my_image.jpg";
@@ -222,6 +223,7 @@ export const About = {
   Email,
   LinkedIn,
   Location,
+  Whatsapp,
   Phone,
   GitHub,
   CV_image_English,

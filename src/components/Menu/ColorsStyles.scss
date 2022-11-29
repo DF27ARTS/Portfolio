@@ -2,53 +2,36 @@
 
 .container_colors {
   position: absolute;
-  top: 10%;
-  left: -105%;
+  top: -200%;
+  left: 15%;
   padding: 1vw;
-  background: #ccc2;
-  border-radius: 5px 0 0 5px;
-  backdrop-filter: blur(7px);
+  // background: var(--right-panel);
+  border-radius: 5px;
   overflow: hidden;
+  z-index: 20;
 
   visibility: hidden;
   opacity: 0;
-  transform: translateX(120%);
+  transform: translateX(70%);
 
   display: grid;
   grid-template-columns: repeat(3, 2vw);
   grid-template-rows: repeat(3, 2vw);
   grid-column-gap: 1.2vw;
-  grid-row-gap: 1.7vw;
+  grid-row-gap: 2.5vw;
+  box-shadow: 0 0 4vw 0 var(--first-gradient-color) inset;
 
- 
   transition: 
     transform 500ms ease-in-out, 
     opacity 200ms ease-in-out, 
     visibility 200ms ease-in-out;
 }
 
-.container_colors::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  z-index: -1;
 
-  height: 10vw;
-  width: 10vw;
-  background: var(--first-gradient-color);
-  opacity: 0.3;
-  filter: blur(40px);
-}
-
-
-.menu_container:has(.icon_colos):focus + .container_colors,
+.menu_container:first-child:focus-within .container_colors,
 .container_colors:hover,
 .container_colors:focus {
-  transform: translateX(0%);
+  transform: translateY(80%);
   visibility: visible;
   opacity: 1;
 }

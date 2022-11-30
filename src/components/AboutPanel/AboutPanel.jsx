@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { About, Icons } from "../Image/Projects_Description.js";
-import Projects from "../Projects/Projects.jsx";
+import Projects from "../ProjectsPanel/ProjectsPanel.jsx";
 
 // Styles
 import "./AboutPanel.scss";

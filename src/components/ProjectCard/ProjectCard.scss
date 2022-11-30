@@ -1,0 +1,103 @@
+
+$card:  38.8vw;
+.container_project_card {
+
+  height: #{$card / 1.7};
+  width: $card;
+  // background: red;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0 0 15px 0 #0007;
+
+  perspective: 90vw;
+  perspective-origin: 50% 70%;
+
+
+  margin: 0;
+  padding: 0;
+  position: relative;
+  transform-style: preserve-3d;
+
+  // transform: rotateX(-45deg);
+}
+
+// .container_project_card::before,
+// .container_project_card::after {
+//   position: absolute;
+//   content: "";
+//   top: 0;
+
+//   height: 100%;
+//   width: 21%;
+//   background: linear-gradient(90deg, #9007 0% 50%, #0907 50% 100%);
+
+//   z-index: 1;
+// }
+
+// .container_project_card::before {
+//   left: 0;
+// }
+
+// .container_project_card::after {
+//   right: 0;
+// }
+
+.single_image_container {
+  height: #{$card / 2};
+  width: #{$card / 12};
+  overflow: hidden;
+  z-index: 4;
+
+  transition: transform 200ms ease-in-out;
+}
+
+.card_image {
+  height: #{$card / 2};
+  width: $card ;
+
+  transform: 
+    translateX(var(--translate-image));
+}
+
+.card_title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: #{$card / 12};
+  width: $card;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.5vw;
+  font-weight: bold;
+  color: var(--titles);
+}
+
+.container_card_description {
+  position: absolute;
+  top: #{$card / 11};
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: #{$card / 2.1};
+  width: #{$card / 1.5};
+  padding: 2.5vw;
+  z-index: 2;
+
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.container_card_description::-webkit-scrollbar {
+  width: 0;
+}
+
+@import "AccordionAnimation.scss";
+
+@for $i from 0 to 12 {
+  .single_image_container:nth-child(#{$i + 1}) img {
+    --translate-image: #{$card / 12 * $i * -1};
+  }
+}

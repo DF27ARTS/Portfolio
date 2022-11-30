@@ -20,11 +20,6 @@ export default function SingleProject({
   language,
 }) {
   // Save in a variable the description of the project depending on the language
-  const ProjectDescription = !App_Object.Description
-    ? null
-    : !language
-    ? App_Object.Description.spanish_description
-    : App_Object.Description.english_description;
 
   // Handler close projrct detail
   const CloseProjectDetail = () => {

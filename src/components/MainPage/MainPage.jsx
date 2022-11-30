@@ -57,7 +57,6 @@ export default function MainPage({ setCurrentProjectObject, language }) {
             <div className="education">
               <span className="education_title">Education</span>
               <div>
-                <div></div>
                 <span>Full-stack Developer</span>
                 <span>Soy henry</span>
               </div>

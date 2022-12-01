@@ -1,22 +1,19 @@
 import "./LanguageButton.scss";
-import { useState } from "react";
 
 const LanguageButton = ({ setLanguage }) => {
-  const [LanguageSelected, setLanguageSelected] = useState(false);
-
   const SelectLanguage = () => {
     const containerLanguage = document.querySelector(".container_language");
-    // const slider =
-    //   getComputedStyle(containerLanguage).getPropertyValue("--language");
-    // console.log(slider);
-    if (LanguageSelected === false) {
+    const currentLanguage =
+      getComputedStyle(containerLanguage).getPropertyValue("--language");
+
+    if (currentLanguage !== "-100%") {
       containerLanguage.style.setProperty("--language", "-100%");
       setLanguage(true);
-      setLanguageSelected(true);
+      localStorage.setItem("language", "English");
     } else {
       containerLanguage.style.setProperty("--language", "0%");
       setLanguage(false);
-      setLanguageSelected(false);
+      localStorage.setItem("language", "Spanish");
     }
   };
 

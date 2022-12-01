@@ -78,9 +78,19 @@
   box-shadow: 5px 5px 20px 5px #0005;
 }
 
-.contact_message {
-  font-size: calc(var(--font-size) / 1.7) ;
+.form_message {
+  font-size: var(--font-size) ;
   color: var(--titles);
+
+  // background: red;
+  padding: 0 0 3vw 0;
+  font-family: 'Kaushan Script', cursive;
+  background: linear-gradient(90deg, var(--first-gradient-color), var(--second-gradient-color));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  display: flex;
+  justify-content: center;
 }
 
 .contact_form ~ label {
@@ -174,7 +184,7 @@
 .contact_footer {
   display: flex;
   width: 100%;
-  gap: calc(var(--unit) * 2);
+  gap: calc(var(--unit) * 4);
   align-items: flex-end;
   justify-content: center;
   padding: calc(var(--unit) * 2);
@@ -184,7 +194,7 @@
 }
 
 .single_contact_icon {
-  height: 9vw;
+  height: 7vw;
   aspect-ratio: 1 / 1;
   background: transparent;
   border-radius: 1vw;
@@ -195,10 +205,17 @@
   gap: var(--unit);
   justify-content: center;
   align-items: center;
+  backdrop-filter: blur(7px);
+
+  transition: background-color 300ms ease-in-out;
+}
+
+.single_contact_icon:hover {
+  background-color: #ccc4;
 }
 
 .contact_icons {
-  height: 4vw;
+  height: 3vw;
 }
 
 .contact_icons_torre {
@@ -220,12 +237,17 @@
 }
 
 .icon_contact_title {
-  font-size: 1.3vw;
+  font-size: 1vw;
   font-weight: bold;
   color: var(--titles);
+
 }
 
 a {
   margin: 0;
   padding: 0;
+
+  text-decoration: none;
 }
+
+@import "ContactMobileStyles.scss";

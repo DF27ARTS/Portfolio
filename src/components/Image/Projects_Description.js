@@ -177,6 +177,20 @@ const Weather_App_Descriptions = {
 
 // Object With English and Spanish Information
 const About_Me = {
+  contact_message_spanish: [
+    "¿Hola como estas?  👋",
+    "Si estas interesado en mi Perfil y crees que mi Stack de tecnologias se ajusta a lo que estas buscando",
+    "¡Contáctame!",
+    "Estaria encantado de unirme a tu equipo 😉",
+  ],
+
+  contact_message_english: [
+    "Hello how are you? 👋",
+    "If you're interested in my Profile and you think my Technology Stack fits what you're looking for",
+    "¡Contact me!",
+    "I'd be glad to join your team  😉",
+  ],
+
   description_spanish: [
     "Hola! 👋",
     "💻 Soy un desarrollador web Full stack, cuando decidí hacer el bootcamp de henery y termine la cursada me enamore de la programación. Me gustan los retos y aprender cosas nuevas por eso aver cursar henry fue una gran y maravillosa experiencia donde aprendí varias de las tecnologías mas usadas en el mundo tech",

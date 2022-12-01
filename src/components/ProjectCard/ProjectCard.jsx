@@ -77,6 +77,10 @@ export default function ProjectCard({
             ))}
         </ul>
       </div>
+
+      <button className="card_button">
+        {!language ? "Mas Información" : "More Details"}
+      </button>
     </div>
   );
 }

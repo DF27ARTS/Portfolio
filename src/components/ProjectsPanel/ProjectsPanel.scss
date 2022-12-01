@@ -1,73 +1,33 @@
-$background: transparent;
 
 .projects_container {
   position: relative;
   height: 100%; 
   width: 100%;
-  background: $background;
   display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--unit) * 5);
+  justify-content: center;
+  padding: 5%;
+
   overflow-y: auto;
   overflow-x: hidden;
-  overscroll-behavior-block: contain;
-  padding: 5%;
-  flex-wrap: wrap;
-  gap: 5%;
-  justify-content: center;
+  overscroll-behavior: contain;
+
 }
 
-.projects_container::before,
-.projects_container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 2px;
-  height: 100%;
-  border-radius: 2px;
-}
-
-.projects_container::before {
-  left: 0;
-  background: linear-gradient(var(--first-gradient-color), 20%, var(--second-gradient-color), 40%, transparent);
-}
-
-.projects_container::after {
-  right: 0;
-  background: linear-gradient( transparent, 60%,var(--second-gradient-color), 80%, var(--first-gradient-color));
-}
 
 .projects_container::-webkit-scrollbar {
   width: 0px;
 }
 
-.main_img {
-  height: 13vw;
-  width: 26vw;
-  transition: scale 300ms ease;
-  border-radius: 20px;
-}
-
-.main_img:hover {
-  scale: 1.1;
-}
-
 
 @media screen and (max-width: 500px) {
-
-  .main_img {
-    height: 120px;
-    width: 240px;
-    border-radius: 15px;
-  }
-
-  .main_img:hover,
-  .main_img:focus {
-    scale: 1;
-  }
 
   .projects_container {
     perspective-origin: 50% 50%;
     height: 80%;
-    gap: 0;
+
+    gap: calc(var(--unit) * 5);
   }
 }
 

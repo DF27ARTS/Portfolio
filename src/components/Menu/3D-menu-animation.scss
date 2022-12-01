@@ -142,14 +142,12 @@
 }
 
 .line_left_front {
-  // background: linear-gradient( hsl(0, 0%, 3%), 50%, var(--first-gradient-color));
   transform: 
     rotateY(315deg)
     translateZ(calc(var(--translate-square) * 1.2));
 }
 
 .line_top_front {
-  // background: var(--box-top-color);
   transform: 
     rotate(90deg)
     rotateY(315deg)
@@ -157,7 +155,6 @@
 }
   
 .line_top_left {
-  // background: var(--box-top-color);
   transform: 
     rotateX(90deg)
     rotateY(315deg)
@@ -195,5 +192,20 @@
     height: 50%;
     width: 50%;
     filter: blur(calc(var(--unit-menu) / 7));
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  .container_aquare {
+    --unit-menu: 5vw;
+    --box-top-color: hsl(0, 0%, 10%);
+    --translate-square: calc(var(--unit-menu) / 1.8);
+  
+    perspective-origin: 50% -50vw;
+  }
+
+  .container_aquare::before {
+    font-size: 5vw;
   }
 }

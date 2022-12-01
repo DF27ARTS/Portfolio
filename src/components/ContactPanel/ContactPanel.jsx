@@ -3,15 +3,21 @@ import "./ContactPanel.scss";
 import { About } from "../Image/Projects_Description.js";
 
 export default function ContactPanel({ language }) {
-  function HandleSubmit(e) {
-    e.preventDefault();
-  }
+  const message = !language
+    ? About.About_Me.contact_message_spanish
+    : About.About_Me.contact_message_english;
 
   return (
     <div className="contact_container">
-      <h2 className="contact_title">
-        {!language ? "Contactáme" : "Contact  me"}
-      </h2>
+      <h2 className="contact_title">{!language ? "Contacto" : "Contact"}</h2>
+
+      <div className="contact_message">
+        {message &&
+          message.map((singleMessage, index) => (
+            <p key={index}>{singleMessage}</p>
+          ))}
+      </div>
+
       <div className="container_contacts">
         <div className="container_single_contact">
           <span className="title">{!language ? "Locación" : "Location"}</span>
@@ -32,17 +38,18 @@ export default function ContactPanel({ language }) {
         method="POST"
         className="contact_form"
       >
-        <span className="contact_message">Send me an Email</span>
+        <span className="form_message">
+          {!language ? "Enviame un Email" : "Send me an Email"}
+        </span>
         <label htmlFor="name"></label>
         <input
           required={true}
           name="name"
-          placeholder="Name"
+          placeholder={!language ? "Nombre" : "Name"}
           type="text"
           className="contact_input"
         />
         <label htmlFor="email"></label>
-        {/* <div class="input-field"><input type="email" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" placeholder="Email" class="validate */}
         <input
           required={true}
           pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
@@ -54,7 +61,7 @@ export default function ContactPanel({ language }) {
         <label htmlFor="subject"></label>
         <input
           name="subject"
-          placeholder="Subject"
+          placeholder={!language ? "Asunto" : "Subject"}
           type="text"
           className="contact_input"
         />
@@ -64,59 +71,60 @@ export default function ContactPanel({ language }) {
           required={true}
           className="contact_textarea"
           name="description"
-          placeholder="Description"
+          placeholder={!language ? "Descripción" : "Description"}
         ></textarea>
         <div className="container_button">
           <input
             type="submit"
-            value="Enviar"
+            value={!language ? "Enviar" : "Submit"}
             className="contact_button"
           ></input>
         </div>
       </form>
 
       <footer className="contact_footer">
-        <div className="single_contact_icon">
-          <a href="https://github.com/DF27ARTS">
+        <a href="https://github.com/DF27ARTS">
+          <div className="single_contact_icon">
             <img
               src={About.GitHub}
               alt="github icon"
               className="contact_icons"
             />
-          </a>
-          <span className="icon_contact_title">GitHub</span>
-        </div>
+            <span className="icon_contact_title">GitHub</span>
+          </div>
+        </a>
 
-        <div className="single_contact_icon">
-          <a href="https://www.linkedin.com/in/diego-fernando-rojas-carrillo-full-stack-developer/">
+        <a href="https://www.linkedin.com/in/diego-fernando-rojas-carrillo-full-stack-developer/">
+          <div className="single_contact_icon">
             <img
               src={About.LinkedIn}
               alt="linkedin icon"
               className="contact_icons"
             />
-          </a>
-          <span className="icon_contact_title">LinkedIn</span>
-        </div>
-
-        <div className="single_contact_icon">
-          <div className="contact_icons_torre">
-            <a href="https://torre.co/@fernando_rc?r=kZjElFcd">
-              <img src={About.Picture} alt="picture" />
-            </a>
+            <span className="icon_contact_title">LinkedIn</span>
           </div>
-          <span className="icon_contact_title">Torre</span>
-        </div>
+        </a>
 
-        <div className="single_contact_icon">
-          <a href="https://wa.me/573202074828">
+        <a href="https://torre.co/@fernando_rc?r=kZjElFcd">
+          <div className="single_contact_icon">
+            <div className="contact_icons_torre">
+              <img src={About.Picture} alt="picture" />
+            </div>
+            <span className="icon_contact_title">Torre</span>
+          </div>
+        </a>
+
+        <a href="https://wa.me/573202074828">
+          <div className="single_contact_icon">
             <img
+              area-text="whatsApp"
               src={About.Whatsapp}
               alt="linkedin icon"
               className="contact_icons"
             />
-          </a>
-          <span className="icon_contact_title">WhatsApp</span>
-        </div>
+            <span className="icon_contact_title">WhatsApp</span>
+          </div>
+        </a>
       </footer>
     </div>
   );

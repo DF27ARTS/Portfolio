@@ -9,10 +9,101 @@ import { FaPhoneAlt } from "react-icons/fa";
 import "./MainPage.scss";
 import Navbar from "../Navbar/Navbar.jsx";
 import Panels from "../Panels/Panels.jsx";
-export default function MainPage({ setCurrentProjectObject, language }) {
+export default function MainPage({
+  setDayOrNight,
+  setLanguage,
+  setCurrentProjectObject,
+  language,
+}) {
+  function HandleOnLoad() {
+    const Language = localStorage.getItem("language");
+    const Theme = localStorage.getItem("theme");
+    const FirstColor = localStorage.getItem("FirstColor");
+    const SecondColor = localStorage.getItem("SecondColor");
+    const DataAtribute = localStorage.getItem("DataAtribute");
+
+    const containerLanguage = document.querySelector(".container_language");
+
+    const first_circle = document.querySelector(".first_circle");
+    const titles = document.querySelectorAll(".titles");
+
+    // language button
+    if (Language) {
+      if (Language === "English") {
+        containerLanguage.style.setProperty("--language", "-100%");
+        setLanguage(true);
+      } else if (Language === "Spanish") {
+        containerLanguage.style.setProperty("--language", "0%");
+        setLanguage(false);
+      }
+    }
+
+    // Theme button
+    if (Theme) {
+      if (Theme === "day") {
+        // Icon animation properties day
+        first_circle.style.setProperty("--translate", "0%");
+        first_circle.style.setProperty("--color", "yellow");
+        first_circle.style.setProperty("--center-color", "yellow");
+
+        //Colors changed day
+        document.documentElement.style.setProperty(
+          "--right-panel",
+          "rgb(240, 239, 239)"
+        );
+        document.documentElement.style.setProperty("--main-background", "#000");
+        document.documentElement.style.setProperty("--body-background", "#fff");
+        document.documentElement.style.setProperty("--titles", "#333");
+        titles.forEach((title) =>
+          title.style.setProperty("--button-color", "rgb(238, 233, 233)")
+        );
+        setDayOrNight(true);
+      } else {
+        // Icon animation properties night
+        first_circle.style.setProperty("--translate", "-50%");
+        first_circle.style.setProperty("--color", "#ccc");
+        first_circle.style.setProperty("--center-color", "#ccc");
+
+        //Colors changed night
+        document.documentElement.style.setProperty(
+          "--right-panel",
+          "rgb(32, 32, 32)"
+        );
+        document.documentElement.style.setProperty("--main-background", "#ccc");
+        document.documentElement.style.setProperty("--body-background", "#000");
+        document.documentElement.style.setProperty("--titles", "#ccc");
+        titles.forEach((title) =>
+          title.style.setProperty("--button-color", "rgb(238, 233, 233)")
+        );
+        setDayOrNight(true);
+      }
+    }
+
+    // Current Color page
+    if (FirstColor && SecondColor && DataAtribute) {
+      document.documentElement.style.setProperty(
+        "--first-gradient-color",
+        FirstColor
+      );
+      document.documentElement.style.setProperty(
+        "--second-gradient-color",
+        SecondColor
+      );
+
+      const colorActive = document.querySelector(".color_active");
+      colorActive.classList.remove("color_active");
+
+      const currentColor = document.querySelector(
+        `[data-name="${DataAtribute}"]`
+      );
+
+      currentColor.classList.add("color_active");
+    }
+  }
+
   return (
     <>
-      <main className="main_container">
+      <main onLoad={() => HandleOnLoad()} className="main_container">
         <div className="left_panel">
           <div className="cont_img_CV">
             <div className="container_picture">
@@ -24,34 +115,6 @@ export default function MainPage({ setCurrentProjectObject, language }) {
                 className="picture"
               />
             </div>
-            {/* <div className="resume">
-              <button className="cv_button b_sp">
-                {!language ? "CV ESPAÑOL" : "CV SPANISH"}
-              </button>
-              <div tabIndex={0} className="cv_button_options sp">
-                <a href={About.CV_SPANISH} download>
-                  <img
-                    tabIndex={0}
-                    src={About.CV_image_Spanish}
-                    alt="cv icon"
-                    className="CV_image"
-                  />
-                </a>
-              </div>
-              <button className="cv_button b_en">
-                {!language ? "CV INGLES" : "CV ENGLISH"}
-              </button>
-              <div tabIndex={0} className="cv_button_options en">
-                <a href={About.CV_ENGLISH} download>
-                  <img
-                    tabIndex={0}
-                    src={About.CV_image_English}
-                    alt="cv icon"
-                    className="CV_image"
-                  />
-                </a>
-              </div>
-            </div> */}
           </div>
           <div className="container_ducation">
             <div className="education">
@@ -72,7 +135,7 @@ export default function MainPage({ setCurrentProjectObject, language }) {
                 </div>
                 <div>
                   <span>English</span>
-                  <span>B2</span>
+                  <span>B2 Uper Intermidiate</span>
                 </div>
               </div>
             </div>

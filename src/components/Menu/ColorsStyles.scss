@@ -19,6 +19,7 @@
   grid-template-rows: repeat(3, 2vw);
   grid-column-gap: 1.2vw;
   grid-row-gap: 2.5vw;
+  background: var(--right-panel);
   box-shadow: 0 0 4vw 0 var(--first-gradient-color) inset;
 
   transition: 
@@ -85,4 +86,15 @@
   box-shadow:
     0 0 0 2px var(--right-panel),
     0 0 0 4px var(--first-gradient-color);
+}
+
+@media screen and (max-width: 500px) {
+  .container_colors {
+    padding: 5vw 3vw;
+    grid-template-columns: repeat(3, 10vw);
+    grid-template-rows: repeat(3, 10vw);
+    grid-column-gap: 5vw;
+    grid-row-gap: 7vw;
+    box-shadow: 0 0 17vw 0 var(--first-gradient-color) inset;
+  }
 }

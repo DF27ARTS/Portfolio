@@ -23,6 +23,7 @@ const ThemeButton = ({ setDayOrNight, dayOrNight }) => {
       titles.forEach((title) =>
         title.style.setProperty("--button-color", "rgb(238, 233, 233)")
       );
+      localStorage.setItem("theme", "day");
     } else {
       // Icon animation properties night
       first_circle.style.setProperty("--translate", "-50%");
@@ -40,6 +41,7 @@ const ThemeButton = ({ setDayOrNight, dayOrNight }) => {
       titles.forEach((title) =>
         title.style.setProperty("--button-color", "rgb(238, 233, 233)")
       );
+      localStorage.setItem("theme", "night");
     }
     setDayOrNight(value);
   };

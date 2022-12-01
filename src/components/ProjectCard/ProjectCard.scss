@@ -1,50 +1,29 @@
 
 $card:  38.8vw;
+$border: 1vw;
+
+
 .container_project_card {
 
-  height: #{$card / 1.7};
+  height: calc($card / 1.7);
   width: $card;
-  // background: red;
   display: flex;
   align-items: flex-end;
-  box-shadow: 0 0 15px 0 #0007;
+  box-shadow: 2px 5px 15px -5px var(--first-gradient-color);
+  border-radius: $border;
 
-  perspective: 90vw;
-  perspective-origin: 50% 70%;
-
+  perspective: 50vw;
+  perspective-origin: center;
 
   margin: 0;
   padding: 0;
   position: relative;
   transform-style: preserve-3d;
-
-  // transform: rotateX(-45deg);
 }
 
-// .container_project_card::before,
-// .container_project_card::after {
-//   position: absolute;
-//   content: "";
-//   top: 0;
-
-//   height: 100%;
-//   width: 21%;
-//   background: linear-gradient(90deg, #9007 0% 50%, #0907 50% 100%);
-
-//   z-index: 1;
-// }
-
-// .container_project_card::before {
-//   left: 0;
-// }
-
-// .container_project_card::after {
-//   right: 0;
-// }
-
 .single_image_container {
-  height: #{$card / 2};
-  width: #{$card / 12};
+  height: calc($card / 2);
+  width: calc($card / 12);
   overflow: hidden;
   z-index: 4;
 
@@ -52,8 +31,9 @@ $card:  38.8vw;
 }
 
 .card_image {
-  height: #{$card / 2};
+  height: calc($card / 2);
   width: $card ;
+  // display: none;
 
   transform: 
     translateX(var(--translate-image));
@@ -63,35 +43,102 @@ $card:  38.8vw;
   position: absolute;
   top: 0;
   left: 0;
-  height: #{$card / 12};
+  height: calc($card / 12);
   width: $card;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: 1.5vw;
+  font-size: 1.7vw;
   font-weight: bold;
   color: var(--titles);
 }
 
 .container_card_description {
   position: absolute;
-  top: #{$card / 11};
+  top: calc($card / 11);
   left: 0;
   right: 0;
   margin: auto;
-  height: #{$card / 2.1};
-  width: #{$card / 1.5};
-  padding: 2.5vw;
+  height: calc($card / 2.5);
+  width: calc($card / 1.5);
+  padding: 1vw 3.5vw;
   z-index: 2;
+  color: var(--titles);
 
   overflow-y: auto;
-  overscroll-behavior: contain;
 }
 
 .container_card_description::-webkit-scrollbar {
   width: 0;
+}
+
+.container_card_description ul {
+  display: flex; 
+  flex-direction:column;
+  gap: calc(var(--unit) * 2);
+  font-size: 1vw;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container_card_description ul li {
+  position: relative;
+}
+
+.container_card_description ul li::before {
+  position: absolute;
+  content: "";
+  top: 1vw;
+  left: -1vw;
+  height: .5vw;
+  width: .5vw;
+  border-radius: 50%;
+  background: linear-gradient( 45deg, var(--first-gradient-color), var(--second-gradient-color));
+}
+
+.card_button {
+  position: absolute;
+  bottom: 1vw;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 0;
+
+  border: none;
+  background: var(--right-panel);
+  height: 1.5vw;
+  width: fit-content;
+  color: var(--titles);
+  font-size: 1.3vw;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.card_button::before,
+.card_button::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+
+  height: 2px;
+  width: 100%;
+  background: var(--titles);
+}
+
+.card_button::after {
+  transform: scale(0);
+  transition: transform 300ms ease-in-out;
+  background: linear-gradient(90deg, var(--first-gradient-color), var(--second-gradient-color));
+}
+
+.card_button:hover::after {
+  transform: scale(1);
 }
 
 @import "AccordionAnimation.scss";
@@ -101,3 +148,78 @@ $card:  38.8vw;
     --translate-image: #{$card / 12 * $i * -1};
   }
 }
+
+@media screen and (max-width: 500px) {
+  $card:  81vw ;
+  $border: .5vh;
+
+  .container_project_card {
+
+    height: calc($card / 1.6);
+    width: $card;
+
+    perspective: 150vw;
+  }
+
+  .single_image_container {
+    height: calc($card / 2);
+    width: calc($card / 12);
+  }
+
+  .card_image {
+    height: calc($card / 2);
+    width: $card ;
+  }
+
+  .card_title {
+    height: calc($card / 9);
+    width: $card;
+  
+    font-size: 2.5vh;
+  }
+
+  .container_card_description {
+    top: calc($card / 8);
+    height: calc($card / 2.3);
+    width: calc($card / 1.5);
+
+    padding: 1vh 3.5vh;
+    overscroll-behavior: contain;
+  }
+
+  .container_card_description ul {
+    gap: var(--unit);
+    font-size: 1.5vh;
+  }
+
+  .container_card_description ul li::before {
+    left: -1.5vh;
+    height: .7vh;
+    width: .7vh;
+  }
+
+  .card_button {
+    // position: absolute;
+    // bottom: 1vw;
+    // left: 0;
+    // right: 0;
+    // margin: auto;
+    // padding: 0;
+  
+    // border: none;
+    // background: var(--right-panel);
+    height: 3vh;
+    width: fit-content;
+    // color: var(--titles);
+    font-size: 1.7vh;
+    font-weight: normal;
+    // cursor: pointer;
+  }
+
+  @for $i from 0 to 12 {
+    .single_image_container:nth-child(#{$i + 1}) img {
+      --translate-image: #{$card / 12 * $i * -1};
+    }
+  }
+}
+

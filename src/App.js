@@ -11,6 +11,8 @@ function App() {
   return (
     <>
       <MainPage
+        setDayOrNight={setDayOrNight}
+        setLanguage={setLanguage}
         setCurrentProjectObject={setCurrentProjectObject}
         language={language}
       />

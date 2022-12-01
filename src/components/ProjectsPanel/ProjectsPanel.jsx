@@ -33,20 +33,6 @@ export default function Projects({ setCurrentProjectObject, language }) {
           setCurrentProjectObject={setCurrentProjectObject}
           language={language}
         />
-        {/* <img
-          src={App_dogs.Images[0]}
-          alt="App_images"
-          className="main_img"
-        />
-        <img
-          alt="App_images"
-          className="main_img"
-        />
-        <img
-          src={App_Weather.Images[0]}
-          alt="App_images"
-          className="main_img"
-        /> */}
       </div>
     </>
   );

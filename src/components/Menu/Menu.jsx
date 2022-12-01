@@ -22,13 +22,15 @@ export default function Menu({
 
     const colorActive = document.querySelector(".color_active");
     colorActive.classList.remove("color_active");
-    console.log(colorActive);
 
     const currentColor = document.querySelector(
       `[data-name="${data_tribute}"]`
     );
 
     currentColor.classList.add("color_active");
+    localStorage.setItem("FirstColor", color_one);
+    localStorage.setItem("SecondColor", color_two);
+    localStorage.setItem("DataAtribute", data_tribute);
   }
 
   return (

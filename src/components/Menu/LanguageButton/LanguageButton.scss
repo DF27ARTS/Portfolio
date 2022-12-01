@@ -72,3 +72,27 @@
 .rows_three {
   transform: rotate(90deg);
 }
+
+
+@media screen and (max-width: 500px) {
+  .container_language {
+    height: 7vw;
+    width: 7vw;
+  }
+
+  .rows_one,
+  .rows_two,
+  .rows_three,
+  .rows_four {
+    height: 7vw;
+    width: 1.2vw;
+  }
+
+  .rows_one {
+    width: 1vw;
+  }
+  
+  .rows_two {
+    width: 1vw;
+  }
+}

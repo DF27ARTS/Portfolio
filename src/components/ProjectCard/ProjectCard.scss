@@ -8,146 +8,94 @@ $border: 1vw;
   height: calc($card / 1.7);
   width: $card;
   display: flex;
+  flex-direction: column;
   align-items: flex-end;
   box-shadow: 2px 5px 15px -5px var(--first-gradient-color);
   border-radius: $border;
-
-  perspective: 50vw;
-  perspective-origin: center;
 
   margin: 0;
   padding: 0;
   position: relative;
   transform-style: preserve-3d;
-}
 
-.single_image_container {
-  height: calc($card / 2);
-  width: calc($card / 12);
-  overflow: hidden;
-  z-index: 4;
-
-  transition: transform 200ms ease-in-out;
-}
-
-.card_image {
-  height: calc($card / 2);
-  width: $card ;
-  // display: none;
-
-  transform: 
-    translateX(var(--translate-image));
+  // transform:
+  //   rotateY(10deg)
+  //   rotateX(-10deg);  
+  transition: transform 300ms ease-in-out;
 }
 
 .card_title {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: calc($card / 12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc($card / 9);
   width: $card;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 1.7vw;
-  font-weight: bold;
-  color: var(--titles);
+  font-size: 3vh;
 }
 
-.container_card_description {
+.card_image {
+  height: 100%;
+  width: 100%;
+
+  border-radius: 0 0 $border $border;
+}
+
+.single_square {
   position: absolute;
-  top: calc($card / 11);
+  height: 50%;
+  width: 30%;
+}
+
+.container_project_card:has(.single_square:nth-child(1):hover) {
+  transform:
+    rotateY(-10deg)
+    rotateX(10deg);
+}
+
+.container_project_card:has(.single_square:nth-child(2):hover) {
+  transform:
+    rotateY(10deg)
+    rotateX(10deg);
+}
+
+.container_project_card:has(.single_square:nth-child(3):hover) {
+  transform:
+    rotateY(-10deg)
+    rotateX(-10deg);
+}
+
+.container_project_card:has(.single_square:nth-child(4):hover) {
+  transform:
+    rotateY(10deg)
+    rotateX(-10deg);
+}
+
+.single_square:nth-child(1) {
+  top: 0;
   left: 0;
+}
+
+.single_square:nth-child(2) {
+  top: 0;
   right: 0;
-  margin: auto;
-  height: calc($card / 2.5);
-  width: calc($card / 1.5);
-  padding: 1vw 3.5vw;
-  z-index: 2;
-  color: var(--titles);
-
-  overflow-y: auto;
 }
 
-.container_card_description::-webkit-scrollbar {
-  width: 0;
-}
-
-.container_card_description ul {
-  display: flex; 
-  flex-direction:column;
-  gap: calc(var(--unit) * 2);
-  font-size: 1vw;
-
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.container_card_description ul li {
-  position: relative;
-}
-
-.container_card_description ul li::before {
-  position: absolute;
-  content: "";
-  top: 1vw;
-  left: -1vw;
-  height: .5vw;
-  width: .5vw;
-  border-radius: 50%;
-  background: linear-gradient( 45deg, var(--first-gradient-color), var(--second-gradient-color));
-}
-
-.card_button {
-  position: absolute;
-  bottom: 1vw;
-  left: 0;
-  right: 0;
-  margin: auto;
-  padding: 0;
-
-  border: none;
-  background: var(--right-panel);
-  height: 1.5vw;
-  width: fit-content;
-  color: var(--titles);
-  font-size: 1.3vw;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-
-.card_button::before,
-.card_button::after {
-  position: absolute;
-  content: "";
+.single_square:nth-child(3) {
   bottom: 0;
   left: 0;
-
-  height: 2px;
-  width: 100%;
-  background: var(--titles);
 }
 
-.card_button::after {
-  transform: scale(0);
-  transition: transform 300ms ease-in-out;
-  background: linear-gradient(90deg, var(--first-gradient-color), var(--second-gradient-color));
+.single_square:nth-child(4) {
+  bottom: 0;
+  right: 0;
 }
 
-.card_button:hover::after {
-  transform: scale(1);
-}
 
-@import "AccordionAnimation.scss";
 
-@for $i from 0 to 12 {
-  .single_image_container:nth-child(#{$i + 1}) img {
-    --translate-image: #{$card / 12 * $i * -1};
-  }
-}
+
+
+
 
 @media screen and (max-width: 500px) {
   $card:  81vw ;
@@ -178,43 +126,7 @@ $border: 1vw;
     font-size: 2.5vh;
   }
 
-  .container_card_description {
-    top: calc($card / 8);
-    height: calc($card / 2.3);
-    width: calc($card / 1.5);
 
-    padding: 1vh 3.5vh;
-    overscroll-behavior: contain;
-  }
-
-  .container_card_description ul {
-    gap: var(--unit);
-    font-size: 1.5vh;
-  }
-
-  .container_card_description ul li::before {
-    left: -1.5vh;
-    height: .7vh;
-    width: .7vh;
-  }
-
-  .card_button {
-    // position: absolute;
-    // bottom: 1vw;
-    // left: 0;
-    // right: 0;
-    // margin: auto;
-    // padding: 0;
-  
-    // border: none;
-    // background: var(--right-panel);
-    height: 3vh;
-    width: fit-content;
-    // color: var(--titles);
-    font-size: 1.7vh;
-    font-weight: normal;
-    // cursor: pointer;
-  }
 
   @for $i from 0 to 12 {
     .single_image_container:nth-child(#{$i + 1}) img {
@@ -222,4 +134,3 @@ $border: 1vw;
     }
   }
 }
-

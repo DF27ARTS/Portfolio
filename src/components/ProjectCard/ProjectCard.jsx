@@ -30,57 +30,12 @@ export default function ProjectCard({
       onClick={() => HandleClick(Project)}
       className="container_project_card"
     >
-      <div className="single_image_container">
-        <img src={Images} alt="picture of the project" className="card_image" />
-      </div>
-      <div className="single_image_container">
-        <img src={Images} alt="picture of the project" className="card_image" />
-      </div>
-      <div className="single_image_container">
-        <img src={Images} alt="picture of the project" className="card_image" />
-      </div>
-      <div className="single_image_container">
-        <img src={Images} alt="picture of the project" className="card_image" />
-      </div>
-      <div className="single_image_container">
-        <img src={Images} alt="picture of the project" className="card_image" />
-      </div>
-      <div className="single_image_container">
-        <img src={Images} alt="picture of the project" className="card_image" />
-      </div>
-      <div className="single_image_container">
-        <img src={Images} alt="picture of the project" className="card_image" />
-      </div>
-      <div className="single_image_container">
-        <img src={Images} alt="picture of the project" className="card_image" />
-      </div>
-      <div className="single_image_container">
-        <img src={Images} alt="picture of the project" className="card_image" />
-      </div>
-      <div className="single_image_container">
-        <img src={Images} alt="picture of the project" className="card_image" />
-      </div>
-      <div className="single_image_container">
-        <img src={Images} alt="picture of the project" className="card_image" />
-      </div>
-      <div className="single_image_container">
-        <img src={Images} alt="picture of the project" className="card_image" />
-      </div>
-
+      <div className="single_square"></div>
+      <div className="single_square"></div>
+      <div className="single_square"></div>
+      <div className="single_square"></div>
       <span className="card_title">{Project.Description.title}</span>
-
-      <div className="container_card_description">
-        <ul>
-          {ProjectDescription.length &&
-            ProjectDescription.map((information, index) => (
-              <li key={index}>{information}</li>
-            ))}
-        </ul>
-      </div>
-
-      <button className="card_button">
-        {!language ? "Mas Información" : "More Details"}
-      </button>
+      <img src={Images} alt="picture of the project" className="card_image" />
     </div>
   );
 }

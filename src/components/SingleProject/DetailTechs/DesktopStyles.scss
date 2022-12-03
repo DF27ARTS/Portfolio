@@ -57,8 +57,6 @@
 }
 
 
-
-
 .description_title {
   color: var(--titles);
 }
@@ -96,4 +94,16 @@
 
   padding: 15px 18px;
   font-weight: bold;
+}
+
+@media screen and (max-width: 500px) {
+
+  .detail_techs {
+    padding: 0 5% 15% 5%;
+  }
+
+  .single_tech p {
+    padding: 7px 10px;
+    font-size: 2vh;
+  }
 }

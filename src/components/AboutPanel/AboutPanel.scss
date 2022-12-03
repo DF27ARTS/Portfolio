@@ -12,7 +12,7 @@
 
   position: relative;
   padding: 0 2.5%;
-  height: 18vh;
+  height: var(--about-container-height);
   width: 100%;
   overflow: hidden;
   padding-right: 15px;
@@ -29,7 +29,7 @@
 }
   
 .go_down_btn {
-  --rotate-arrow: 0deg;
+  --rotate-arrow: 180deg;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,29 +43,6 @@
   transition: transform ease 500ms, background-image var(--timing) ease-in-out;
   transform: translateX(-1vw) rotate(270deg) rotateY(var(--rotate-arrow)) ;
   cursor: pointer;
-}
-
-.about_extended {
-  height: 50vh;
-  padding-right: 0;
-  overflow-y: scroll;
-}
-
-.about_extended::-webkit-scrollbar {
-  width: 7px;
-}
-
-.about_extended::-webkit-scrollbar-thumb {
-  background-image: linear-gradient(var(--first-gradient-color), 50%, var(--second-gradient-color) );
-  border-right: 5px solid var(--right-panel);
-  transition: background-image var(--timing) ease-in-out;
-}
-
-.about_extended::-webkit-scrollbar-thumb::after {
-  content: "";
-  height: 20px;
-  width: 20px;
-  background: red;
 }
 
 .about_description {

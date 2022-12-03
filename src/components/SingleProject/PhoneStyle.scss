@@ -1,34 +1,42 @@
 
 @media screen and (max-width: 500px) {
+
+  .main_container_project_detail {
+    padding: 0;
+  }
+
   .project_information {
-    background-color: rgb(240 237 237);
+    background-color: var(--right-panel);
     min-height: 80vh;
+    overflow-x: hidden;
+  }
+
+  .project_information::-webkit-scrollbar {
+    width: 7px;
   }
   
-  .project_information_night {
-    background-color: rgba(32, 32, 32);
+  .project_information::-webkit-scrollbar-thumb {
+    border-right: 5px solid var(--right-panel);
   }
 
   .project_name {
-    top: 8vh;
-    height: fit-content;
-    width: fit-content;
-    background-image: linear-gradient( 70deg , var(--first-gradient-color), 40%, var(--second-gradient-color) );
-    transition: background-image var(--timing) ease-in-out ;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: none;
+    top: 4vh;
     font-size: 4vh;
+
+    margin-bottom: 10vh;
   }
 
   .links {
-    bottom: 0;
-    top: -74vh;
-    right: none;
-    left: 0;
-    height: 5vh;
-    width: 30vh;
-    gap: 7vh;
+    top: 11vh;
+    height: 7vh;
+    width: 70% !important;
+    gap: calc(var(--unit) * 4);
+
+     
+    .arrow_detail_project {
+      height: 1vh;
+      width: 4.5vh;
+    }
   
     .link_deploy {
       height: 5vh;
@@ -43,16 +51,30 @@
     }
   }
 
+  @keyframes arrow_animation {
+    0% {
+      transform: 
+        translateX(0);
+    }
+    50% {
+      transform: 
+        translateX(-2vh);
+    }
+    100% {
+      transform: 
+        translateX(0);
+    }
+  }
+
   .links_github_cont::before ,
   .link_deploy_cont::before {
     content: "";
-    display: flex;
+    display: none;
     bottom: -1vh;
     left: -2vh;
     height: 2vh;
     width: 9vh;
-    font-size: 1.2vh;
-    backdrop-filter: blur(15px);
+    font-size: 1.5vh;
   }
 
   .link_deploy_cont::before { content: "link Deploy" }
@@ -61,13 +83,34 @@
 
   .container_slider {
     height: 8vh;
-    top: 13vh;
-    left: 1vw;
   
     .slider {
       height: 1vw;
-      width: 5vw;
+      width: 7vw;
     }
+  }
+
+  .main_container_video_carousel {
+    height: 25%;
+
+    padding: 0;
+    
+  }
+
+  .container_detail_carousel {
+    width: 100%;
+
+    padding: 0;
+  }
+
+  .container_video_detail {
+    height: 100% !important;
+    width: 100% !important;
+  }
+
+  .video_detail {
+    height: fit-content;
+    width: 98%;
   }
   
   .center_panel {
@@ -77,7 +120,7 @@
     align-items: center;
     padding: 0;
     padding-left: 2.5vw;
-    top: 20vh;
+    top: none;
     background: transparent;
     border-block-start: 2px solid;
     border-block-end: 2px solid;
@@ -87,6 +130,8 @@
     height: 40vw;
     width: 80vw;
     overflow: hidden;
+
+    margin-top: -2vh;
   }
 
   .button_translate_mobile {
@@ -149,76 +194,45 @@
     font-size: 15vw;
     top: 3vw;
     right: -3.2vw;
-    color: #333;
+    color: var(--tiltes);
   }
 
-  .description_main_container {
-    position: absolute;
-    align-self: flex-end;
-    padding: 5%;
-    display: flex;
-    align-items: center;
-    gap: 2vh;
-    flex-direction: column;
-    top: 43vh;
-    height: fit-content;
-    width: 100%;
-    overflow-y: auto;
-    left: 0;
+  .detail_project_container_description {
+    height: 10vh;
   }
 
-  .description_main_container::-webkit-scrollbar {
-    width: 7px;
-  }
-
-  .description_container {
-    position: static;
-    width: 75vw;
-    height: 5vh;
-    border-radius: 5px;
-    padding: 5vh 0 0 0;
+  .gallery_project_detail,
+  .video_project_detail {
+    height: 80%;
+    width: fit-content;
   }
 
   
-  .left_desc {
-    left: 0;
+  .select::before,
+  .select::after {
+    top: none;
+    bottom: none;
+    height: 2px;
+    width: 0;
+    background: linear-gradient(90deg, var(--first-gradient-color), var(--second-gradient-color));
   }
-  
-  .right_desc {
+
+  @keyframes selected {
+    to {width: 100%}
+  }
+
+  .select::before {
+    left: 0;
     right: 0;
-  }
-  .project_activated {
-    height: 40vh;
-  }
-
-  .message {
-    height: 5vh;
-    width: 75vw;
-  }
-
-  .message_top {
-    font-size: 4vw;
-  }
-
-  .single_tech{
-    height: 2.8vh;
-    padding: 5px 15px;
-    margin: 0;
-    font-size: 2.5vw;
-  }
-
-  .description_text {
-    padding: 1vh 2vh;
+    margin: auto;
+    bottom: -9vh !important;
   }
   
-  .description_text::-webkit-scrollbar {
-    width: 4px;
+  .select::after {
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: -9vh !important;
   }
 
-  .ul_class {
-    .description {
-      font-size: .8em;
-      font-weight: 500;
-    }
-  }
 }

@@ -14,6 +14,8 @@ import { Icons } from "../Image/Projects_Description.js";
 import DetailDescrioptions from "./DetailDescrioptions/DetailDescrioptions";
 import DetailTechs from "./DetailTechs/DetailTechs";
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 export default function SingleProject({
   App_Object,
   setCurrentProjectObject,
@@ -23,17 +25,6 @@ export default function SingleProject({
 
   // Handler close projrct detail
   const CloseProjectDetail = () => {
-    // const center_panel = document.querySelector(".center_panel");
-    // const projectInformation = document.querySelector(".project_information");
-    // center_panel.style.setProperty("--rotate", "0deg");
-
-    // const front_panel = document.querySelector(".front_panel");
-    // front_panel.style.setProperty("--rotate-panel", "0deg");
-
-    // center_panel.classList.remove("activated");
-
-    // projectInformation.classList.remove("show");
-
     const mainDetailContainer = document.querySelector(
       ".main_container_project_detail"
     );
@@ -79,6 +70,7 @@ export default function SingleProject({
             <div className="project_information closer_view">
               {/* Github and deployment links */}
               <div className="links">
+                <div className="arrow_detail_project"></div>
                 <div className="link_deploy_cont">
                   <a href={App_Object.Deploy}>
                     <img
@@ -123,11 +115,10 @@ export default function SingleProject({
                     {App_Object.Images
                       ? App_Object.Images.map((image, index) => (
                           <div key={index} className="single_image">
-                            <img
-                              tabIndex={0}
-                              loading="lazy"
+                            <LazyLoadImage
                               src={image}
-                              alt="App-image-project"
+                              effect="blur"
+                              placeholderSrc={image}
                               className="image"
                             />
                             <div className="shadow"></div>

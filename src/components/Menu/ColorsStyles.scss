@@ -58,7 +58,8 @@
 }
 
 .single_color:nth-child(4) {
-  background: linear-gradient(90deg, hsl(267, 100%, 70%), hsl(210, 89%, 71%))
+  background-image: linear-gradient( hsl(241, 70%, 75%), hsl(0, 72%, 86%) );
+  // background: linear-gradient(90deg, hsl(267, 100%, 70%), hsl(210, 89%, 71%))
 }
 
 .single_color:nth-child(5) {
@@ -74,11 +75,11 @@
 }
 
 .single_color:nth-child(8) {
-  background: linear-gradient(90deg, hsl(321, 73%, 26%), hsl(0, 0%, 11%))
+  background-image: linear-gradient( hsl(302, 58%, 36%), hsl(302, 60%, 80%) );
 }
 
 .single_color:nth-child(9) {
-  background: linear-gradient(90deg, hsl(201, 9%, 31%), hsl(0, 0%, 73%))
+  background-image: linear-gradient( hsl(42, 95%, 49%), hsl(66, 96%, 55%) );
 }
 
 

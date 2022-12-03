@@ -32,11 +32,7 @@
   .container_information {
 
     .about {
-      height: 13vh;
-    }
-    
-    .about_extended {
-      height: 65vh;
+      height: var(--about-container-height);
     }
     
     .about_description {

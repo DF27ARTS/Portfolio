@@ -77,6 +77,59 @@
   background: linear-gradient(var(--first-gradient-color), var(--second-gradient-color));
 }
 
+.cv {
+  flex-grow: 1;
+}
+
+.download_icon {
+  --icons-color: var(--titles);
+  height: 5vh;
+  aspect-ratio: 1 / 1;
+
+  border-radius: 50%;
+  border: 2px solid var(--icons-color);
+  transition: border 250ms ease-in-out;
+
+  position: relative;
+}
+
+.download_icon:hover,
+.download_icon:focus {
+  --icons-color: var(--first-gradient-color);
+}
+
+.download_icon::before {
+  position: absolute;
+  content: "";
+  right: 0;
+  left: 0;
+  bottom: 20%;
+  margin: auto;
+
+  height: 20%;
+  width: 50%;
+  border: 2px solid transparent;
+  border-left-color: var(--icons-color);
+  border-right-color: var(--icons-color);
+  border-bottom-color: var(--icons-color);
+  transition: border 250ms ease-in-out;
+}
+
+.download_icon::after {
+  position: absolute;
+  content: "";
+  right: 0;
+  left: 0; 
+  top: 20%;
+  margin: auto;
+
+  height: 45%;
+  width: 45%;
+  background-color: var(--icons-color);
+  transition: background-color 250ms ease-in-out;
+  clip-path: polygon(40% 0%, 60% 0%, 60% 60%, 80% 60%, 50% 100%, 20% 60%, 40% 60%);
+}
+
 
 @import "ColorsStyles.scss";
 

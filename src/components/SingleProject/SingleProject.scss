@@ -237,6 +237,50 @@
   gap: calc(var(--unit) * 3);
 
 
+  .arrow_detail_project {
+    position: relative;
+
+    height: .8vw;
+    width: 3vw;
+    border-radius: 2vw;
+
+    background: var(--titles);
+    animation: arrow_animation 1000ms ease-in-out infinite;
+  }
+
+  .arrow_detail_project::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: -.5vw;
+
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    background: blue;
+    background: var(--titles);
+    clip-path: polygon(0% 0%, 80% 50%, 0% 100%, 30% 50%);
+
+    transform: scale(2.5);
+  }
+
+
+  @keyframes arrow_animation {
+    0% {
+      transform: 
+        translateX(0);
+    }
+    50% {
+      transform: 
+        translateX(-1vw);
+    }
+    100% {
+      transform: 
+        translateX(0);
+    }
+  }
+
   .link_deploy {
     position: relative;
     height: 3.5vw;

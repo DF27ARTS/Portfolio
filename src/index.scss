@@ -2,7 +2,7 @@
 
 *, *::before, *::after {
   box-sizing: border-box;
-  user-select: none;
+  // user-select: none;
 }
 
 :root {
@@ -10,13 +10,14 @@
   $mobile-styles: 500px;
   
   /* Colors */
-  --body-background: #fff;
-  --right-panel: rgb(240, 239, 239);
-  --main-background: #000;
-  --titles: #333;
+  --body-background: #000;
+  --right-panel: rgb(32, 32, 32);
+  --main-background: #ccc;
+  --titles: #ccc;
   --right-panel-translate: cubic-bezier(0.34, 0.67, 0.86, 1.42);
 
   --unit: 8px;
+  --about-container-height: fit-content;
   --translate-gallery: 0%;
 
   /* Gradient color */

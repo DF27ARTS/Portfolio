@@ -4,8 +4,8 @@ import SingleProject from "./components/SingleProject/SingleProject";
 import Menu from "./components/Menu/Menu";
 
 function App() {
-  const [dayOrNight, setDayOrNight] = useState(true);
-  const [language, setLanguage] = useState(false);
+  const [dayOrNight, setDayOrNight] = useState(false);
+  const [language, setLanguage] = useState(true);
   const [currentProjectObject, setCurrentProjectObject] = useState({});
 
   return (

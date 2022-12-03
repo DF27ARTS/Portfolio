@@ -73,3 +73,26 @@
 .description_project li {
   color: var(--titles);
 }
+
+@media screen and (max-width: 500px) {
+
+  .detail_descriptions {
+    padding: var(--unit) calc(var(--unit) * 3) !important;
+  }
+
+  .top_left {
+    left: 0 !important;
+  }
+
+  .bottom_right {
+    right: 0 !important;
+  }
+
+  .corners::before {
+    width: calc(var(--width) * 3) !important;
+  }
+  
+  .corners::after {
+    height: calc(var(--width) * 3) !important;
+  }
+}

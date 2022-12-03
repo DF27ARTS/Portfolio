@@ -1,8 +1,8 @@
 import React from "react";
 import LanguageButton from "./LanguageButton/LanguageButton";
 import "./MenuDesktopStyles.scss";
-import StackColors from "./StackColors";
 import ThemeButton from "./ThemeButton/ThemeButton";
+import { About } from "../Image/Projects_Description.js";
 
 export default function Menu({
   language,
@@ -91,8 +91,8 @@ export default function Menu({
                 data-name="color-four"
                 onClick={() =>
                   ChangeProjectStyle(
-                    "hsl(267, 100%, 70%)",
-                    "hsl(210, 89%, 71%)",
+                    "hsl(241, 70%, 75%)",
+                    "hsl(0, 72%, 86%)",
                     "color-four"
                   )
                 }
@@ -135,8 +135,8 @@ export default function Menu({
                 data-name="color-eight"
                 onClick={() =>
                   ChangeProjectStyle(
-                    "hsl(321, 73%, 26%)",
-                    "hsl(0, 0%, 11%)",
+                    "hsl(302, 58%, 36%)",
+                    "hsl(302, 60%, 80%)",
                     "color-eight"
                   )
                 }
@@ -146,8 +146,8 @@ export default function Menu({
                 data-name="color-nine"
                 onClick={() =>
                   ChangeProjectStyle(
-                    "hsl(201, 9%, 31%)",
-                    "hsl(0, 0%, 73%)",
+                    "hsl(42, 95%, 49%)",
+                    "hsl(66, 96%, 55%)",
                     "color-nine"
                   )
                 }
@@ -167,6 +167,20 @@ export default function Menu({
               setDayOrNight={setDayOrNight}
               dayOrNight={dayOrNight}
             />
+          </div>
+          <div className="menu_container">
+            <span className="cv">
+              {!language ? "CV Español" : "CV Spanish"}
+            </span>
+            <a href={About.CV_SPANISH} download>
+              <div className="download_icon"></div>
+            </a>
+          </div>
+          <div className="menu_container">
+            <span className="cv">{!language ? "CV Ingles" : "CV English"}</span>
+            <a href={About.CV_ENGLISH} download>
+              <div className="download_icon"></div>
+            </a>
           </div>
         </div>
       </div>

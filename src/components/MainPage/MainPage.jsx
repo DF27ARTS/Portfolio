@@ -1,9 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { About } from "../Image/Projects_Description.js";
 // import AboutPanel from "./Panels/AboutPanel/AboutPanel.jsx";
-import { ImLocation2, ImLinkedin } from "react-icons/im";
-import { SiGmail, SiGithub } from "react-icons/si";
-import { FaPhoneAlt } from "react-icons/fa";
 
 // Styles
 import "./MainPage.scss";
@@ -54,9 +51,9 @@ export default function MainPage({
         document.documentElement.style.setProperty("--main-background", "#000");
         document.documentElement.style.setProperty("--body-background", "#fff");
         document.documentElement.style.setProperty("--titles", "#333");
-        titles.forEach((title) =>
-          title.style.setProperty("--button-color", "rgb(238, 233, 233)")
-        );
+        // titles.forEach((title) =>
+        //   title.style.setProperty("--button-color", "rgb(238, 233, 233)")
+        // );
         setDayOrNight(true);
       } else {
         // Icon animation properties night
@@ -72,9 +69,9 @@ export default function MainPage({
         document.documentElement.style.setProperty("--main-background", "#ccc");
         document.documentElement.style.setProperty("--body-background", "#000");
         document.documentElement.style.setProperty("--titles", "#ccc");
-        titles.forEach((title) =>
-          title.style.setProperty("--button-color", "rgb(238, 233, 233)")
-        );
+        // titles.forEach((title) =>
+        //   title.style.setProperty("--button-color", "rgb(238, 233, 233)")
+        // );
         setDayOrNight(true);
       }
     }
@@ -105,6 +102,11 @@ export default function MainPage({
     <>
       <main onLoad={() => HandleOnLoad()} className="main_container">
         <div className="left_panel">
+          <div className="arrow_right">
+            <p>&#8250;</p>
+            <p>&#8250;</p>
+            <p>&#8250;</p>
+          </div>
           <div className="cont_img_CV">
             <div className="container_picture">
               <div className="picture_corners"></div>
@@ -116,9 +118,15 @@ export default function MainPage({
               />
             </div>
           </div>
+          <div className="main_title">
+            <span>Full Stack</span>
+            <span>Web Developer</span>
+          </div>
           <div className="container_ducation">
             <div className="education">
-              <span className="education_title">Education</span>
+              <span className="education_title">
+                {!language ? "Educacíon" : "Education"}
+              </span>
               <div>
                 <span>Full-stack Developer</span>
                 <span>Soy henry</span>
@@ -126,15 +134,17 @@ export default function MainPage({
             </div>
 
             <div className="languages">
-              <span className="languages_title">Languages</span>
+              <span className="languages_title">
+                {!language ? "Idiomas" : "Languages"}
+              </span>
               <div className="container_languages">
                 <div className="left_column"></div>
                 <div>
-                  <span>Spanish</span>
-                  <span>Native</span>
+                  <span>{!language ? "Español" : "Spanish"}</span>
+                  <span>{!language ? "Nativo" : "Native"}</span>
                 </div>
                 <div>
-                  <span>English</span>
+                  <span>{!language ? "Ingles" : "English"}</span>
                   <span>B2 Uper Intermidiate</span>
                 </div>
               </div>

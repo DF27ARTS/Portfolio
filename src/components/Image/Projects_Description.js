@@ -14,6 +14,7 @@ import synnet_image3 from "../Image/Synnet_app_images/synnet_image3.png";
 import synnet_image4 from "../Image/Synnet_app_images/synnet_image4.png";
 import synnet_image5 from "../Image/Synnet_app_images/synnet_image5.png";
 import synnet_image6 from "../Image/Synnet_app_images/synnet_image6.png";
+import synnet_video from "../Image/Synnet_app_images/synnet_video.mp4";
 
 // App Weather Images
 import weather_app_img1 from "../Image/Weather_app_images/weather_app_img1.webp";
@@ -22,6 +23,17 @@ import weather_app_img3 from "../Image/Weather_app_images/weather_app_img3.webp"
 import weather_app_img4 from "../Image/Weather_app_images/weather_app_img4.webp";
 import weather_app_img5 from "../Image/Weather_app_images/weather_app_img5.webp";
 import weather_app_img6 from "../Image/Weather_app_images/weather_app_img6.webp";
+import weather_app_video from "../Image/Weather_app_images/weather_app_video.mp4";
+
+// Portfolio Images
+
+import portfolio1 from "../Image/Portfolio_images/portfolio1.png";
+import portfolio2 from "../Image/Portfolio_images/portfolio2.png";
+import portfolio3 from "../Image/Portfolio_images/portfolio3.png";
+import portfolio4 from "../Image/Portfolio_images/portfolio4.png";
+import portfolio5 from "../Image/Portfolio_images/portfolio5.png";
+import portfolio6 from "../Image/Portfolio_images/portfolio6.png";
+import portfolio_video from "../Image/Portfolio_images/portfolio_video.mp4";
 
 // Technology icons
 import ExpressJS from "../Image/Icons/ExpressJS.svg";
@@ -83,6 +95,16 @@ const Weather_App_Images = [
   weather_app_img6,
 ];
 
+// Array Portfolio Images
+const Portfolio_Images = [
+  portfolio1,
+  portfolio2,
+  portfolio3,
+  portfolio4,
+  portfolio5,
+  portfolio6,
+];
+
 // Description App Synnet
 const Synnet_Descriptions = {
   title: "Synnet",
@@ -102,11 +124,11 @@ const Synnet_Descriptions = {
   ],
 
   Tecnologies: [
-    "React.js",
-    "Redux.js",
+    "ReactJS",
+    "ReduxJS",
     "Javascript",
-    "Node.js",
-    "Express.js",
+    "NodeJS",
+    "ExpressJS",
     "Sequelize",
     "PostgreSQL",
     "React-Chatbot-kit",
@@ -144,11 +166,11 @@ const App_Dogs_Descriptions = {
   ],
 
   Tecnologies: [
-    "React.js",
-    "Redux.js",
+    "ReactJS",
+    "ReduxJS",
     "Javascript",
-    "Node.js",
-    "Express.js",
+    "NodeJS",
+    "ExpressJS",
     "Sequelize",
     "PostgreSQL",
     "HTML",
@@ -161,24 +183,52 @@ const App_Dogs_Descriptions = {
 const Weather_App_Descriptions = {
   title: "Weather App",
   spanish_description: [
-    "Aplicación para ver el clima de diferentes ciudades",
-    "Cuenta con sección de Favoritos y detalle",
-    "Creada con el proposito de mejorar mis habilidades con React y TypeScript",
+    "Una aplicación para ver el clima de diferentes paices y ciudades",
+    "Cuenta con sección de Favoritos, detalle de la ciudad y Buscador para encontrar ciudades por nombre",
+    "Creada con estilos suabes y transparencias para una experiencia comoda de los usuarios",
   ],
 
   english_description: [
-    "Application to see the weather of different cities",
-    "It has a Favorites section and detail",
-    "Created with the purpose of improving my skills with React and TypeScript",
+    "An application to see the weather of different countries and cities",
+    "It has a Favorites section, details of the city and a Search Engine to find cities by name",
+    "Created with smooth and transparent styles for a user-friendly experience",
   ],
 
-  Tecnologies: ["React.js", "TypeScript", "HTML", "CSS"],
+  Tecnologies: ["ReactTS", "TypeScript", "HTML", "CSS"],
+};
+
+// Description Portfolio
+const Porfolio_Description = {
+  title: "Portfolio",
+  spanish_description: [
+    "En mi Portfolio podras encontrar todos mis proyectos, mis estudios y las tecnologías con las que trabajo ",
+    "Podes elegir tu color de tema preferido ademas de elegir entre el modo dia o noche",
+    "Tambien podras encontrar mis redes de comunicación como LinkedIn, GitHub entre otros",
+    "Ademas tendras la posibilidad de enviar me un mensaje por Email asiendo uso de un sencillo formulario",
+  ],
+
+  english_description: [
+    "In my Portfolio you can find all my projects, my studies and the technologies I work with",
+    "You can choose your preferred theme color in addition to choosing between day or night mode",
+    "You can also find my communication networks such as LinkedIn, GitHub among others",
+    "You will also have the possibility to send me a message by Email using a simple form",
+  ],
+
+  Tecnologies: [
+    "JavaScrip",
+    "ReactJS",
+    "HTML",
+    "CSS",
+    "Sass",
+    "React-Lazy-Loading",
+  ],
 };
 
 // Object With English and Spanish Information
 const About_Me = {
   contact_message_spanish: [
     "¿Hola como estas?  👋",
+    "Espero que estes teniendo un gran día",
     "Si estas interesado en mi Perfil y crees que mi Stack de tecnologias se ajusta a lo que estas buscando",
     "¡Contáctame!",
     "Estaria encantado de unirme a tu equipo 😉",
@@ -186,6 +236,7 @@ const About_Me = {
 
   contact_message_english: [
     "Hello how are you? 👋",
+    "I hope you're feeling great today",
     "If you're interested in my Profile and you think my Technology Stack fits what you're looking for",
     "¡Contact me!",
     "I'd be glad to join your team  😉",
@@ -193,16 +244,16 @@ const About_Me = {
 
   description_spanish: [
     "Hola! 👋",
-    "💻 Soy un desarrollador web Full stack, cuando decidí hacer el bootcamp de henery y termine la cursada me enamore de la programación. Me gustan los retos y aprender cosas nuevas por eso aver cursar henry fue una gran y maravillosa experiencia donde aprendí varias de las tecnologías mas usadas en el mundo tech",
-    "Me gustaría tener la oportunidad de seguir aprendiendo nuevas tecnologías y seguir mejorando los conocimientos aprendidos en el Bootcamp.",
-    "Soy una persona curiosa con ganas de aprende y seguir mejorando, me gustaría encontrar un lugar donde pueda seguir desarrollando mis habilidades y donde pueda contribuir con mis conocimientos además de seguir creciendo como programador y también como persona",
+    "Soy Desarrollador Web Full-Stack, terminé el Bootcamp de henry hace unos meses y me enamoré de la programación y el mundo de TI en general",
+    "Me gusta asumir nuevos retos y esforzarme más allá de lo que creo que puedo hacer, aprendiendo cosas nuevas y tratando de ser mejor y mejorando mis conocimientos cada día.",
+    "Busco un lugar donde pueda aportar con mis habilidades resolviendo problemas y además seguir aprendiendo de mis compañeros de trabajo",
   ],
 
   description_english: [
     "Hi! 👋",
-    "💻 I am a full stack web developer, when I decided to do henery's bootcamp and I finished the course I fell in love with programming. I like challenges and learn new things, that's why studying in Henry was a great and wonderful experience where I learned several of the most used technologies in the tech world.",
-    "I would like to have the opportunity to continue learning new technologies and continue improving the knowledge learned in the Bootcamp.",
-    "I am a curious person who wants to learn and keep improving. I'm looking forward to finding a place where I can continue developing my skills and where I can contribute with my knowledge as well as continue to grow as a programmer and also as a person.",
+    "I'm a Full-Stack Web Developer, I finished henry's Bootcamp a few months ago and fell in love with programming and the IT world in general",
+    "I like to take on new challenges and push myself beyond what I think I can do, learning new things and trying to be better and improving my knowledge every day ",
+    "I'm looking for a place where I can contribute with  my abilities by solving problems and also keep learning from my coworkers",
   ],
 };
 
@@ -216,6 +267,7 @@ export const App_dogs = {
 
 export const App_Synnet = {
   Images: App_Synnet_Images,
+  Video: synnet_video,
   Description: Synnet_Descriptions,
   GitHub: "https://github.com/Nicrosi/Proyecto-Final",
   Deploy: "https://proyecto-final-rho-three.vercel.app/",
@@ -223,9 +275,17 @@ export const App_Synnet = {
 
 export const App_Weather = {
   Images: Weather_App_Images,
+  Video: weather_app_video,
   Description: Weather_App_Descriptions,
   GitHub: "https://github.com/DF27ARTS/Weather_App",
   Deploy: "https://weather-app-dusky-phi.vercel.app/",
+};
+
+export const Portfolio = {
+  Images: Portfolio_Images,
+  Video: portfolio_video,
+  Description: Porfolio_Description,
+  GitHub: "https://github.com/DF27ARTS/Portfolio",
 };
 
 export const About = {

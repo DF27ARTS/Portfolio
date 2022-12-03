@@ -1,44 +1,40 @@
-import React, { useState } from "react";
+import React from "react";
 import { About, Icons } from "../Image/Projects_Description.js";
-import Projects from "../ProjectsPanel/ProjectsPanel.jsx";
 
 // Styles
 import "./AboutPanel.scss";
 
 export default function AboutPanel({ language }) {
-  const [aboutExtended, setAboutExtended] = useState(false);
-
   const About_description = !language
     ? About.About_Me.description_spanish
     : About.About_Me.description_english;
 
   // Handler for the axpantion of the about section
-  const HandleAboutExtended = (value) => {
+  const HandleAboutExtended = () => {
     const go_down = document.querySelector(".go_down_btn");
-    if (value === true) {
-      go_down.style.setProperty("--rotate-arrow", "180deg");
-    } else {
+    const state = document.documentElement;
+    const currentState = getComputedStyle(state).getPropertyValue(
+      "--about-container-height"
+    );
+    if (currentState !== "13vh") {
       go_down.style.setProperty("--rotate-arrow", "0deg");
+      state.style.setProperty("--about-container-height", "13vh");
+    } else {
+      go_down.style.setProperty("--rotate-arrow", "180deg");
+      state.style.setProperty("--about-container-height", "fit-content");
     }
-    setAboutExtended(value);
   };
 
   return (
     <>
-      <div
-        onClick={() => HandleAboutExtended(!aboutExtended)}
-        className={!aboutExtended ? "about" : "about about_extended"}
-      >
+      <div onClick={() => HandleAboutExtended()} className="about">
         {About_description.map((description, index) => (
           <p key={index} className="about_description">
             {description}
           </p>
         ))}
       </div>
-      <div
-        onClick={() => HandleAboutExtended(!aboutExtended)}
-        className="go_down_btn"
-      >
+      <div onClick={() => HandleAboutExtended()} className="go_down_btn">
         &#8249;
       </div>
       <div className="technologies">

@@ -7,18 +7,44 @@ export default function ContactPanel({ language }) {
     ? About.About_Me.contact_message_spanish
     : About.About_Me.contact_message_english;
 
+  const observerInformation = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("show_contact", entry.isIntersecting);
+      });
+    },
+    {
+      rootMargin: "-300px",
+    }
+  );
+
+  const contactMessage = document.querySelector(".contact_message");
+  observerInformation.observe(contactMessage);
+
+  const containerContacts = document.querySelector(".container_contacts");
+  observerInformation.observe(containerContacts);
+
+  const contactForm = document.querySelector(".contact_form");
+  observerInformation.observe(contactForm);
+
+  const contactFooter = document.querySelector(".contact_footer");
+  observerInformation.observe(contactFooter);
+
   return (
     <div className="contact_container">
       <h2 className="contact_title">{!language ? "Contacto" : "Contact"}</h2>
 
-      <div className="contact_message">
+      <div style={{ "--translate-contant": "80%" }} className="contact_message">
         {message &&
           message.map((singleMessage, index) => (
             <p key={index}>{singleMessage}</p>
           ))}
       </div>
 
-      <div className="container_contacts">
+      <div
+        style={{ "--translate-contant": "-80%" }}
+        className="container_contacts"
+      >
         <div className="container_single_contact">
           <span className="title">{!language ? "Locación" : "Location"}</span>
           <div className="content">Colombia / Cundinamarca</div>
@@ -37,6 +63,7 @@ export default function ContactPanel({ language }) {
         action="https://formsubmit.co/drawingsdf@gmail.com"
         method="POST"
         className="contact_form"
+        style={{ "--translate-contant": "80%" }}
       >
         <span className="form_message">
           {!language ? "Enviame un Email" : "Send me an Email"}
@@ -82,7 +109,10 @@ export default function ContactPanel({ language }) {
         </div>
       </form>
 
-      <footer className="contact_footer">
+      <footer
+        style={{ "--translate-contant": "-80%" }}
+        className="contact_footer"
+      >
         <a href="https://github.com/DF27ARTS">
           <div className="single_contact_icon">
             <img

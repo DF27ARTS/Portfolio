@@ -4,6 +4,7 @@ $border: 1vw;
 
 
 .container_project_card {
+  --intersection-translate: 50%;
 
   height: calc($card / 1.7);
   width: $card;
@@ -18,10 +19,19 @@ $border: 1vw;
   position: relative;
   transform-style: preserve-3d;
 
-  // transform:
-  //   rotateY(10deg)
-  //   rotateX(-10deg);  
-  transition: transform 300ms ease-in-out;
+  // color: ;
+  transform:
+    translateX(var(--intersection-translate));
+  opacity: 0;
+  transition: 
+    opacity 200ms ease-in-out,
+    transform 300ms ease-in-out;
+}
+
+.show {
+  transform: 
+    translateX(0);
+  opacity: 1;
 }
 
 .card_title {

@@ -6,6 +6,7 @@ export default function ProjectCard({
   Project,
   setCurrentProjectObject,
   language,
+  text_area,
 }) {
   const ProjectDescription = !Project.Description
     ? null
@@ -29,6 +30,7 @@ export default function ProjectCard({
     <div
       onClick={() => HandleClick(Project)}
       className="container_project_card"
+      area-text={text_area}
     >
       <div className="single_square"></div>
       <div className="single_square"></div>

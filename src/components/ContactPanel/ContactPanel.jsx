@@ -23,16 +23,28 @@ export default function ContactPanel({ language }) {
   );
 
   const contactMessage = document.querySelector(".contact_message");
-  contactMessage && observerInformation.observe(contactMessage);
+  if (contactMessage) {
+    contactMessage.classList.add("active_contact");
+    observerInformation.observe(contactMessage);
+  }
 
   const containerContacts = document.querySelector(".container_contacts");
-  containerContacts && observerInformation.observe(containerContacts);
+  if (containerContacts) {
+    containerContacts.classList.add("active_contact");
+    observerInformation.observe(containerContacts);
+  }
 
   const contactForm = document.querySelector(".contact_form");
-  contactForm && observerInformation.observe(contactForm);
+  if (contactForm) {
+    contactForm.classList.add("active_contact");
+    observerInformation.observe(contactForm);
+  }
 
   const contactFooter = document.querySelector(".contact_footer");
-  contactFooter && observerInformation.observe(contactFooter);
+  if (contactFooter) {
+    contactFooter.classList.add("active_contact");
+    observerInformation.observe(contactFooter);
+  }
 
   return (
     <div className="contact_container">

@@ -42,12 +42,15 @@
 }
 
 .contact_message {
+  transition: 
+  opacity 300ms ease-in-out,
+  transform 500ms ease-in-out;
+}
+
+.active_contact.contact_message {
   transform: 
     translateX(var(--translate-contant));
   opacity: 0;
-  transition: 
-    opacity 300ms ease-in-out,
-    transform 500ms ease-in-out;
 }
 
 .container_contacts {
@@ -57,12 +60,15 @@
 
   padding: calc(var(--unit) * 2);
 
-  transform: 
-  translateX(var(--translate-contant));
-  opacity: 0;
   transition: 
     opacity 300ms ease-in-out,
     transform 500ms ease-in-out;
+}
+
+.active_contact.container_contacts {
+  transform: 
+  translateX(var(--translate-contant));
+  opacity: 0;
 }
 
 .container_single_contact {
@@ -94,12 +100,16 @@
 
   box-shadow: 5px 5px 20px 5px #0005;
 
-  transform: 
-  translateX(var(--translate-contant));
-  opacity: 0;
+  
   transition: 
     opacity 300ms ease-in-out,
     transform 500ms ease-in-out;
+}
+
+.active_contact.contact_form {
+  transform: 
+    translateX(var(--translate-contant));
+  opacity: 0;
 }
 
 .form_message {
@@ -215,12 +225,15 @@
   padding-top: calc(var(--unit) * 7);
   padding-bottom: var(--unit);
 
-  transform: 
-  translateX(var(--translate-contant));
-  opacity: 0;
   transition: 
     opacity 300ms ease-in-out,
     transform 500ms ease-in-out;
+}
+
+.active_contact.contact_footer {
+  transform: 
+  translateX(var(--translate-contant));
+  opacity: 0;
 }
 
 .single_contact_icon {
@@ -281,9 +294,9 @@ a {
 }
 
 .show_contact {
-  opacity: 1;
+  opacity: 1 !important;
   transform:
-   translateX(0);
+   translateX(0) !important;
 }
 
 @import "ContactMobileStyles.scss";

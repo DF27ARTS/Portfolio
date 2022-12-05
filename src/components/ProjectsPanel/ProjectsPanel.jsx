@@ -27,10 +27,15 @@ export default function Projects({ setCurrentProjectObject, language }) {
   );
 
   const Cards = document.querySelectorAll(".container_project_card");
-  Cards.length &&
+  if (Cards.length) {
+    Cards.forEach((card) => {
+      card.classList.add("active_intersection");
+    });
+
     Cards.forEach((card) => {
       observer.observe(card);
     });
+  }
 
   return (
     <>

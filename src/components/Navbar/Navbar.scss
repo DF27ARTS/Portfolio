@@ -82,17 +82,29 @@
   }
 
   .navbar_titles {
-    height: 6vw !important;
+    height: 6.5vw !important;
 
     width: 15vw !important;
     padding: 0 0 2px 0 !important;
     border-radius: 0 !important;
-    background: var(--titles);
+    background: var(--right-panel);
   }  
 
   .titles {
     font-size: 3vw !important;
     border-radius: 0 !important;
+
+    position: relative;
+  }
+
+  .titles::before {
+    position: absolute;
+    content: "";
+    bottom: -2px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: var(--titles);
   }
 
   .background_color {

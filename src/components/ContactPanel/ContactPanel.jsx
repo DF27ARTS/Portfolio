@@ -7,6 +7,10 @@ export default function ContactPanel({ language }) {
     ? About.About_Me.contact_message_spanish
     : About.About_Me.contact_message_english;
 
+  const currentMargin = getComputedStyle(
+    document.documentElement
+  ).getPropertyValue("--root-margin");
+
   const observerInformation = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -14,21 +18,21 @@ export default function ContactPanel({ language }) {
       });
     },
     {
-      rootMargin: "-300px",
+      rootMargin: currentMargin,
     }
   );
 
   const contactMessage = document.querySelector(".contact_message");
-  observerInformation.observe(contactMessage);
+  contactMessage && observerInformation.observe(contactMessage);
 
   const containerContacts = document.querySelector(".container_contacts");
-  observerInformation.observe(containerContacts);
+  containerContacts && observerInformation.observe(containerContacts);
 
   const contactForm = document.querySelector(".contact_form");
-  observerInformation.observe(contactForm);
+  contactForm && observerInformation.observe(contactForm);
 
   const contactFooter = document.querySelector(".contact_footer");
-  observerInformation.observe(contactFooter);
+  contactFooter && observerInformation.observe(contactFooter);
 
   return (
     <div className="contact_container">
@@ -138,7 +142,7 @@ export default function ContactPanel({ language }) {
         <a href="https://torre.co/@fernando_rc?r=kZjElFcd">
           <div className="single_contact_icon">
             <div className="contact_icons_torre">
-              <img src={About.Picture} alt="picture" />
+              <img src={About.Picture} alt="Torre icon" />
             </div>
             <span className="icon_contact_title">Torre</span>
           </div>

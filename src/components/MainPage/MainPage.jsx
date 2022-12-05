@@ -1,6 +1,5 @@
 import React from "react";
 import { About } from "../Image/Projects_Description.js";
-// import AboutPanel from "./Panels/AboutPanel/AboutPanel.jsx";
 
 // Styles
 import "./MainPage.scss";
@@ -22,12 +21,11 @@ export default function MainPage({
     const containerLanguage = document.querySelector(".container_language");
 
     const first_circle = document.querySelector(".first_circle");
-    const titles = document.querySelectorAll(".titles");
 
     // language button
     if (Language) {
       if (Language === "English") {
-        containerLanguage.style.setProperty("--language", "-100%");
+        containerLanguage.style.setProperty("--language", "-105%");
         setLanguage(true);
       } else if (Language === "Spanish") {
         containerLanguage.style.setProperty("--language", "0%");
@@ -51,9 +49,6 @@ export default function MainPage({
         document.documentElement.style.setProperty("--main-background", "#000");
         document.documentElement.style.setProperty("--body-background", "#fff");
         document.documentElement.style.setProperty("--titles", "#333");
-        // titles.forEach((title) =>
-        //   title.style.setProperty("--button-color", "rgb(238, 233, 233)")
-        // );
         setDayOrNight(true);
       } else {
         // Icon animation properties night
@@ -69,9 +64,6 @@ export default function MainPage({
         document.documentElement.style.setProperty("--main-background", "#ccc");
         document.documentElement.style.setProperty("--body-background", "#000");
         document.documentElement.style.setProperty("--titles", "#ccc");
-        // titles.forEach((title) =>
-        //   title.style.setProperty("--button-color", "rgb(238, 233, 233)")
-        // );
         setDayOrNight(true);
       }
     }
@@ -113,7 +105,7 @@ export default function MainPage({
               <div className="picture_corners"></div>
               <img
                 src={About.Picture}
-                alt={`Picture of ${About.Full_Name}`}
+                alt={`${About.Full_Name}`}
                 className="picture"
               />
             </div>

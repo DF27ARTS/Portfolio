@@ -33,6 +33,18 @@ export default function Menu({
     localStorage.setItem("DataAtribute", data_tribute);
   }
 
+  function ActivateProgressBar(name) {
+    const cv = document.querySelector(`[area-text="${name}"]`);
+    cv.classList.add("downloading");
+  }
+
+  function DeactivateProgressBar(name) {
+    const cv = document.querySelector(`[area-text="${name}"]`);
+    setTimeout(() => {
+      cv.classList.remove("downloading");
+    }, 4000);
+  }
+
   return (
     <>
       <div tabIndex={0} className="container_aquare">
@@ -56,6 +68,10 @@ export default function Menu({
             <div tabIndex={0} className="container_colors">
               <div
                 data-name="color-one"
+                style={{
+                  "--first-color": "hsl(191, 100%, 50%)",
+                  "--second-color": "hsl(250, 15%, 61%)",
+                }}
                 onClick={() =>
                   ChangeProjectStyle(
                     "hsl(191, 100%, 50%)",
@@ -67,6 +83,10 @@ export default function Menu({
               ></div>
               <div
                 data-name="color-two"
+                style={{
+                  "--first-color": "hsl(120, 58%, 31%)",
+                  "--second-color": "hsl(86, 81%, 35%)",
+                }}
                 onClick={() =>
                   ChangeProjectStyle(
                     "hsl(120, 58%, 31%)",
@@ -78,6 +98,10 @@ export default function Menu({
               ></div>
               <div
                 data-name="color-three"
+                style={{
+                  "--first-color": "hsl(327, 100%, 41%)",
+                  "--second-color": "rgb(109, 44, 106)",
+                }}
                 onClick={() =>
                   ChangeProjectStyle(
                     "hsl(327, 100%, 41%)",
@@ -89,10 +113,14 @@ export default function Menu({
               ></div>
               <div
                 data-name="color-four"
+                style={{
+                  "--first-color": "rgba(20,157,208,1)",
+                  "--second-color": "rgba(140,63,226,1)",
+                }}
                 onClick={() =>
                   ChangeProjectStyle(
-                    "hsl(241, 70%, 75%)",
-                    "hsl(0, 72%, 86%)",
+                    "rgba(20,157,208,1)",
+                    "rgba(140,63,226,1)",
                     "color-four"
                   )
                 }
@@ -100,6 +128,10 @@ export default function Menu({
               ></div>
               <div
                 data-name="color-five"
+                style={{
+                  "--first-color": "hsl(301, 100%, 34%)",
+                  "--second-color": "hsl(212, 72%, 21%)",
+                }}
                 onClick={() =>
                   ChangeProjectStyle(
                     "hsl(301, 100%, 34%)",
@@ -111,6 +143,10 @@ export default function Menu({
               ></div>
               <div
                 data-name="color-six"
+                style={{
+                  "--first-color": "hsl(33, 100%, 50%)",
+                  "--second-color": "hsl(13, 100%, 49%)",
+                }}
                 onClick={() =>
                   ChangeProjectStyle(
                     "hsl(33, 100%, 50%)",
@@ -122,33 +158,15 @@ export default function Menu({
               ></div>
               <div
                 data-name="color-seven"
+                style={{
+                  "--first-color": "hsl(262, 97%, 54%)",
+                  "--second-color": "hsl(282, 68%, 38%)",
+                }}
                 onClick={() =>
                   ChangeProjectStyle(
                     "hsl(262, 97%, 54%)",
                     "hsl(282, 68%, 38%)",
                     "color-seven"
-                  )
-                }
-                className="single_color"
-              ></div>
-              <div
-                data-name="color-eight"
-                onClick={() =>
-                  ChangeProjectStyle(
-                    "hsl(302, 58%, 36%)",
-                    "hsl(302, 60%, 80%)",
-                    "color-eight"
-                  )
-                }
-                className="single_color"
-              ></div>
-              <div
-                data-name="color-nine"
-                onClick={() =>
-                  ChangeProjectStyle(
-                    "hsl(42, 95%, 49%)",
-                    "hsl(66, 96%, 55%)",
-                    "color-nine"
                   )
                 }
                 className="single_color"
@@ -169,17 +187,33 @@ export default function Menu({
             />
           </div>
           <div className="menu_container">
-            <span className="cv">
+            <span
+              area-text="spanish"
+              onAnimationEnd={() => DeactivateProgressBar("spanish")}
+              className="cv"
+            >
               {!language ? "CV Español" : "CV Spanish"}
             </span>
-            <a href={About.CV_SPANISH} download>
-              <div className="download_icon"></div>
+            <a download href={About.CV_SPANISH}>
+              <div
+                onClick={() => ActivateProgressBar("spanish")}
+                className="download_icon"
+              ></div>
             </a>
           </div>
           <div className="menu_container">
-            <span className="cv">{!language ? "CV Ingles" : "CV English"}</span>
-            <a href={About.CV_ENGLISH} download>
-              <div className="download_icon"></div>
+            <span
+              area-text="english"
+              onAnimationEnd={() => DeactivateProgressBar("english")}
+              className="cv"
+            >
+              {!language ? "CV Ingles" : "CV English"}
+            </span>
+            <a download href={About.CV_ENGLISH}>
+              <div
+                onClick={() => ActivateProgressBar("english")}
+                className="download_icon"
+              ></div>
             </a>
           </div>
         </div>

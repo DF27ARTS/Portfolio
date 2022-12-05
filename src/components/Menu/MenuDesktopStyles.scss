@@ -2,14 +2,15 @@
 
 
 .container_right_menu {
-  --translate-right-menu: 130%;
-  --shadow: 0vw;
+  --shadow: 90vw;
+  --clip-path: 0%;
 
   height: 110vh;
   width: 20vw;
   padding: 0 50%;
   background: var(--right-panel);
   transform-style: preserve-3d;
+  clip-path: circle(var(--clip-path) at top right);
 
   box-shadow: 
     0 0 0 var(--shadow) #0005,
@@ -27,19 +28,17 @@
   
 
   transition: 
-    box-shadow 700ms var(--right-panel-translate),
-    transform 300ms ease-in-out;
+    clip-path 700ms ease-in-out,
+    transform 300ms ease-in-out 400ms;
   transform: 
-    translateZ(-18px)
-    translateX(var(--translate-right-menu));
+    translateZ(-18px);
     
 }
 
 .container_aquare:focus-within .container_right_menu,
 .container_right_menu:hover,
 .container_right_menu:focus-within {
-  --translate-right-menu: 10%;
-  --shadow: 90vw;
+  --clip-path: 280%;
 }
 
 .menu_container {
@@ -79,7 +78,62 @@
 
 .cv {
   flex-grow: 1;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+
+  --pogress-bar: 3s;
+  --download-bar: 500ms;
 }
+
+.cv::before,
+.cv::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+
+  height: .7vh;
+  width: 100%;
+  background: var(--titles);
+  border-radius: 2vh;
+  transform: translateX(-110%);
+
+}
+
+.downloading.cv::before {
+  animation: show-download-bar var(--right-panel-translate) var(--download-bar) forwards;
+}
+
+
+.cv::after {
+  background: linear-gradient( 90deg, var(--first-gradient-color), var(--second-gradient-color));
+  width: 0;
+}
+
+.downloading.cv::after {
+  animation: 
+    show-download-bar var(--right-panel-translate) 500ms forwards,
+    progress-bar 3s 700ms linear forwards;
+  // animation-delay: 500ms;
+}
+
+@keyframes show-download-bar {
+  0% {transform: translateX(-100%);}
+  100% {transform: translateX(0%);}
+}
+
+@keyframes progress-bar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+} 
 
 .download_icon {
   --icons-color: var(--titles);

@@ -7,7 +7,7 @@ const LanguageButton = ({ setLanguage }) => {
       getComputedStyle(containerLanguage).getPropertyValue("--language");
 
     if (currentLanguage === "0%") {
-      containerLanguage.style.setProperty("--language", "-100%");
+      containerLanguage.style.setProperty("--language", "-105%");
       setLanguage(true);
       localStorage.setItem("language", "English");
     } else {

@@ -2,12 +2,14 @@
 
 *, *::before, *::after {
   box-sizing: border-box;
-  // user-select: none;
+  user-select: none;
 }
 
 :root {
   /* Mobile Variable */
   $mobile-styles: 500px;
+
+  --root-margin: -150px;
   
   /* Colors */
   --body-background: #000;
@@ -41,6 +43,10 @@ body {
 @media screen and (max-width: 500px) {
   *, *::before, *::after {
     box-sizing: border-box;
+  }
+
+  :root {
+    --root-margin: 50px;
   }
   
   body {

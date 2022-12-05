@@ -1,24 +1,25 @@
 
 
 .container_colors {
+  --unit-styles: 40vh;
+
   position: absolute;
-  top: -200%;
-  left: 15%;
+  top: 0;
+  right: 0;
   padding: 1vw;
-  // background: var(--right-panel);
-  border-radius: 5px;
-  overflow: hidden;
   z-index: 20;
+
+  height: var(--unit-styles);
+  width: var(--unit-styles);
 
   visibility: hidden;
   opacity: 0;
-  transform: translateX(70%);
-
-  display: grid;
-  grid-template-columns: repeat(3, 2vw);
-  grid-template-rows: repeat(3, 2vw);
-  grid-column-gap: 1.2vw;
-  grid-row-gap: 2.5vw;
+  transform: 
+    translateX(calc(var(--unit-styles) / .5))
+    rotate(0);
+  border-radius: 50%;
+  transform-origin: 50% 50%;
+  
   background: var(--right-panel);
   box-shadow: 0 0 4vw 0 var(--first-gradient-color) inset;
 
@@ -28,58 +29,37 @@
     visibility 200ms ease-in-out;
 }
 
+@for $i from 0 to 7 {
+  .container_colors :nth-child(#{$i + 1}) {
+    --rotate-style: #{180 / 7 * $i * -1}deg;
+  }
+}
 
 .menu_container:first-child:focus-within .container_colors,
 .container_colors:hover,
 .container_colors:focus {
-  transform: translateY(80%);
+  transform: 
+    translateX(calc(var(--unit-styles) / 1.8))
+    rotate(167deg);
   visibility: visible;
   opacity: 1;
 }
 
 .single_color {
-  height: 100%; 
-  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+
+  height: 14%; 
+  width: 14%;
   border-radius: 50%;
-  background: blue;
-}
+  background: linear-gradient(90deg, var(--first-color), var(--second-color));
 
-
-.single_color:nth-child(1) {
-  background: linear-gradient(90deg, hsl(191, 100%, 50%),hsl(250, 15%, 61%));
-}
-
-.single_color:nth-child(2) {
-  background: linear-gradient(90deg, hsl(120, 58%, 31%), hsl(86, 81%, 35%))
-}
-
-.single_color:nth-child(3) {
-  background: linear-gradient(90deg, hsl(327, 100%, 41%), rgb(109, 44, 106))
-}
-
-.single_color:nth-child(4) {
-  background-image: linear-gradient( hsl(241, 70%, 75%), hsl(0, 72%, 86%) );
-  // background: linear-gradient(90deg, hsl(267, 100%, 70%), hsl(210, 89%, 71%))
-}
-
-.single_color:nth-child(5) {
-  background: linear-gradient(90deg, hsl(301, 100%, 34%), hsl(212, 72%, 21%))
-}
-
-.single_color:nth-child(6) {
-  background: linear-gradient(90deg, hsl(33, 100%, 50%), hsl(13, 100%, 49%))
-}
-
-.single_color:nth-child(7) {
-  background: linear-gradient(90deg, hsl(262, 97%, 54%), hsl(282, 68%, 38%))
-}
-
-.single_color:nth-child(8) {
-  background-image: linear-gradient( hsl(302, 58%, 36%), hsl(302, 60%, 80%) );
-}
-
-.single_color:nth-child(9) {
-  background-image: linear-gradient( hsl(42, 95%, 49%), hsl(66, 96%, 55%) );
+  transform: 
+    rotate(var(--rotate-style)) translateY(calc(var(--unit-styles) / 2.5));
 }
 
 

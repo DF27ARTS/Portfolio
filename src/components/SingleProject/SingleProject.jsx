@@ -21,9 +21,7 @@ export default function SingleProject({
   setCurrentProjectObject,
   language,
 }) {
-  // Save in a variable the description of the project depending on the language
-
-  // Handler close projrct detail
+  // Handler close project detail
   const CloseProjectDetail = () => {
     const mainDetailContainer = document.querySelector(
       ".main_container_project_detail"
@@ -173,7 +171,7 @@ export default function SingleProject({
                   <img
                     onClick={() => SelectGallery()}
                     src={App_Object.Images[0]}
-                    alt="Gallery main picture"
+                    alt="gallery "
                     className="gallery_main_picture"
                   />
                 </div>

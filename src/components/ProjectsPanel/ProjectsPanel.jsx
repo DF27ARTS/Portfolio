@@ -11,6 +11,10 @@ import ProjectCard from "../ProjectCard/ProjectCard.jsx";
 import "./ProjectsPanel.scss";
 
 export default function Projects({ setCurrentProjectObject, language }) {
+  const currentMargin = getComputedStyle(
+    document.documentElement
+  ).getPropertyValue("--root-margin");
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -18,14 +22,15 @@ export default function Projects({ setCurrentProjectObject, language }) {
       });
     },
     {
-      rootMargin: "-300px",
+      rootMargin: currentMargin,
     }
   );
 
   const Cards = document.querySelectorAll(".container_project_card");
-  Cards.forEach((card) => {
-    observer.observe(card);
-  });
+  Cards.length &&
+    Cards.forEach((card) => {
+      observer.observe(card);
+    });
 
   return (
     <>

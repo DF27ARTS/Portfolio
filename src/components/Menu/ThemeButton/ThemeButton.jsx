@@ -3,10 +3,8 @@ import "./ThemeButton.scss";
 const ThemeButton = ({ setDayOrNight, dayOrNight }) => {
   const HandleClick = (value) => {
     const first_circle = document.querySelector(".first_circle");
-    // const body = document.querySelector("body");
-    const titles = document.querySelectorAll(".titles");
 
-    if (value === true) {
+    if (value === false) {
       // Icon animation properties day
       first_circle.style.setProperty("--translate", "0%");
       first_circle.style.setProperty("--color", "yellow");
@@ -20,9 +18,7 @@ const ThemeButton = ({ setDayOrNight, dayOrNight }) => {
       document.documentElement.style.setProperty("--main-background", "#000");
       document.documentElement.style.setProperty("--body-background", "#fff");
       document.documentElement.style.setProperty("--titles", "#333");
-      titles.forEach((title) =>
-        title.style.setProperty("--button-color", "rgb(238, 233, 233)")
-      );
+
       localStorage.setItem("theme", "day");
     } else {
       // Icon animation properties night
@@ -38,9 +34,7 @@ const ThemeButton = ({ setDayOrNight, dayOrNight }) => {
       document.documentElement.style.setProperty("--main-background", "#ccc");
       document.documentElement.style.setProperty("--body-background", "#000");
       document.documentElement.style.setProperty("--titles", "#ccc");
-      titles.forEach((title) =>
-        title.style.setProperty("--button-color", "rgb(238, 233, 233)")
-      );
+
       localStorage.setItem("theme", "night");
     }
     setDayOrNight(value);

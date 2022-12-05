@@ -49,9 +49,6 @@ import TypeScript from "../Image/Icons/TypeScript.svg";
 import CSS from "../Image/Icons/CSS.svg";
 import HTML from "../Image/Icons/HTML.svg";
 import Sequelize from "../Image/Icons/Sequelize.svg";
-import Arrow_icon from "../Image/Icons/Arrow_icon.svg";
-import Play_btn from "../Image/Icons/play-btn.svg";
-import Paused_btn from "../Image/Icons/paused-btn.svg";
 import Whatsapp from "../Image/Icons/whatsapp.png";
 
 // Personal Information
@@ -302,9 +299,6 @@ export const About = {
   GitHub,
   CV_image_English,
   CV_image_Spanish,
-  Arrow_icon,
-  Play_btn,
-  Paused_btn,
 };
 
 export const Icons = [

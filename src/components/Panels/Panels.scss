@@ -1,0 +1,84 @@
+.container_information {
+  --translate: -0%;
+  display: grid;
+  grid-template-areas:
+    "about projects contact"; 
+  grid-template-columns: 100% 100% 100%;
+  grid-template-rows: 130%;
+  grid-gap: 5%;
+  margin-top: 3%;
+  padding-bottom: 10%;
+  height: 77%;
+  width: 100%;
+  transform: translateX(var(--translate));
+  transition: 
+    transform var(--right-panel-translate) 500ms, 
+    height ease-in-out 300ms;
+}
+
+.information {
+  grid-area: about;
+
+  overflow-y: auto;
+  overscroll-behavior-block: contain;
+}
+
+.container_projects {
+  grid-area: projects;
+  position: relative;
+
+  height:100%;
+  width: 100%;
+}
+
+
+.container_projects::before,
+.container_projects::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 0%;
+  border-radius: 2px;
+}
+
+.container_projects::before {
+  left: 0;
+  background: linear-gradient(var(--first-gradient-color), 20%, var(--second-gradient-color), 40%, transparent);
+}
+
+.container_projects::after {
+  right: 0;
+  background: linear-gradient( transparent, 60%,var(--second-gradient-color), 80%, var(--first-gradient-color));
+}
+
+.contact {
+  grid-area: contact;
+
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  position: relative;
+}
+
+.contact::before,
+.contact::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  height: 100%;
+  width: 2px;
+  border: 2px;
+}
+
+.contact::before {
+  left: 0;
+  background: linear-gradient( var(--first-gradient-color), 25%, var(--second-gradient-color), 60%, transparent);
+}
+
+.contact::after {
+  background: linear-gradient( transparent, 40%, var(--first-gradient-color), 75%, var(--second-gradient-color));
+  right: 0;
+}

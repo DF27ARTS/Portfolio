@@ -1,0 +1,64 @@
+@media screen and (max-width: 500px) {
+
+  .navbar {
+    align-items: flex-end;
+    padding: 3% 5%;
+    height: 15%;
+
+    .navbar_titles {
+      height: 5.5vw;
+      width: 15vw;
+      border-radius: 1vw;
+      padding: 2px;
+
+      .titles {
+        font-size: 2.2vw;
+        height: 100%;
+        min-width: 100%;
+      }
+    }  
+  }
+
+  .full_name {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+    top: .5vw;
+    left: 0;
+    font-size: 9vw;
+  }
+
+  .container_information {
+
+    .about {
+      height: var(--about-container-height);
+    }
+    
+    .about_description {
+      font-size:.9em;
+    }
+
+    .technologies {
+      grid-template-rows: repeat(9, 7vw);
+      grid-column-gap: 2.3%;
+      grid-row-gap: 5%;
+      font-size: 3vw;
+
+      .frontend_titles {
+        font-size: 5vw;
+      }
+  
+      .backend_titles {
+        font-size: 5vw;
+      }
+
+      .tech_rows {
+        .img_icons {
+          height: 7vw;
+          width: 7vw;
+        }
+      }
+    }  
+  }  
+}

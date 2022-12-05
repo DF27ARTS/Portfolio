@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Kaushan+Script&family=Tangerine:wght@700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+:root {
+  /* Mobile Variable */
+  $mobile-styles: 500px;
+
+  --root-margin: -150px;
+  
+  /* Colors */
+  --body-background: #000;
+  --right-panel: rgb(32, 32, 32);
+  --main-background: #ccc;
+  --titles: #ccc;
+  --right-panel-translate: cubic-bezier(0.34, 0.67, 0.86, 1.42);
+
+  --unit: 8px;
+  --about-container-height: fit-content;
+  --translate-gallery: 0%;
+
+  /* Gradient color */
+  --first-gradient-color: #00d2ff;
+  --second-gradient-color: #928DAB;
+  /* --first-gradient-color: #24C6DC; */
+  /* --second-gradient-color: #514A9D; */
+
+  /* Transition */
+  --timing: 1500ms;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--main-background);
+  background: var(--body-background)
+}
+
+@media screen and (max-width: 500px) {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  :root {
+    --root-margin: 50px;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+    color: var(--main-background);
+  }
+
+  body::-webkit-scrollbar {
+    width: 0px;
+  }
+}

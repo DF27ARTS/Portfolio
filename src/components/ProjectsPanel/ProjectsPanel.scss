@@ -1,0 +1,36 @@
+
+.projects_container {
+  position: relative;
+  height: 100%; 
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--unit) * 5);
+  justify-content: center;
+  padding: 5%;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+
+  perspective: 50vw;
+  perspective-origin: center;
+}
+
+
+.projects_container::-webkit-scrollbar {
+  width: 0px;
+}
+
+
+@media screen and (max-width: 500px) {
+
+  .projects_container {
+    perspective-origin: 50% 50%;
+    height: 80%;
+
+    gap: calc(var(--unit) * 5);
+  }
+}
+
+

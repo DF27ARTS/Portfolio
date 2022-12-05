@@ -1,0 +1,211 @@
+.container_information {
+
+  .technologies > :nth-child(1) {
+    position: relative;
+    --timing: ease;
+    --width: 70%;
+    grid-area: JavaScript;
+  }
+
+  .technologies > :nth-child(1) .tech_panel::after {
+    content: "JavaScript";
+    position: absolute;
+    top: 150%;
+    height: 200%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .technologies > :nth-child(2) {
+    --timing: ease-in;
+    --width: 50%;
+    grid-area: TypeScript;
+  }
+  
+  .technologies > :nth-child(2) .tech_panel::after {
+    content: "TypeScript";
+    position: absolute;
+    top: 150%;
+    height: 200%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .technologies > :nth-child(3) {
+    --timing: ease-out;
+    --width: 70%;
+    grid-area: ReactJS;
+  }
+   
+  .technologies > :nth-child(3) .tech_panel::after {
+    content: "ReactJS";
+    position: absolute;
+    top: 150%;
+    height: 200%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .technologies > :nth-child(4) {
+    --timing: ease;
+    --width: 70%;
+    grid-area: ReduxJS;
+  }
+     
+  .technologies > :nth-child(4) .tech_panel::after {
+    content: "ReduxJS";
+    position: absolute;
+    top: 150%;
+    height: 200%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .technologies > :nth-child(5) {
+    --timing: ease-in-out;
+    --width: 70%;
+    grid-area: CSS;
+  }
+      
+  .technologies > :nth-child(5) .tech_panel::after {
+    content: "CSS";
+    position: absolute;
+    top: 150%;
+    height: 200%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .technologies > :nth-child(6) {
+    --timing: ease-out;
+    --width: 70%;
+    grid-area: HTML;
+  }
+        
+  .technologies > :nth-child(6) .tech_panel::after {
+    content: "HTML";
+    position: absolute;
+    top: 150%;
+    height: 200%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .technologies > :nth-child(7) {
+    --timing: ease-in;
+    --width: 70%;
+    grid-area: ExpressJS;
+  }
+          
+  .technologies > :nth-child(7) .tech_panel::after {
+    content: "ExpressJS";
+    position: absolute;
+    top: 150%;
+    height: 200%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .technologies > :nth-child(8) {
+    --timing: ease;
+    --width: 70%;
+    grid-area: Git;
+  }
+            
+  .technologies > :nth-child(8) .tech_panel::after {
+    content: "Git";
+    position: absolute;
+    top: 150%;
+    height: 200%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .technologies > :nth-child(9) {
+    --timing: ease-out;
+    --width: 70%;
+    grid-area: GitHub;
+  }
+              
+  .technologies > :nth-child(9) .tech_panel::after {
+    content: "GitHub";
+    position: absolute;
+    top: 150%;
+    height: 200%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .technologies > :nth-child(10) {
+    --timing: ease-in-out;
+    --width: 50%;
+    grid-area: NodeJS;
+  }
+                
+  .technologies > :nth-child(10) .tech_panel::after {
+    content: "NodeJS";
+    position: absolute;
+    top: 150%;
+    height: 200%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .technologies > :nth-child(11) {
+    --timing: ease;
+    --width: 50%;
+    grid-area: PostgreSQL;
+  }
+                  
+  .technologies > :nth-child(11) .tech_panel::after {
+    content: "PostgreSQL";
+    position: absolute;
+    top: 150%;
+    height: 200%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .technologies > :nth-child(12) {
+    --timing: ease-in;
+    --width: 50%;
+    grid-area: Scrum;
+  }
+                    
+  .technologies > :nth-child(12) .tech_panel::after {
+    content: "Scrum";
+    position: absolute;
+    top: 150%;
+    height: 200%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .technologies > :nth-child(13) {
+    --timing: ease-in;
+    --width: 50%;
+    grid-area: Sequelize;
+  }
+                    
+  .technologies > :nth-child(13) .tech_panel::after {
+    content: "Sequelize";
+    position: absolute;
+    top: 150%;
+    height: 200%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,81 @@
+
+
+.container_colors {
+  --unit-styles: 40vh;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1vw;
+  z-index: 20;
+
+  height: var(--unit-styles);
+  width: var(--unit-styles);
+
+  visibility: hidden;
+  opacity: 0;
+  transform: 
+    translateX(calc(var(--unit-styles) / .5))
+    rotate(0);
+  border-radius: 50%;
+  transform-origin: 50% 50%;
+  
+  background: var(--right-panel);
+  box-shadow: 0 0 4vw 0 var(--first-gradient-color) inset;
+
+  transition: 
+    transform 500ms ease-in-out, 
+    opacity 200ms ease-in-out, 
+    visibility 200ms ease-in-out;
+}
+
+@for $i from 0 to 7 {
+  .container_colors :nth-child(#{$i + 1}) {
+    --rotate-style: #{180 / 7 * $i * -1}deg;
+  }
+}
+
+.menu_container:first-child:focus-within .container_colors,
+.container_colors:hover,
+.container_colors:focus {
+  transform: 
+    translateX(calc(var(--unit-styles) / 1.8))
+    rotate(167deg);
+  visibility: visible;
+  opacity: 1;
+}
+
+.single_color {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+
+  height: 14%; 
+  width: 14%;
+  border-radius: 50%;
+  background: linear-gradient(90deg, var(--first-color), var(--second-color));
+
+  transform: 
+    rotate(var(--rotate-style)) translateY(calc(var(--unit-styles) / 2.5));
+}
+
+
+.container_colors .color_active {
+  box-shadow:
+    0 0 0 2px var(--right-panel),
+    0 0 0 4px var(--first-gradient-color);
+}
+
+@media screen and (max-width: 500px) {
+  .container_colors {
+    padding: 5vw 3vw;
+    grid-template-columns: repeat(3, 10vw);
+    grid-template-rows: repeat(3, 10vw);
+    grid-column-gap: 5vw;
+    grid-row-gap: 7vw;
+    box-shadow: 0 0 17vw 0 var(--first-gradient-color) inset;
+  }
+}

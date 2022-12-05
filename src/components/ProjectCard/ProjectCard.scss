@@ -1,0 +1,146 @@
+
+$card:  38.8vw;
+$border: 1vw;
+
+
+.container_project_card {
+  --intersection-translate: 50%;
+
+  height: calc($card / 1.7);
+  width: $card;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  box-shadow: 2px 5px 15px -5px var(--first-gradient-color);
+  border-radius: $border;
+
+  margin: 0;
+  padding: 0;
+  position: relative;
+  transform-style: preserve-3d;
+
+  // color: ;
+  transform:
+    translateX(var(--intersection-translate));
+  opacity: 0;
+  transition: 
+    opacity 200ms ease-in-out,
+    transform 300ms ease-in-out;
+}
+
+.show {
+  transform: 
+    translateX(0);
+  opacity: 1;
+}
+
+.card_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc($card / 9);
+  width: $card;
+
+  font-size: 3vh;
+}
+
+.card_image {
+  height: 100%;
+  width: 100%;
+
+  border-radius: 0 0 $border $border;
+}
+
+.single_square {
+  position: absolute;
+  height: 50%;
+  width: 30%;
+}
+
+.container_project_card:has(.single_square:nth-child(1):hover) {
+  transform:
+    rotateY(-10deg)
+    rotateX(10deg);
+}
+
+.container_project_card:has(.single_square:nth-child(2):hover) {
+  transform:
+    rotateY(10deg)
+    rotateX(10deg);
+}
+
+.container_project_card:has(.single_square:nth-child(3):hover) {
+  transform:
+    rotateY(-10deg)
+    rotateX(-10deg);
+}
+
+.container_project_card:has(.single_square:nth-child(4):hover) {
+  transform:
+    rotateY(10deg)
+    rotateX(-10deg);
+}
+
+.single_square:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+.single_square:nth-child(2) {
+  top: 0;
+  right: 0;
+}
+
+.single_square:nth-child(3) {
+  bottom: 0;
+  left: 0;
+}
+
+.single_square:nth-child(4) {
+  bottom: 0;
+  right: 0;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 500px) {
+  $card:  81vw ;
+  $border: .5vh;
+
+  .container_project_card {
+
+    height: calc($card / 1.6);
+    width: $card;
+
+    perspective: 150vw;
+  }
+
+  .single_image_container {
+    height: calc($card / 2);
+    width: calc($card / 12);
+  }
+
+  .card_image {
+    height: calc($card / 2);
+    width: $card ;
+  }
+
+  .card_title {
+    height: calc($card / 9);
+    width: $card;
+  
+    font-size: 2.5vh;
+  }
+
+
+
+  @for $i from 0 to 12 {
+    .single_image_container:nth-child(#{$i + 1}) img {
+      --translate-image: #{$card / 12 * $i * -1};
+    }
+  }
+}

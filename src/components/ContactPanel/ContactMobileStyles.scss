@@ -1,0 +1,95 @@
+@media screen and (max-width: 500px) {
+
+  .contact_container {
+    --font-size: 4vh;
+  
+    gap: calc(var(--unit) * 5);
+    padding-left: var(--unit);
+    padding-right: var(--unit);
+    padding-bottom: calc(var(--unit) * 10);
+  
+  }
+
+  .contact_container::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  .contact_container::-webkit-scrollbar-thumb {
+    border-right: 5px solid var(--right-panel);
+  }
+
+  .contact_title {
+    margin-bottom: calc(var(--unit) * 3);
+    padding-left: calc(var(--unit) * 4);
+  }
+  
+  .contact_message {
+    padding-left: calc(var(--unit) * 4);
+  }
+
+  .container_contacts {
+  
+    padding: calc(var(--unit) * 2);
+    padding-left: 0;
+    padding-right: 0;
+    padding-left: calc(var(--unit) * 4);
+
+  }
+
+  .container_single_contact {
+    gap: calc(var(--unit) * 3);
+  
+    font-size: 2vh;
+  }
+
+  .contact_form {
+    width: 80vw;
+  
+    padding: calc(var(--unit) * 4);
+    padding-top: calc(var(--unit) * 5);
+  }
+
+  .contact_input {
+    height: 10vw;
+  
+    border-radius: 7vw !important;
+  }
+
+  .contact_textarea {
+    height: 50vw;
+    border-radius: 2vw;
+  }
+
+  .contact_button {
+    font-size: 2vh;
+  }
+
+  .contact_footer {
+    gap: calc(var(--unit) * 2);
+  
+  }
+
+  .single_contact_icon {
+    height: 7vh;
+    gap: calc(var(--unit) / 2);
+  }
+
+  .single_contact_icon .contact_icons[area-text=whatsApp] {
+    height: 4.5vh;
+  }
+
+  .contact_icons {
+    height: 5vh;
+
+    padding: 0;
+    margin: 0;
+  }
+
+  .contact_icons_torre {
+    height: 5vh;
+  }
+
+  .icon_contact_title {
+    font-size: 1.2vh;
+  }
+}

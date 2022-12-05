@@ -1,24 +1,33 @@
-import "./App.css";
 import { useState } from "react";
 import MainPage from "./components/MainPage/MainPage";
-import EnglishSpanish from "./components/English_Spanish_Button/EnglishSpanish";
-import DayAndNightButton from "./components/DayAndNightButton/DayAndNaightButton";
+import SingleProject from "./components/SingleProject/SingleProject";
+import Menu from "./components/Menu/Menu";
 
 function App() {
-  const [dayOrNight, setDayOrNight] = useState(true);
-  const [language, setLanguage] = useState(false);
+  const [dayOrNight, setDayOrNight] = useState(false);
+  const [language, setLanguage] = useState(true);
+  const [currentProjectObject, setCurrentProjectObject] = useState({});
 
   return (
     <>
-      <MainPage dayOrNight={dayOrNight} language={language} />
-      <EnglishSpanish
+      <MainPage
+        setDayOrNight={setDayOrNight}
+        setLanguage={setLanguage}
+        setCurrentProjectObject={setCurrentProjectObject}
+        language={language}
+      />
+      <SingleProject
+        App_Object={currentProjectObject}
+        setCurrentProjectObject={setCurrentProjectObject}
+        language={language}
         dayOrNight={dayOrNight}
+      />
+
+      <Menu
         language={language}
         setLanguage={setLanguage}
-      />
-      <DayAndNightButton
-        setDayOrNight={setDayOrNight}
         dayOrNight={dayOrNight}
+        setDayOrNight={setDayOrNight}
       />
     </>
   );

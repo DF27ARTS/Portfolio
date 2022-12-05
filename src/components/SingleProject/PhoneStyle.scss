@@ -1,0 +1,238 @@
+
+@media screen and (max-width: 500px) {
+
+  .main_container_project_detail {
+    padding: 0;
+  }
+
+  .project_information {
+    background-color: var(--right-panel);
+    min-height: 80vh;
+    overflow-x: hidden;
+  }
+
+  .project_information::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  .project_information::-webkit-scrollbar-thumb {
+    border-right: 5px solid var(--right-panel);
+  }
+
+  .project_name {
+    top: 4vh;
+    font-size: 4vh;
+
+    margin-bottom: 10vh;
+  }
+
+  .links {
+    top: 11vh;
+    height: 7vh;
+    width: 70% !important;
+    gap: calc(var(--unit) * 4);
+
+     
+    .arrow_detail_project {
+      height: 1vh;
+      width: 4.5vh;
+    }
+  
+    .link_deploy {
+      height: 5vh;
+      width: 5vh;
+      object-fit: cover;
+    }
+  
+    .links_github {
+      transform: translateY(-.2vh);
+      height: 6vh;
+      width: fit-content;
+    }
+  }
+
+  @keyframes arrow_animation {
+    0% {
+      transform: 
+        translateX(0);
+    }
+    50% {
+      transform: 
+        translateX(-2vh);
+    }
+    100% {
+      transform: 
+        translateX(0);
+    }
+  }
+
+  .links_github_cont::before ,
+  .link_deploy_cont::before {
+    content: "";
+    display: none;
+    bottom: -1vh;
+    left: -2vh;
+    height: 2vh;
+    width: 9vh;
+    font-size: 1.5vh;
+  }
+
+  .link_deploy_cont::before { content: "link Deploy" }
+  .links_github_cont::before { content: "link GitHub"; transform: translateY(-.5vh);}
+
+
+  .container_slider {
+    height: 8vh;
+  
+    .slider {
+      height: 1vw;
+      width: 7vw;
+    }
+  }
+
+  .main_container_video_carousel {
+    height: 25%;
+
+    padding: 0;
+    
+  }
+
+  .container_detail_carousel {
+    width: 100%;
+
+    padding: 0;
+  }
+
+  .container_video_detail {
+    height: 100% !important;
+    width: 100% !important;
+  }
+
+  .video_detail {
+    height: fit-content;
+    width: 98%;
+  }
+  
+  .center_panel {
+    --current-slider-num: 0;
+    display: flex;
+    gap: 5vw;
+    align-items: center;
+    padding: 0;
+    padding-left: 2.5vw;
+    top: none;
+    background: transparent;
+    border-block-start: 2px solid;
+    border-block-end: 2px solid;
+    border-image-source: linear-gradient(90deg , var(--first-gradient-color), 50%, var(--second-gradient-color) );
+    border-image-slice: 1;
+    transition: border-image-source var(--timing) ease-in-out ;
+    height: 40vw;
+    width: 80vw;
+    overflow: hidden;
+
+    margin-top: -2vh;
+  }
+
+  .button_translate_mobile {
+    display: block;
+    position: absolute; 
+    top: 25%;
+    background: transparent;
+    z-index: 100;
+    height: 16vw;
+    width: 7vw;
+    font-size: 13vw;
+    border: none;
+    color: #ccc;
+    text-shadow: 1px 1px 5px #000;
+  }
+
+  .btn_left {
+    left: 0;
+  }
+
+  .btn_right {
+    right: 0;
+  }
+
+  .front_panel {
+    display: none;
+  }
+
+  .single_image {
+    --translate: -0vw;
+    position: static;
+    height: 35vw;
+    min-width: 75vw;
+    transition: transform 300ms ease;
+    transform: translateX(var(--translate));
+    background: #ccc;
+  
+    .image {
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      transform: translateZ(0px);
+    }
+
+    .image:focus {
+      scale: 1.1;
+    }
+  }
+
+  .activated {
+    .single_image {
+      animation: none;
+    }
+  }
+
+  .close_icon {
+    font-size: 15vw;
+    top: 3vw;
+    right: -3.2vw;
+    color: var(--tiltes);
+  }
+
+  .detail_project_container_description {
+    height: 10vh;
+  }
+
+  .gallery_project_detail,
+  .video_project_detail {
+    height: 80%;
+    width: fit-content;
+  }
+
+  
+  .select::before,
+  .select::after {
+    top: none;
+    bottom: none;
+    height: 2px;
+    width: 0;
+    background: linear-gradient(90deg, var(--first-gradient-color), var(--second-gradient-color));
+  }
+
+  @keyframes selected {
+    to {width: 100%}
+  }
+
+  .select::before {
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: -9vh !important;
+  }
+  
+  .select::after {
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: -9vh !important;
+  }
+
+}

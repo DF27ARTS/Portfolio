@@ -1,95 +1,156 @@
-import React, { useState } from "react";
+import React from "react";
 import { About } from "../Image/Projects_Description.js";
-import RightPanel from "../RightPanel/RightPanel.jsx";
 
 // Styles
 import "./MainPage.scss";
-export default function MainPage({ dayOrNight, language }) {
-  const [Current_CV_Image, setCurrent_CV_Image] = useState("");
+import Navbar from "../Navbar/Navbar.jsx";
+import Panels from "../Panels/Panels.jsx";
+export default function MainPage({
+  setDayOrNight,
+  setLanguage,
+  setCurrentProjectObject,
+  language,
+}) {
+  function HandleOnLoad() {
+    const Language = localStorage.getItem("language");
+    const Theme = localStorage.getItem("theme");
+    const FirstColor = localStorage.getItem("FirstColor");
+    const SecondColor = localStorage.getItem("SecondColor");
+    const DataAtribute = localStorage.getItem("DataAtribute");
+
+    const containerLanguage = document.querySelector(".container_language");
+
+    const first_circle = document.querySelector(".first_circle");
+
+    // language button
+    if (Language) {
+      if (Language === "English") {
+        containerLanguage.style.setProperty("--language", "-105%");
+        setLanguage(true);
+      } else if (Language === "Spanish") {
+        containerLanguage.style.setProperty("--language", "0%");
+        setLanguage(false);
+      }
+    }
+
+    // Theme button
+    if (Theme) {
+      if (Theme === "day") {
+        // Icon animation properties day
+        first_circle.style.setProperty("--translate", "0%");
+        first_circle.style.setProperty("--color", "yellow");
+        first_circle.style.setProperty("--center-color", "yellow");
+
+        //Colors changed day
+        document.documentElement.style.setProperty(
+          "--right-panel",
+          "rgb(240, 239, 239)"
+        );
+        document.documentElement.style.setProperty("--main-background", "#000");
+        document.documentElement.style.setProperty("--body-background", "#fff");
+        document.documentElement.style.setProperty("--titles", "#333");
+        setDayOrNight(true);
+      } else {
+        // Icon animation properties night
+        first_circle.style.setProperty("--translate", "-50%");
+        first_circle.style.setProperty("--color", "#ccc");
+        first_circle.style.setProperty("--center-color", "#ccc");
+
+        //Colors changed night
+        document.documentElement.style.setProperty(
+          "--right-panel",
+          "rgb(32, 32, 32)"
+        );
+        document.documentElement.style.setProperty("--main-background", "#ccc");
+        document.documentElement.style.setProperty("--body-background", "#000");
+        document.documentElement.style.setProperty("--titles", "#ccc");
+        setDayOrNight(true);
+      }
+    }
+
+    // Current Color page
+    if (FirstColor && SecondColor && DataAtribute) {
+      document.documentElement.style.setProperty(
+        "--first-gradient-color",
+        FirstColor
+      );
+      document.documentElement.style.setProperty(
+        "--second-gradient-color",
+        SecondColor
+      );
+
+      const colorActive = document.querySelector(".color_active");
+      colorActive.classList.remove("color_active");
+
+      const currentColor = document.querySelector(
+        `[data-name="${DataAtribute}"]`
+      );
+
+      currentColor.classList.add("color_active");
+    }
+  }
 
   return (
     <>
-      <main className="main_container">
+      <main onLoad={() => HandleOnLoad()} className="main_container">
         <div className="left_panel">
-          <img
-            src={About.Picture}
-            alt={`Picture of ${About.Full_Name}`}
-            className="picture"
-          />
-          <div className="personal_information">
-            <div className="resume">
-              <button className="cv_button b_sp">
-                {!language ? "CV ESPAÑOL" : "CV SPANISH"}
-              </button>
-              <div tabIndex={0} className="cv_button_options sp">
-                <a href={About.CV_SPANISH} download>
-                  <img
-                    tabIndex={0}
-                    src={About.CV_image_Spanish}
-                    alt="cv icon"
-                    className="CV_image"
-                  />
-                </a>
-              </div>
-              <button className="cv_button b_en">
-                {!language ? "CV INGLES" : "CV ENGLISH"}
-              </button>
-              <div tabIndex={0} className="cv_button_options en">
-                <a href={About.CV_ENGLISH} download>
-                  <img
-                    tabIndex={0}
-                    src={About.CV_image_English}
-                    alt="cv icon"
-                    className="CV_image"
-                  />
-                </a>
+          <div className="arrow_right">
+            <p>&#8250;</p>
+            <p>&#8250;</p>
+            <p>&#8250;</p>
+          </div>
+          <div className="cont_img_CV">
+            <div className="container_picture">
+              <div className="picture_corners"></div>
+              <div className="picture_corners"></div>
+              <img
+                src={About.Picture}
+                alt={`${About.Full_Name}`}
+                className="picture"
+              />
+            </div>
+          </div>
+          <div className="main_title">
+            <span>Full Stack</span>
+            <span>Web Developer</span>
+          </div>
+          <div className="container_ducation">
+            <div className="education">
+              <span className="education_title">
+                {!language ? "Educacíon" : "Education"}
+              </span>
+              <div>
+                <span>Full-stack Developer</span>
+                <span>Soy henry</span>
               </div>
             </div>
 
-            <a href="mailto:drawingsdf@gmail.com">
-              <div className="information_rows">
-                <img src={About.Email} alt="" className="personal_icons" />
-                <span className="icons_name">drawingsdf@gmail.com</span>
+            <div className="languages">
+              <span className="languages_title">
+                {!language ? "Idiomas" : "Languages"}
+              </span>
+              <div className="container_languages">
+                <div className="left_column"></div>
+                <div>
+                  <span>{!language ? "Español" : "Spanish"}</span>
+                  <span>{!language ? "Nativo" : "Native"}</span>
+                </div>
+                <div>
+                  <span>{!language ? "Ingles" : "English"}</span>
+                  <span>B2 Uper Intermidiate</span>
+                </div>
               </div>
-            </a>
-            <a href="https://www.google.com/maps/place/Cra.+3+%2331-36,+Ch%C3%ADa,+Cundinamarca/@4.8783224,-74.0473217,17z/data=!3m1!4b1!4m5!3m4!1s0x8e4079ef5feec27d:0x3119ad7ce25dc794!8m2!3d4.8783171!4d-74.045133">
-              <div className="information_rows">
-                <img src={About.Location} alt="" className="personal_icons" />
-                <span className="icons_name">Colombia / Cundinamarca</span>
-              </div>
-            </a>
-            <a href="https://wa.me/573202074828">
-              <div className="information_rows">
-                <img src={About.Phone} alt="" className="personal_icons" />
-                <span className="icons_name">+57 3202074828</span>
-              </div>
-            </a>
-            <a href="https://github.com/DF27ARTS">
-              <div className="information_rows">
-                <img src={About.GitHub} alt="" className="web_icons" />
-                <span className="icons_name">GitHub</span>
-              </div>
-            </a>
-            <a href="https://www.linkedin.com/in/diego-fernando-rojas-carrillo-full-stack-developer/">
-              <div className="information_rows">
-                <img src={About.LinkedIn} alt="" className="web_icons" />
-                <span className="icons_name">LinedIn</span>
-              </div>
-            </a>
-            <a href="https://torre.co/@fernando_rc?r=kZjElFcd">
-              <div className="information_rows">
-                <img src={About.Picture} alt="" className="web_icons torre" />
-                <span className="icons_name">Torre</span>
-              </div>
-            </a>
+            </div>
           </div>
         </div>
-        <div
-          className={
-            dayOrNight ? "right_panel" : "right_panel right_panel_black"
-          }
-        >
-          <RightPanel dayOrNight={dayOrNight} language={language} />
+
+        <div className="right_panel">
+          <Navbar language={language} />
+
+          <Panels
+            setCurrentProjectObject={setCurrentProjectObject}
+            language={language}
+          />
         </div>
       </main>
     </>

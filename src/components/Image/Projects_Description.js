@@ -225,18 +225,18 @@ const Porfolio_Description = {
 const About_Me = {
   contact_message_spanish: [
     "¿Hola como estas?  👋",
-    "Espero que estes teniendo un gran día",
-    "Si estas interesado en mi Perfil y crees que mi Stack de tecnologias se ajusta a lo que estas buscando",
-    "¡Contáctame!",
-    "Estaria encantado de unirme a tu equipo 😉",
+    "si estas interesado en mi Perfil",
+    "puedes contactarme atravez de mis diferentes redes de contacto como linkedIn, whatsApp entre otros ",
+    "o tambien puedes enviarme un Email llenando el formulario que puedes encontrar un poco mas abajo ",
+    "Estaria feliz de charlar con tigo 😉",
   ],
 
   contact_message_english: [
     "Hello how are you? 👋",
-    "I hope you're feeling great today",
-    "If you're interested in my Profile and you think my Technology Stack fits what you're looking for",
-    "¡Contact me!",
-    "I'd be glad to join your team  😉",
+    "If you're interested in my Profile",
+    "You can contact me through my different contact networks such as LinkedIn, WhatsApp, among others",
+    "Or you can also send me an email by filling out the form that you can find a little below",
+    "I would be happy to chat with you 😉",
   ],
 
   description_spanish: [

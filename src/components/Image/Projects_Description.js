@@ -49,6 +49,7 @@ import TypeScript from "../Image/Icons/TypeScript.svg";
 import CSS from "../Image/Icons/CSS.svg";
 import HTML from "../Image/Icons/HTML.svg";
 import Sequelize from "../Image/Icons/Sequelize.svg";
+import Twitter from "../Image/Icons/Twitter.svg";
 import Whatsapp from "../Image/Icons/whatsapp.png";
 
 // Personal Information

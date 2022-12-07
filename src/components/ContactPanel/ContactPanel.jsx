@@ -151,6 +151,17 @@ export default function ContactPanel({ language }) {
           </div>
         </a>
 
+        <a href="https://twitter.com/_DF_Fernando">
+          <div className="single_contact_icon">
+            <img
+              src={About.Twitter}
+              alt="linkedin icon"
+              className="twitter_icons"
+            />
+            <span className="icon_contact_title">Twitter</span>
+          </div>
+        </a>
+
         <a href="https://torre.co/@fernando_rc?r=kZjElFcd">
           <div className="single_contact_icon">
             <div className="contact_icons_torre">

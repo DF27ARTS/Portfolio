@@ -294,6 +294,7 @@ export const About = {
   CV_ENGLISH: CV_ENGLISH,
   Email,
   LinkedIn,
+  Twitter,
   Location,
   Whatsapp,
   Phone,
